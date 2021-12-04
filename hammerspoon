@@ -1,0 +1,272 @@
+--**********************************************
+--************* Hyper Key Setup *****************
+
+hyper = hs.hotkey.modal.new({'ctrl', 'alt', 'cmd'}, 'return','Hyper Mode')
+
+-- Enter Hyper Mode when Hyper/Capslock is pressed
+--function enterHyper()
+--    hyper:enter()
+--    hs.alert.show("Hyper Mode On")
+--end
+
+-- Leave Hyper Mode when Hyper/Capslock is pressed,
+function exitHyper()
+    hyper:exit()
+    hs.alert.show("Hyper Mode Off")
+end
+
+-- Enter and exit Hyper mode
+hyper:bind('', 'escape', exitHyper)
+
+-- Hyper mode active while holding f10
+--f10 = hs.hotkey.bind({nil}, 'f10', enterHyper, exitHyper)
+
+--**********************************************
+--************ Window Management ***************
+--**********************************************
+
+hs.window.animationDuration = 0 --0.05
+local padding = {x = 8, y = 8}
+
+function MoveLeftHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + padding.x
+    f.y = max.y + padding.y
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h - padding.y*2
+    win:setFrame(f)
+end
+
+function MoveTopLeftHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + padding.x
+    f.y = max.y + padding.y
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h / 2 - padding.y * 1.5
+    win:setFrame(f)
+end
+
+function MoveBottomLeftHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + padding.x
+    f.y = max.y + padding.y / 2 + max.h / 2
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h / 2 - padding.y * 1.5
+    win:setFrame(f)
+end
+
+function MoveRightHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + max.w / 2 + padding.x / 2
+    f.y = max.y + padding.y
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h - padding.y * 2
+    win:setFrame(f)
+end
+
+function MoveTopRightHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + max.w / 2 + padding.x / 2
+    f.y = max.y + padding.y
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h / 2 - padding.y * 1.5
+    win:setFrame(f)
+end
+
+function MoveBottomRightHalf()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + max.w / 2 + padding.x / 2
+    f.y = max.y + padding.y / 2 + max.h / 2
+    f.w = max.w / 2 - padding.x * 1.5
+    f.h = max.h / 2 - padding.y * 1.5
+    win:setFrame(f)
+end
+
+function Center()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + max.w * 3 / 16
+    f.y = max.y + max.h * 1 / 6
+    f.w = max.w * 10 / 16
+    f.h = max.h * 4 / 6
+    win:setFrame(f)
+end
+
+function CenterSame()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    f.x = max.x + (max.w - f.w) / 2
+    f.y = max.y + (max.h - f.h) / 2
+    win:setFrame(f)
+end
+
+function AddWidth()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    local add = max.w / 32
+    f.w = f.w + add
+    win:setFrame(f)
+end
+
+function ReduceWidth()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    local add = max.w / 32
+    f.w = f.w - add
+    win:setFrame(f)
+end
+
+function AddHeight()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    local add = max.h / 32
+    f.h = f.h + add
+    win:setFrame(f)
+end
+
+function ReduceHeight()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+    local add = max.h / 32
+    f.h = f.h - add
+    win:setFrame(f)
+end
+
+hyper:bind({'fn1'}, 'c', CenterSame)
+hyper:bind({'fn1', 'shift'}, 'c', Center)
+hyper:bind({'fn1', 'shift'}, 'h', MoveLeftHalf)
+hyper:bind({'fn1', 'shift'}, 'y', MoveTopLeftHalf)
+hyper:bind({'fn1', 'shift'}, 'n', MoveBottomLeftHalf)
+hyper:bind({'fn1', 'shift'}, 'l', MoveRightHalf)
+hyper:bind({'fn1', 'shift'}, 'o', MoveTopRightHalf)
+hyper:bind({'fn1', 'shift'}, '.', MoveBottomRightHalf)
+hyper:bind({nil}, ']', AddWidth)
+hyper:bind({nil}, '[', ReduceWidth)
+hyper:bind({nil}, '=', AddHeight)
+hyper:bind({nil}, '-', ReduceHeight)
+
+--**********************************************
+--*************** Window Focus *****************
+--**********************************************
+
+function FocusLeft()
+    --local win = hs.window.filter.new():setCurrentSpace(true)
+    local win = hs.window.focusedWindow()
+    if win == nil then
+        return
+    end
+    win:focusWindowWest(nil, false, true)
+    -- win:focusWindowWest(nil, nil, True)
+end
+
+function FocusRight()
+    --local win = hs.window.filter.new():setCurrentSpace(true)
+    local win = hs.window.focusedWindow() if win == nil then return end win:focusWindowEast(nil, false, true)
+end
+
+function FocusNorth()
+    --local win = hs.window.filter.new():setCurrentSpace(true)
+    local win = hs.window.focusedWindow()
+    if win == nil then
+        return
+    end
+    win:focusWindowNorth(nil, false, true)
+end
+
+function FocusSouth()
+    --local win = hs.window.filter.new():setCurrentSpace(true)
+    local win = hs.window.focusedWindow()
+    if win == nil then
+        return
+    end
+    win:focusWindowSouth(nil, false, true)
+end
+
+hyper:bind({nil}, 'h', FocusLeft)
+hyper:bind({nil}, 'l', FocusRight, hyper:exit())
+hyper:bind({nil}, 'k', FocusNorth, hyper:exit())
+hyper:bind({nil}, 'j', FocusSouth, hyper:exit())
+
+---**********************************************
+--*********** Launch Applications ***************
+--***********************************************
+
+app_list = {
+    {key = 'a', name = 'Alacritty'},
+    {key = 'v', name = 'VimR'},
+    {key = 'f', name = 'Firefox'},
+    {key = 'z', name = 'CLion'},
+    {key = 'x', name = 'Xcode'},
+    --{key = 'i', name = 'IINA'},
+    --{key = 't', name = 'Telegram' },
+    --{key = 'i', name = 'iTerm'},
+    --{key = 'w', name = 'Waterfox'},
+    --{key = 'b', name = 'Brave Browser'},
+    --{key = 'w', name = 'Whatsapp'},
+    --{key = , name = },
+}
+
+for num, apps in ipairs(app_list) do 
+        hyper:bind({'fn1'}, apps.key, function () 
+            hs.application.launchOrFocus(apps.name)
+        end)
+        
+        hs.hotkey.bind({'cmd', 'ctrl'}, tostring(num), function ()
+            hs.application.launchOrFocus(apps.name)
+        end)
+end
+
+--hs.hotkey.bind({'fn'}, 'f', function ()
+--    hs.application.launchOrFocus('Firefox')
+--end)
+
+--**********************************************
+--*************** Reload Config ****************
+--**********************************************
+
+function reloadConfig(files)
+    doReload = false
+    for _,file in pairs(files) do
+        if file:sub(-4) == ".lua" then
+            doReload = true
+        end
+    end
+    if doReload then
+        hs.reload()
+    end
+end
+myWatcher = hs.pathwatcher.new(
+    os.getenv("HOME") .. "/.hammerspoon/",
+    reloadConfig):start()
+hs.alert.show("Config loaded")
+

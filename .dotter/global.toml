@@ -1,0 +1,29 @@
+[shell.files]
+starship = "~/.config/starship.toml"
+ripgrep = "~/.config/.ripgreprc"
+zellij = "~/.config/zellij"
+gitconfig = "~/.gitconfig"
+github = "~/.config/gh/config.yml"
+
+[zsh]
+depends = ["shell"]
+
+[zsh.files]
+"zsh/zshrc" = "~/.zshrc"
+
+[rust.files]
+"zsh/zshenv" = "~/.zshenv"
+rustup = "~/.rustup/settings.toml"
+
+[alacritty.files]
+alacritty = "~/.config/alacritty"
+
+[hammerspoon.files]
+hammerspoon = "~/.hammerspoon/init.lua"
+
+[neovim.files]
+nvim = "~/.config/nvim"
+
+[julia.files]
+julia-startup = "~/.julia/config/startup.jl"
+
