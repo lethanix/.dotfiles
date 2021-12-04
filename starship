@@ -1,0 +1,54 @@
+# Imprimir una nueva línea al inicio del prompt
+add_newline = false
+
+# Reemplaza el símbolo "❯" por "➜" del prompt
+[character] 
+#success_symbol = "[     ](bold green)" 
+#success_symbol = "[](bold green)" 
+#success_symbol = "[ ](bold green)" 
+#success_symbol = "[ ](bold green)" 
+#success_symbol = "[ ](bold green)" 
+success_symbol = "[ ](bold fg:78)" 
+error_symbol = "[  🤯 ](bold red)"
+vicmd_symbol = "[ ](bold green)"
+
+[package]
+disabled = true
+
+[cmd_duration]
+min_time = 500
+format = "[龍$duration]($style) "
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 5
+style = "bold red"
+
+[[battery.display]]
+threshold = 15
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 50
+style = "bold green"
+
+[directory]
+format = "[ $path]($style)[$read_only]($read_only_style) "
+style = "bold #e39400"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[memory_usage]
+disabled = false
+threshold = 90
+format = "[|](bold cyan) [$symbol ${ram_pct}]($style) "
+symbol = "﬙"
+style = "bold purple"
+
+[aws]
+symbol = " "
+
