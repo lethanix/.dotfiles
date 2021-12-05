@@ -22,10 +22,9 @@ require('nvim-ts-rainbow')
 
 -- Load LSP settings
 require("lsp-conf")
---require("completion-nv")
 require("compe-conf")
-require("rust")
---require("rust-tools-conf")
+--require("rust")
+require("rust-tools-conf")
 require("julia-server")
 require("swift")
 require("type-javascript")
