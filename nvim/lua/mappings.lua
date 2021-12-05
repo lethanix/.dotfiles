@@ -11,7 +11,8 @@ local map = vim.api.nvim_set_keymap
 -- **************************************
 -- Map leader to Space or Comma
 -- **************************************
-vim.g.mapleader = " "
+--vim.g.mapleader = " "
+vim.g.mapleader = ","
 
 -- **************************************
 -- Map esc to exit terminal mode

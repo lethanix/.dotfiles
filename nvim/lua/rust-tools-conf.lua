@@ -36,7 +36,7 @@ local opts = {
             other_hints_prefix = "=> ",
 
             -- whether to align to the lenght of the longest line in the file
-            max_len_align = false,
+            max_len_align = true,
 
             -- padding from the left if max_len_align is true
             max_len_align_padding = 1,
@@ -60,7 +60,7 @@ local opts = {
 
             -- whether the hover action window gets automatically focused
             -- default: false
-            auto_focus = false
+            auto_focus = true
         }
     },
 

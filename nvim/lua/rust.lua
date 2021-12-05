@@ -11,6 +11,7 @@ nvim_lsp.rust_analyzer.setup({
             assist = {
                 importGranularity = "module",
                 importPrefix = "by_self",
+                importEnforceGranularity = true
             },
             cargo = {
                 loadOutDirsFromCheck = true
