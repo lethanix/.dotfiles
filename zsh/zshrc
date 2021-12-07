@@ -3,6 +3,9 @@ export LANG=en_US.UTF-8
 # Fixed directory for user specific data
 export PATH=$HOME/.local/bin:$PATH
 
+# Lua lsp
+export PATH="$HOME/lua-language-server/bin/macOS:$PATH"
+
 # Swift lsp (sourcekit-lsp)
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp
 
@@ -33,7 +36,7 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 #**************************
 
 # Neovide opening with some flags
-alias nv="neovide --geometry=80x40 --multigrid"
+alias nv="neovide --multigrid"
 
 # Aseprite launch
 alias aseprite="nohup aseprite &"

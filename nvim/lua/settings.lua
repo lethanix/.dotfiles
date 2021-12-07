@@ -9,6 +9,7 @@ local g = vim.g      -- a table to access global variables
 
 --local map = vim.api.nvim_set_keymap
 
+cmd 'let g:neovide_remember_window_size = v:true'
 -- Highlight on yank
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
@@ -29,7 +30,7 @@ cmd 'let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"'
 cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
 o.termguicolors = true 
 
-local colorsch = "dracula"
+local colorsch = "gruvbox"
 cmd 'let ayucolor = "mirage"'
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'

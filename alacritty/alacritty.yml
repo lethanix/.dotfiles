@@ -79,16 +79,16 @@ draw_bold_text_with_bright_colors: true
 
 import:
   # Font configuration -> Select the font yaml file
-  - ~/.config/alacritty/fonts/fira.yml
-  #- ~/.config/alacritty/fonts/space.yml
+  #- ~/.config/alacritty/fonts/fira.yml
+  - ~/.config/alacritty/fonts/space.yml
   #- ~/.config/alacritty/fonts/blex.yml
   #- ~/.config/alacritty/fonts/caskaydia.yml
   #- ~/.config/alacritty/fonts/ibm.yml
   #- ~/.config/alacritty/fonts/jetbrains.yml
 
   # Change the color importing the corresponding yaml file
-  - ~/.config/alacritty/colors/dracula.yml
-  #- ~/.config/alacritty/colors/gruvbox.yml
+  #- ~/.config/alacritty/colors/dracula.yml
+  - ~/.config/alacritty/colors/gruvbox.yml
 
 mouse:
     # Click settings

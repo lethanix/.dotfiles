@@ -8,12 +8,10 @@ require("mappings")
 require("minimap")
 require("focus-win") -- Focus active windows
 require("shade-win") -- Dim inactive windows
---require("dim") -- Dim inactive windows
 require("lsp-icons")
 require("true-zen-conf")
 require("treesitter")
---require("nvimtree")
---require("buffertabs")
+require("buffertabs")
 require("autopairs-conf")
 require("indent")
 require("statusline")
@@ -21,12 +19,11 @@ require('telescope-config')
 require('nvim-ts-rainbow')
 
 -- Load LSP settings
-require("lsp-conf")
 require("compe-conf")
---require("rust")
-require("rust-tools-conf")
-require("julia-server")
+require("rust")
 require("swift")
+require("lua-lsp")
+require("julia-server")
 require("type-javascript")
 require("html-lsp")
 
