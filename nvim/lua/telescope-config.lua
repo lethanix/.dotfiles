@@ -6,6 +6,7 @@ map('n', '<leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<cr>]
 map('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<cr>]], options)
 map('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<cr>]], options)
 map('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<cr>]], options)
+map('n', '<leader>tf', [[<Cmd>lua require('telescope.builtin').file_browser()<cr>]], options)
 
 require('telescope').setup{
   defaults = {

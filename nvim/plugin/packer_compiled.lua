@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/ayu-vim",
     url = "https://github.com/ayu-theme/ayu-vim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["calvera-dark.nvim"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/calvera-dark.nvim",
@@ -175,11 +180,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
-    url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -282,6 +282,11 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-dogrun",
     url = "https://github.com/wadackel/vim-dogrun"
   },
+  ["vim-nightfly-guicolors"] = {
+    loaded = true,
+    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
   ["vim-prettier"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-prettier",
@@ -290,10 +295,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15statusline\frequire\0", "config", "galaxyline.nvim")
@@ -302,6 +303,10 @@ time([[Config for galaxyline.nvim]], false)
 time([[Config for twilight.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
 time([[Config for twilight.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

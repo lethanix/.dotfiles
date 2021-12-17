@@ -1,7 +1,7 @@
 -- *******************************************
 -- Mapping configuration for general settings
--- 
--- The mappings for a specific pluggin can be 
+--
+-- The mappings for a specific pluggin can be
 -- found in its config file.
 -- *******************************************
 
@@ -20,7 +20,7 @@ vim.g.mapleader = ","
 --map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
 -- **************************************
--- Map ccedilla to Esc in 
+-- Map ccedilla to Esc in
 -- **************************************
 map('', 'ç', '<Esc>', {noremap = false}) -- Normal, Visual, Select, Operator-pending
 map('!', 'ç', '<Esc>', {noremap = false}) -- Insert and Command-line
@@ -42,5 +42,10 @@ map( "", "<C-L>", "<C-W><C-L>", { noremap = true,})
 -- **************************************
 -- Clear highlights
 -- **************************************
-map('n', '<Leader><C-h>', '<cmd>noh<cr>', { noremap = true,}) 
+map('n', '<Leader><C-h>', '<cmd>noh<cr>', { noremap = true,})
 
+-- **************************************
+-- Toggle styles
+-- **************************************
+local options = { noremap = true, silent = true }
+map('n', '<leader>mm', [[<cmd>lua require('material.functions').toggle_style()<CR>]], options)

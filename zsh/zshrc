@@ -18,10 +18,6 @@ export PATH=$PATH:/usr/local/lib/node_modules
 # DataWarrior program
 export PATH=$PATH:$HOME/Documents/Rust/DataWarrior/target/release
 
-# Neovide
-# release was moved to .local/bin
-#export PATH=$PATH:$HOME/neovide/target/release
-
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
@@ -36,7 +32,9 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 #**************************
 
 # Neovide opening with some flags
-alias nv="neovide --multigrid"
+alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
+export NEOVIDE_MULTIGRID=true
+export NEOVIDE_FRAME=buttonless # Local only; waiting for merge
 
 # Aseprite launch
 alias aseprite="nohup aseprite &"

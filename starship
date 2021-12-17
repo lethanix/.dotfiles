@@ -15,6 +15,9 @@ vicmd_symbol = "[ ](bold green)"
 [package]
 disabled = true
 
+#[line_break]
+#disabled = true
+
 [cmd_duration]
 min_time = 500
 format = "[龍$duration]($style) "

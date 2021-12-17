@@ -2,14 +2,12 @@
 local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
-
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
-local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
+--local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
 
 --local map = vim.api.nvim_set_keymap
 
-cmd 'let g:neovide_remember_window_size = v:true'
 -- Highlight on yank
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
@@ -21,23 +19,28 @@ o.guicursor="n-v-c:block," ..
             "r-cr:hor20," ..
             "o:hor50," ..
             "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," ..
-            "sm:block-blinkwait175-blinkoff150-blinkon175" 
+            "sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- **************************************
 -- Color scheme
 -- **************************************
 cmd 'let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"'
 cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
-o.termguicolors = true 
+o.termguicolors = true
 
-local colorsch = "gruvbox"
+local colorsch = "ayu"
 cmd 'let ayucolor = "mirage"'
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
+
+elseif "nightfly" then
+    cmd [[colorscheme nightfly]]
+    g.nightflyNormalFloat = 1
 elseif "dracula" == colorsch then
     o.background = "dark"
     vim.cmd[[colorscheme dracula]]
-elseif "gruvbox" == colorsch then 
+
+elseif "gruvbox" == colorsch then
     g.gruvbox_contrast_dark = "hard" -- soft, medium or hard
     g.gruvbox_contrast_light = "soft"
     g.gruvbox_italic = 1
@@ -45,7 +48,6 @@ elseif "gruvbox" == colorsch then
     cmd([[colorscheme gruvbox]])
 elseif "fox" == colorsch then
 	local nightfox = require('nightfox')
-	
 	-- This function set the configuration of nightfox. If a value is not passed in the setup function
 	-- it will be taken from the default configuration above
 	nightfox.setup({
@@ -57,7 +59,6 @@ elseif "fox" == colorsch then
 	 	  --functions = "italic" -- styles can be a comma separated list
 	 	},
 	})
-	
 	-- Load the configuration set above and apply the colorscheme
 	nightfox.load()
 elseif "cal" == colorsch  then require('calvera').set()
@@ -78,7 +79,7 @@ elseif "tokyo" == colorsch  then
     cmd 'colorscheme tokyodark'
 elseif "github" == colorsch  then
     require('github-theme').setup({
-        themeStyle = "dimmed",
+        themeStyle = "dark_default",
         functionStyle = "italic",
     	darkSidebar = true,
     	darkFloat = true,
@@ -90,13 +91,6 @@ end
 -- **************************************
 o.encoding="UTF-8"
 bo.fileencoding="UTF-8"
-
--- **************************************
--- Neovide configuration
--- **************************************
-o.guifont="SpaceMono Nerd Font:h17"
---o.guifont="JetBrainsMono Nerd Font:h17"
---o.guifont="FiraCode Nerd Font:h17"
 
 -- **************************************
 -- Display numbers of lines

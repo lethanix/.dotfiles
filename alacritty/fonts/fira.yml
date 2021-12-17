@@ -1,7 +1,7 @@
 font:
     normal:
         family: "FiraCode Nerd Font"
-        style: Regular
+        style: Retina
     bold:
         family: "FiraCode Nerd Font"
         style: Bold
@@ -11,12 +11,12 @@ font:
     bold_italic:
         family: "FiraCode Nerd Font"
         style: Bold Italic
-    size: 17.0
+    size: 15.0
     # Offset is the extra space around each character. offset.y can be thought of
     # as modifying the linespacing, and offset.x as modifying the letter spacing.
     offset:
         x: 0
-        y: 0
+        y: 9
     # Glyph offset determines the locations of the glyphs within their cells with
     # the default being at the bottom. Increasing `x` moves the glyph to the
     # right, increasing `y` moves the glyph upward.

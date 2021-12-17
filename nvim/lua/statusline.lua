@@ -2,22 +2,43 @@ local gl = require("galaxyline")
 local condition = require('galaxyline.condition')
 local sec = gl.section
 gl.short_line_list = {"minimap", "NvimTree", "-MINIMAP-"}
-local lspclient = require('galaxyline.provider_lsp')
 
 local nerd_icon = require("statusline-colors.nerd-icon")
 
+-- **************************************
+-- Colorscheme
+-- **************************************
 -- Load the files required for each colorscheme
-local colors = require("statusline-colors.gruvbox")
-if vim.o.background == "dark" then
-    mode_color = require("statusline-colors.gruvbox-mode-dark")
-    bar_bg = colors.dark0_hard
-elseif vim.o.background == "light" then
-    mode_color = require("statusline-colors.gruvbox-mode-light")
-    bar_bg = colors.light1
+-- Gruvbox is the default
+local colors
+local mode_color, bar_bg
+local file_fg, file_bg_2
+
+local colors_name = vim.g.colors_name
+if colors_name == "material" then
+    colors = require("statusline-colors.material")
+    mode_color = require("statusline-colors.material-deep-ocean")
+    bar_bg = colors.bg
+
+    file_fg = colors.bg
+    file_bg_2 = colors.darkcyan
+
+else
+    colors = require("statusline-colors.gruvbox")
+
+    if vim.o.background == "dark" then
+        mode_color = require("statusline-colors.gruvbox-mode-dark")
+        bar_bg = colors.dark0_hard
+    elseif vim.o.background == "light" then
+        mode_color = require("statusline-colors.gruvbox-mode-light")
+        bar_bg = colors.light1
+    end
+
+    file_fg = colors.light1
+    file_bg_2 = colors.faded_blue
+
 end
-local file_fg = colors.light1
-local file_bg = colors.bright_green
-local file_bg2 = colors.faded_blue
+
 
 -- **************************************
 -- Left side
@@ -46,7 +67,7 @@ sec.left[2] = {
         end,
         highlight = { bar_bg, colors.gray },
         separator = " ",
-        separator_highlight = { file_bg2, file_bg2 }
+        separator_highlight = { file_bg_2, file_bg_2 }
     }
 }
 
@@ -56,10 +77,10 @@ sec.left[3] = {
         condition = buffer_not_empty,
         highlight = {
     	    require("galaxyline.provider_fileinfo").get_file_icon_color, 
-    	    file_bg2
+    	    file_bg_2
     	},
         separator = "",
-        separator_highlight = { file_bg2, file_bg2 }
+        separator_highlight = { file_bg_2, file_bg_2 }
     }
 }
 
@@ -69,7 +90,7 @@ sec.left[4] = {
         condition = buffer_not_empty,
         highlight = {
             file_fg,
-            file_bg2
+            file_bg_2
         }
     }
 }
@@ -81,7 +102,7 @@ sec.left[5] = {
         end,
         separator = " ",
         highlight = {
-            file_bg2, bar_bg },
+            file_bg_2, bar_bg },
         separator_highlight = { bar_bg, bar_bg }
     }
 }

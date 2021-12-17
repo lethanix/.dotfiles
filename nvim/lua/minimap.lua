@@ -12,7 +12,7 @@ vim.g.minimap_auto_start = 0
 vim.g.minimap_auto_start_win_enter = 0
 
 -- Color of lines at the cursor and not in the cursor
-vim.g.minimap_highlight_range = 1 -- Chage to 1 to color all lines visible in the current window
+vim.g.minimap_highlight_range = 0 -- Chage to 1 to color all lines visible in the current window
 vim.g.minimap_highlight = 'WildMenu'
 vim.g.minimap_base_highlight = 'Conceal'
 

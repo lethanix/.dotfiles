@@ -50,6 +50,7 @@ return require('packer').startup(function()
     }
 
     -- Color scheme
+    use 'bluz71/vim-nightfly-guicolors'
     use 'rktjmp/lush.nvim'
     use 'EdenEast/nightfox.nvim'
     --use 'Mofiqul/dracula.nvim'
@@ -88,7 +89,7 @@ return require('packer').startup(function()
     use { 'kyazdani42/nvim-tree.lua' }
     
     -- Buffer tabs
-    use { 'akinsho/nvim-bufferline.lua' }
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     
     -- Language Server Client
     use { 'neovim/nvim-lspconfig' }
