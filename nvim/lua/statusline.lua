@@ -16,12 +16,19 @@ local file_fg, file_bg_2
 
 local colors_name = vim.g.colors_name
 if colors_name == "material" then
-    colors = require("statusline-colors.material")
-    mode_color = require("statusline-colors.material-deep-ocean")
-    bar_bg = colors.bg
+    --colors = require("statusline-colors.material")
+    --mode_color = require("statusline-colors.material-deep-ocean")
+    --bar_bg = colors.bg
 
-    file_fg = colors.bg
-    file_bg_2 = colors.darkcyan
+    --file_fg = colors.bg
+    --file_bg_2 = colors.darkcyan
+    colors = require("statusline-colors.black-amethyst")
+    mode_color = require("statusline-colors.black-amethyst-mode")
+    --mode_color = require("statusline-colors.material-deep-ocean")
+    bar_bg = colors.black2
+
+    file_fg = colors.black1
+    file_bg_2 = colors.purple
 
 else
     colors = require("statusline-colors.gruvbox")
@@ -76,11 +83,11 @@ sec.left[3] = {
         provider = "FileIcon",
         condition = buffer_not_empty,
         highlight = {
-    	    require("galaxyline.provider_fileinfo").get_file_icon_color, 
+    	    require("galaxyline.provider_fileinfo").get_file_icon_color,
     	    file_bg_2
     	},
         separator = "",
-        separator_highlight = { file_bg_2, file_bg_2 }
+        separator_highlight = { file_bg_2, file_bg_2, "bold" }
     }
 }
 
@@ -112,7 +119,8 @@ sec.left[6] = {
         provider = "DiffAdd",
         condition = condition.hide_in_width,
         icon = "   ",
-        highlight = {colors.bright_green, bar_bg}
+        --highlight = {colors.green, bar_bg}
+        highlight = {colors.green, bar_bg}
     }
 }
 
@@ -121,7 +129,7 @@ sec.left[7] = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
         icon = " ",
-        highlight = {colors.bright_orange, bar_bg}
+        highlight = {colors.orange, bar_bg}
     }
 }
 
@@ -130,7 +138,7 @@ sec.left[8] = {
         provider = "DiffRemove",
         condition = condition.hide_in_width,
         icon = " ",
-        highlight = {colors.bright_red, bar_bg}
+        highlight = {colors.red, bar_bg}
     }
 }
 
@@ -141,7 +149,7 @@ sec.left[9] = {
         end,
         separator = " ",
         separator_highlight = { bar_bg, bar_bg },
-        highlight = { colors.neutral_purple, bar_bg }
+        highlight = { colors.purple, bar_bg }
     }
 }
 
@@ -149,7 +157,7 @@ sec.left[10] = {
     DiagnosticError = {
         provider = "DiagnosticError",
         icon = "  ",
-        highlight = {colors.bright_red, bar_bg}
+        highlight = {colors.red, bar_bg}
     }
 }
 
@@ -166,7 +174,7 @@ sec.left[12] = {
     DiagnosticWarn = {
         provider = "DiagnosticWarn",
         icon = "  ",
-        highlight = {colors.bright_aqua, bar_bg}
+        highlight = {colors.cyan, bar_bg}
     }
 }
 
@@ -182,7 +190,7 @@ sec.left[13] = {
             return true
         end,
         icon = '  ',
-        highlight = {colors.bright_aqua, bar_bg}
+        highlight = {colors.cyan, bar_bg}
   }
 }
 
@@ -195,7 +203,7 @@ sec.right[1] = {
             return "   "
         end,
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.bright_green, bar_bg}
+        highlight = {colors.green, bar_bg}
     }
 }
 
@@ -203,7 +211,7 @@ sec.right[2] = {
     GitBranch = {
         provider = "GitBranch",
         condition = require("galaxyline.provider_vcs").check_git_workspace,
-        highlight = {colors.bright_green, bar_bg}
+        highlight = {colors.green, bar_bg}
     }
 }
 
@@ -216,7 +224,7 @@ sec.right[3] = {
         end,
         separator = " ",
         separator_highlight = {bar_bg, bar_bg},
-        highlight = {colors.bright_red, bar_bg}
+        highlight = {colors.red, bar_bg}
     }
 }
 
@@ -237,7 +245,7 @@ sec.right[4] = {
             return " "
             --return alias[vim.fn.mode()]
         end,
-        highlight = {bar_bg, colors.bright_red}
+        highlight = {bar_bg, colors.red}
     }
 }
 
@@ -251,7 +259,7 @@ sec.right[5] = {
         end,
         separator = "",
         separator_highlight = {bar_bg, bar_bg},
-        highlight = {colors.bright_red, bar_bg}
+        highlight = {colors.red, bar_bg}
 
         --highlight = { colors.neutral_purple, bar_bg }
     }
@@ -265,7 +273,7 @@ sec.short_line_left[1] = {
         provider = function()
             return ""
         end,
-        highlight = {colors.bright_aqua, bar_bg}
+        highlight = {colors.cyan, bar_bg}
     }
 }
 
@@ -275,7 +283,7 @@ sec.short_line_left[2] = {
             --return "  "
             return ""
         end,
-        highlight = { bar_bg, colors.bright_aqua }, 
+        highlight = { bar_bg, colors.cyan }, 
     }
 }
 
@@ -285,7 +293,7 @@ sec.short_line_left[3] = {
             return ""
         end,
         highlight = {
-            colors.bright_aqua,
+            colors.cyan,
             bar_bg
         }
     }

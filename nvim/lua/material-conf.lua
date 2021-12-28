@@ -5,13 +5,13 @@ require('material').setup({
 
      -- Overwrite highlights with your own
     custom_highlights = {
-        TSComment =             { fg = '#43474d' },
+        TSComment =             { fg = '#43474d', style = 'italic' },
         TSType =                { fg = '#a85ff1' },
         TSInclude =             { fg = '#a85ff1', style = 'italic' }, -- use, mod
         TSKeyword =             { fg = '#38c7bd', style = 'italic' }, -- pub, impl, static, const, struct, etc.
         TSKeywordFunction =     { fg = '#38c7bd', style = 'italic' }, -- fn
         TSFunction =            { fg = '#11B7D4' }, -- Name of the functions
-        TSNamespace =           { fg = '#11B7D4' }, -- Name of the crates: std::time
+        TSNamespace =           { fg = '#AEB2B2' }, -- Name of the crates: std::time
         TSFuncMacro =           { fg = '#11B7D4' },
         TSConditional =         { fg = '#c7910c' },
         TSNumber =              { fg = '#d4770c' },
@@ -21,10 +21,14 @@ require('material').setup({
         TSParameter =           { fg = '#c62f52' },
         TSParameterReference =  { fg = '#c62f52' },
         TSConstant =            { fg = '#E35535' },
-        String =                { fg = '#00a884'},
+        TSString =              { fg = '#00a884' },
+        Cursor =                { bg = '#c7910c' },
+        CursorLine =            { bg = '#201c2e' },
+        TSPunctDelimiter =      { fg = '#2D3135' }, -- For delimiters ie: `;`
     },
 
     custom_colors = {
+        fg = '#AEB2B2',
         bg = '#111418',
     },
 
