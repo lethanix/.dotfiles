@@ -86,3 +86,6 @@ PERL_MM_OPT="INSTALL_BASE=/Users/louis/perl5"; export PERL_MM_OPT;
 alias luamake=/Users/louis/lua-language-server/3rd/luamake/luamake
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Haskell GHCUP
+[ -f "/Users/louis/.ghcup/env" ] && source "/Users/louis/.ghcup/env" # ghcup-env
