@@ -8,7 +8,7 @@ require("mappings")
 -- Load plugins settings
 require("minimap")
 require("focus-win") -- Focus active windows
---require("shade-win") -- Dim inactive windows
+require("shade-win") -- Dim inactive windows
 require("lsp-icons")
 require("true-zen-conf")
 require("treesitter")
@@ -28,7 +28,7 @@ require("bash-lsp")
 require("julia-server")
 require("type-javascript")
 require("html-lsp")
-require("haskell")
+require("haskell-lsp")
 
 -- Load a high-performance color highlighter for Neovim
 -- NOTE: You should add this line after/below where your

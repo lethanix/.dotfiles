@@ -6,6 +6,6 @@ local on_attach = function(client)
 end
 
 nvim_lsp.sourcekit.setup({
-    on_attach = on_attach	
+    on_attach = on_attach,
 })
- 
+
