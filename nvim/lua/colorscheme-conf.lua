@@ -11,7 +11,8 @@ cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
 o.termguicolors = true
 
 --local colorsch = "material"
-local colorsch = "gruvbox"
+local colorsch = "dracula"
+--local colorsch = "gruvbox"
 cmd 'let ayucolor = "mirage"'
 
 -- **************************************

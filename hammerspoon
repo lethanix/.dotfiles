@@ -226,6 +226,7 @@ app_list = {
     {key = 'n', name = 'Neovide'},
     {key = 'b', name = 'Brave Browser'},
     {key = 'z', name = 'CLion'},
+    {key = 'w', name = 'Warp'},
     --{key = 'v', name = 'VimR'},
     --{key = 'x', name = 'Xcode'},
     --{key = 'f', name = 'Firefox'},
