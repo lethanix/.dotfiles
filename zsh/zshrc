@@ -33,8 +33,8 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 
 # Neovide opening with some flags
 alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
-export NEOVIDE_MULTIGRID=true
-export NEOVIDE_FRAME=buttonless # Local only; waiting for merge
+# export NEOVIDE_MULTIGRID=true
+export NEOVIDE_FRAME=buttonless
 
 # Aseprite launch
 alias aseprite="nohup aseprite &"

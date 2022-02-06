@@ -9,7 +9,7 @@ require("mappings")
 require("minimap")
 require("focus-win") -- Focus active windows
 require("shade-win") -- Dim inactive windows
-require("lsp-icons")
+--require("lsp-icons")
 require("true-zen-conf")
 require("treesitter")
 require("buffertabs")
