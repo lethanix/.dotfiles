@@ -80,15 +80,18 @@ draw_bold_text_with_bright_colors: false
 import:
 
   # Font configuration -> Select the font yaml file
-  - ~/.config/alacritty/fonts/jetbrains.yml
+  #- ~/.config/alacritty/fonts/jetbrains.yml
   #- ~/.config/alacritty/fonts/fira.yml
-  #- ~/.config/alacritty/fonts/space.yml
+  - ~/.config/alacritty/fonts/space.yml
   #- ~/.config/alacritty/fonts/caskaydia.yml
 
   # Change the color importing the corresponding yaml file
-  - ~/.config/alacritty/colors/ayumirage.yml
+  #- ~/.config/alacritty/colors/ayumirage.yml
   #- ~/.config/alacritty/colors/dracula.yml
   #- ~/.config/alacritty/colors/gruvbox.yml
+  #- ~/.config/alacritty/colors/gruvbox-light.yml
+  #- ~/.config/alacritty/colors/gruvbox-light-medium.yml
+  - ~/.config/alacritty/colors/base16-gruvbox-light-soft-256.yml
   #- ~/.config/alacritty/colors/ayu.yml
   #- ~/.config/alacritty/colors/spaceduck.yml
   #- ~/.config/alacritty/colors/nightfly.yml

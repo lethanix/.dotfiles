@@ -11,16 +11,16 @@ cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
 o.termguicolors = true
 
 --local colorsch = "material"
-local colorsch = "dracula"
---local colorsch = "gruvbox"
+--local colorsch = "dracula"
+local colorsch = "gruvbox"
 cmd 'let ayucolor = "mirage"'
 
 -- **************************************
 -- Font
 -- **************************************
---o.guifont="SpaceMono Nerd Font:h17"
-o.guifont="JetBrainsMono Nerd Font:h17"
---o.guifont="FiraCode Nerd Font:h17"
+o.guifont="SpaceMono Nerd Font:h13"
+--o.guifont="JetBrainsMono Nerd Font:h13"
+--o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
 elseif "dracula" == colorsch then
@@ -29,8 +29,10 @@ elseif "dracula" == colorsch then
 elseif "gruvbox" == colorsch then
     g.gruvbox_contrast_dark = "hard" -- soft, medium or hard
     g.gruvbox_contrast_light = "soft"
+    g.gruvbox_bold = 0
     g.gruvbox_italic = 1
-    o.background = "dark" -- or "light" for light mode
+    g.gruvbox_italicize_strings = 1
+    o.background = "light" -- or "light" for light mode
     cmd [[colorscheme gruvbox]]
 elseif "fox" == colorsch then
     local nightfox = require('nightfox')

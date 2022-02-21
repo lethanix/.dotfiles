@@ -222,11 +222,11 @@ hyper:bind({nil}, 'j', FocusSouth, hyper:exit())
 --***********************************************
 
 app_list = {
+    --{key = 'w', name = 'Warp'},
     {key = 'a', name = 'Alacritty'},
-    {key = 'n', name = 'Neovide'},
-    {key = 'b', name = 'Brave Browser'},
+    {key = 'f', name = 'Firefox'},
     {key = 'z', name = 'CLion'},
-    {key = 'w', name = 'Warp'},
+    {key = 'n', name = 'Neovide'},
     --{key = 'v', name = 'VimR'},
     --{key = 'x', name = 'Xcode'},
     --{key = 'f', name = 'Firefox'},

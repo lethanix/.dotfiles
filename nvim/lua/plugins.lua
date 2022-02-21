@@ -76,13 +76,23 @@ return require('packer').startup(function()
     use {'p00f/nvim-ts-rainbow'}
 
     -- Status line
-    use {'glepnir/galaxyline.nvim',
-        branch = 'main',
-        -- your statusline
-        config = function() require("statusline") end,
-        -- some optional icons
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
+	use({
+	  "NTBBloodbath/galaxyline.nvim",
+	  -- your statusline
+	  config = function()
+	    --require("galaxyline.themes.eviline")
+	    require("statusline")
+	  end,
+	  -- some optional icons
+	  requires = { "kyazdani42/nvim-web-devicons", opt = true }
+	})
+--    use {'glepnir/galaxyline.nvim',
+--        branch = 'main',
+--        -- your statusline
+--        config = function() require("statusline") end,
+--        -- some optional icons
+--        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+--    }
 
     -- File navigation
     use { 'kyazdani42/nvim-web-devicons' }

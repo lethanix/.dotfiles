@@ -83,7 +83,7 @@ sec.left[3] = {
         provider = "FileIcon",
         condition = buffer_not_empty,
         highlight = {
-    	    require("galaxyline.provider_fileinfo").get_file_icon_color,
+    	    require("galaxyline.providers.fileinfo").get_file_icon_color,
     	    file_bg_2
     	},
         separator = "",
@@ -202,7 +202,7 @@ sec.right[1] = {
         provider = function()
             return "   "
         end,
-        condition = require("galaxyline.provider_vcs").check_git_workspace,
+        condition = require("galaxyline.providers.vcs").check_git_workspace,
         highlight = {colors.green, bar_bg}
     }
 }
@@ -210,7 +210,7 @@ sec.right[1] = {
 sec.right[2] = {
     GitBranch = {
         provider = "GitBranch",
-        condition = require("galaxyline.provider_vcs").check_git_workspace,
+        condition = require("galaxyline.providers.vcs").check_git_workspace,
         highlight = {colors.green, bar_bg}
     }
 }
