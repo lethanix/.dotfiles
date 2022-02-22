@@ -32,7 +32,7 @@ elseif "gruvbox" == colorsch then
     g.gruvbox_bold = 0
     g.gruvbox_italic = 1
     g.gruvbox_italicize_strings = 1
-    o.background = "light" -- or "light" for light mode
+    o.background = "dark" -- or "light" for light mode
     cmd [[colorscheme gruvbox]]
 elseif "fox" == colorsch then
     local nightfox = require('nightfox')

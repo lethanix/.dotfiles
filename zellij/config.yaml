@@ -215,6 +215,23 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
 themes:
+  default: # gruvbox dark
+    fg: [17,102,119] # Letter background for options
+    bg: [40, 42, 54]
+    #black: [59, 55, 54]
+    black: [40,40,40] # Tab name color
+    white: [184,186,55] # Zellij font color
+    red: [214, 152, 49] # Letters colors for options
+    yellow: [214, 152, 49]
+    green: [184,186,55]
+    #green: [17,102,119] # Tab and pane colors
+    blue: [17,102,119]
+    magenta: [142,65,112]
+    cyan: [40,40,40] # Top and bottom bars' background
+    #cyan: [188,174,148] # Top and bottom bars' background
+    #cyan: [124,111,101]
+    orange: [212,93,32]
+
   gruvbox_light_soft:
     fg: [17,102,119] # Letter background for options
     bg: [40, 42, 54]
