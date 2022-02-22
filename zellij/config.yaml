@@ -216,7 +216,7 @@ keybinds:
           key: [ Alt: ']',]
 themes:
   default: # gruvbox dark
-    fg: [17,102,119] # Letter background for options
+    fg: [72,133,135] # Letter background for options
     bg: [40, 42, 54]
     #black: [59, 55, 54]
     black: [40,40,40] # Tab name color
