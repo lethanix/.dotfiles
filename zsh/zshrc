@@ -34,7 +34,8 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 #**************************
 
 # Neovide opening with some flags
-alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=110x38"
+alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --multigrid --geometry=110x76"
+export NEOVIDE_MULTIGRID=true
 export NEOVIDE_FRAME=buttonless
 
 # Aseprite launch

@@ -88,7 +88,8 @@ import:
   # Change the color importing the corresponding yaml file
   #- ~/.config/alacritty/colors/ayumirage.yml
   #- ~/.config/alacritty/colors/dracula.yml
-  - ~/.config/alacritty/colors/gruvbox.yml
+  - ~/.config/alacritty/colors/one_dark.yml
+  #- ~/.config/alacritty/colors/gruvbox.yml
   #- ~/.config/alacritty/colors/gruvbox-light.yml
   #- ~/.config/alacritty/colors/gruvbox-light-medium.yml
   #- ~/.config/alacritty/colors/base16-gruvbox-light-soft-256.yml

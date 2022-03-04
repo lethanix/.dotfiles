@@ -32,7 +32,7 @@ elseif "onedark" then
         term_colors = true, -- Change terminal color as per the selected theme style
         ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
         -- toggle theme style ---
-        toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+        toggle_style_key = '<leader>ss', -- Default keybinding to toggle
         toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
         -- Change code style ---
@@ -113,7 +113,7 @@ g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
 
 g.neovide_window_floating_opacity = 0.87
-g.neovide_remember_window_size = true
+g.neovide_remember_window_size = false
 g.neovide_cursor_animation_length = 0.10
 g.neovide_cursor_antialiasing = false
 g.neovide_no_idle = false

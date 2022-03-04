@@ -1,5 +1,6 @@
 require("settings") -- Load general settings
 require("plugins")  -- Load plugins
+require("utils")
 require("colorscheme-conf")
 require("notify-conf")
 
@@ -7,12 +8,16 @@ require("notify-conf")
 require("mappings")
 
 -- Load plugins settings
-require("minimap")
-require("focus-win") -- Focus active windows
+require("nvimtree")
+require("scroll")
+require("dashboard")
+--require("minimap")
 require("shade-win") -- Dim inactive windows
+--require("dim")
+require("buffertabs")
+--require("focus-win") -- Focus active windows
 require("true-zen-conf")
 require("treesitter")
-require("buffertabs")
 require("autopairs-conf")
 require("indent")
 require("statusline")

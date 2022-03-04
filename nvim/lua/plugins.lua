@@ -6,7 +6,13 @@ return require('packer').startup(function()
     -- Dim inactive windows
     use { "beauwilliams/focus.nvim" }
     use 'sunjon/shade.nvim'
-    use 'blueyed/vim-diminactive'
+    --use 'blueyed/vim-diminactive'
+
+    -- Smooth scrholling
+    use 'karb94/neoscroll.nvim'
+    
+    -- Dashboard/ greeter
+    use { 'goolord/alpha-nvim', }
 
     -- Better-escape.vim is created to help Vim/Nvim users escape insert mode
     -- quickly using their customized key combinations, without experiencing the lag

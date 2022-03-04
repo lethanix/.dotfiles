@@ -3,18 +3,21 @@
 --   hi default link UnfocusedWindow Normal
 -- To change them, you can link them to a different highlight group, see `:h hi-default` for more info.
 --vim.cmd('hi default link UnfocusedWindow StatusLineNC')
+
 vim.cmd [[hi default link UnfocusedWindow EndOfBuffer]]
 vim.cmd [[hi default link FocusedWindow Normal]]
 
 require("focus").setup({
-    winhighlight = false,
+    excluded_filetypes = {"-MINIMAP-", "minimap"},
+    excluded_buftypes = {"-MINIMAP-", "minimap"},
+    --excluded_buftypes = { "-MINIMAP-"},
+    bufnew = false,
+    winhighlight = true,
     cursorline = true,
     --hybridnumber = true,
-    --excluded_filetypes = {"nofile","minimap", "-MINIMAP-"},
-    --excluded_buftypes = { "nofile", "prompt", "popup", "minimap", "-MINIMAP-"},
-    excluded_filetypes = {"minimap", "-MINIMAP-"},
-    --compatible_filetrees = { "nvimtree", "nerdtree", "chadtree", "fern" ,"minimap", "-MINIMAP-"},
-    treewidth = 1,
+    relativenumber = true,
+    compatible_filetrees = {"nvimtree"},
+    treewidth = 10,
 })
 
 -- Recommended commands, leverage hjkl to move and create your splits directionally with ease

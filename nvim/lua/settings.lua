@@ -42,7 +42,7 @@ o.showmode = false
 -- **************************************
 wo.colorcolumn = "80"
 --bo.textwidth = 80
-wo.wrap = false
+wo.wrap = true
 
 -- **************************************
 -- Turn on syntax
@@ -60,9 +60,9 @@ o.clipboard = "unnamedplus"
 -- *****************************************
 local indent = 4
 bo.expandtab = true
-bo.tabstop = indent*2
+bo.tabstop = 8
 bo.softtabstop = 0
-bo.shiftwidth = indent
+bo.shiftwidth = 4
 
 -- **************************************
 -- Folding settings
