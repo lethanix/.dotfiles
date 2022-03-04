@@ -59,10 +59,10 @@ o.clipboard = "unnamedplus"
 -- Tabs using 4 spaces
 -- *****************************************
 local indent = 4
+bo.expandtab = true
 bo.tabstop = indent*2
 bo.softtabstop = 0
 bo.shiftwidth = indent
-bo.expandtab = true
 
 -- **************************************
 -- Folding settings

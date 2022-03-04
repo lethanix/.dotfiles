@@ -8,8 +8,12 @@ return require('packer').startup(function()
     use 'sunjon/shade.nvim'
     use 'blueyed/vim-diminactive'
 
+    -- Better-escape.vim is created to help Vim/Nvim users escape insert mode
+    -- quickly using their customized key combinations, without experiencing the lag
+    use {'jdhao/better-escape.vim', event = 'InsertEnter'}
+    
     -- post install (yarn install | npm install) then load plugin only for editing supported files
-    use {'prettier/vim-prettier', run = 'yarn install' }
+    --use {'prettier/vim-prettier', run = 'yarn install' }
 
     -- This tiny plugin adds vscode-like pictograms to neovim built-in lsp
     use "onsails/lspkind-nvim"
@@ -18,8 +22,8 @@ return require('packer').startup(function()
     use "Pocco81/TrueZen.nvim"
 
     use {
-	"folke/twilight.nvim",
-	config = function()
+        "folke/twilight.nvim",
+        config = function()
         require("twilight").setup {
           -- your configuration comes here
           -- or leave it empty to use the default settings
@@ -53,7 +57,6 @@ return require('packer').startup(function()
     use 'bluz71/vim-nightfly-guicolors'
     use 'rktjmp/lush.nvim'
     use 'EdenEast/nightfox.nvim'
-    --use 'Mofiqul/dracula.nvim'
     use 'dracula/vim'
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     --use 'morhetz/gruvbox'
@@ -68,6 +71,7 @@ return require('packer').startup(function()
     use {'wadackel/vim-dogrun'}
     use {'tiagovla/tokyodark.nvim'}
     use {'projekt0n/github-nvim-theme'}
+    use 'navarasu/onedark.nvim'
 
     -- Adds indentation guides to all lines (including empty lines).
     use {'lukas-reineke/indent-blankline.nvim'}
@@ -76,50 +80,50 @@ return require('packer').startup(function()
     use {'p00f/nvim-ts-rainbow'}
 
     -- Status line
-	use({
-	  "NTBBloodbath/galaxyline.nvim",
-	  -- your statusline
-	  config = function()
-	    --require("galaxyline.themes.eviline")
-	    require("statusline")
-	  end,
-	  -- some optional icons
-	  requires = { "kyazdani42/nvim-web-devicons", opt = true }
-	})
---    use {'glepnir/galaxyline.nvim',
---        branch = 'main',
---        -- your statusline
---        config = function() require("statusline") end,
---        -- some optional icons
---        requires = {'kyazdani42/nvim-web-devicons', opt = true}
---    }
+    use({
+      "NTBBloodbath/galaxyline.nvim",
+      -- your statusline
+      config = function()
+        --require("galaxyline.themes.eviline")
+        require("statusline")
+      end,
+      -- some optional icons
+      requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    })
 
     -- File navigation
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
-    
+
     -- Buffer tabs
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    
+
     -- Language Server Client
+    --use { 'simrat39/rust-tools.nvim'}
     use { 'neovim/nvim-lspconfig' }
-    use { 'simrat39/rust-tools.nvim'}
-    use { 'nvim-lua/completion-nvim' }
-    use {'hrsh7th/nvim-compe'}
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+    use { 'hrsh7th/cmp-cmdline' }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'saadparwaiz1/cmp_luasnip' }
+
     use { 'JuliaEditorSupport/julia-vim' }
-    use {'nvim-lua/lsp_extensions.nvim'}
-    
-    -- Brackets completition 
+    use { 'nvim-lua/lsp_extensions.nvim' }
+
+    -- Brackets completition
     use { 'windwp/nvim-autopairs' }
-    
+
+    use { 'rcarriga/nvim-notify' }
     -- Show colors
     --use { 'ap/vim-css-color' }
     use { 'norcalli/nvim-colorizer.lua' }
 
-    -- Minimap text 
+    -- Minimap text
     use {'wfxr/minimap.vim'}
 
 
-end) 
+end)
 
 

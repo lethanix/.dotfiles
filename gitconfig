@@ -20,4 +20,4 @@
 [tag]
 	forceSignAnnotated = false
 [credential]
-	helper = cache
+	helper = osxkeychain

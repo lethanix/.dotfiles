@@ -1,5 +1,10 @@
 export LANG=en_US.UTF-8
 
+# Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+export LD_LIBRARY_PATH="/usr/local/lib"
+
 # Fixed directory for user specific data
 export PATH=$HOME/.local/bin:$PATH
 
@@ -18,9 +23,6 @@ export PATH=$PATH:/usr/local/lib/node_modules
 # DataWarrior program
 export PATH=$PATH:$HOME/Documents/Rust/DataWarrior/target/release
 
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
-
 #Julia lang
 export PATH=$PATH:/Applications/Julia-1.7.app/Contents/Resources/julia/bin
 
@@ -32,8 +34,7 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 #**************************
 
 # Neovide opening with some flags
-alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
-# export NEOVIDE_MULTIGRID=true
+alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=110x38"
 export NEOVIDE_FRAME=buttonless
 
 # Aseprite launch

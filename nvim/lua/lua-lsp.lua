@@ -3,9 +3,10 @@ local nvim_lsp = require("lspconfig")
 local sumneko_binary_path = vim.fn.exepath('lua-language-server')
 local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
 
-local on_attach = function(client)
-    require'completion'.on_attach(client)
+local on_attach = function()
     require("lsp-conf")
+    require("cmp-conf")
+    vim.cmd [[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)]]
 end
 
 local runtime_path = vim.split(package.path, ';')

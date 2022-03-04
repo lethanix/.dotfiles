@@ -9,7 +9,8 @@ add_newline = false
 #success_symbol = "[ ](bold green)" 
 #success_symbol = "[ ](bold green)" 
 success_symbol = "[ ](bold fg:78)" 
-error_symbol = "[  🤯 ](bold red)"
+#error_symbol = "[  🤯 ](bold red)"
+error_symbol = "[🤯 ](bold red)"
 vicmd_symbol = "[ ](bold green)"
 
 [package]

@@ -1,6 +1,7 @@
-require("plugins")  -- Load plugins
 require("settings") -- Load general settings
+require("plugins")  -- Load plugins
 require("colorscheme-conf")
+require("notify-conf")
 
 -- Load general mappings
 require("mappings")
@@ -9,7 +10,6 @@ require("mappings")
 require("minimap")
 require("focus-win") -- Focus active windows
 require("shade-win") -- Dim inactive windows
---require("lsp-icons")
 require("true-zen-conf")
 require("treesitter")
 require("buffertabs")
@@ -20,7 +20,7 @@ require('telescope-config')
 require('nvim-ts-rainbow')
 
 -- Load LSP settings
-require("compe-conf")
+require("cmp-conf")
 require("rust")
 require("swift")
 require("lua-lsp")
