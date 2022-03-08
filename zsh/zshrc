@@ -8,6 +8,14 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 # Fixed directory for user specific data
 export PATH=$HOME/.local/bin:$PATH
 
+export PATH="/usr/local/include:$PATH"
+
+# Bash scripts folder
+export PATH="$HOME/Documents/Bash/utils:$PATH"
+
+# Indigo (universal molecular toolkit) command line utilities
+export PATH="$HOME/indigo-utils:$PATH"
+
 # Lua lsp
 export PATH="$HOME/lua-language-server/bin/macOS:$PATH"
 
@@ -32,6 +40,9 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 #**************************
 # Tools and aliases
 #**************************
+
+# Using bash from brew
+alias bash="/usr/local/bin/bash"
 
 # Neovide opening with some flags
 alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --multigrid --geometry=110x76"

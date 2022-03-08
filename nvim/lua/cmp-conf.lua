@@ -7,7 +7,28 @@ end
 
 -- luasnip setup
 local luasnip = require 'luasnip'
-luasnip.snippets={all={}}
+
+local fmta = require("luasnip.extras.fmt").fmta
+local i = luasnip.insert_node
+local r = require("luasnip.extras").rep
+local s = luasnip.snippet
+
+luasnip.snippets={
+    all={
+        s(
+            "pt",
+            fmta(
+              [[
+              println!("<NODE_1> = {:?}", <NODE_2>);
+              ]],
+              {
+                NODE_1 = i(1, "NAME"),
+                NODE_2 = r(1),
+              }
+            )
+        ),
+    }
+}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'

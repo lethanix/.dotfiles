@@ -222,8 +222,8 @@ hyper:bind({nil}, 'j', FocusSouth, hyper:exit())
 --***********************************************
 
 app_list = {
-    --{key = 'w', name = 'Warp'},
-    {key = 'a', name = 'Alacritty'},
+    {key = 'w', name = 'Warp'},
+    --{key = 'a', name = 'Alacritty'},
     --{key = 'z', name = 'CLion'},
     {key = 'n', name = 'Neovide'},
     {key = 'f', name = 'Firefox'},

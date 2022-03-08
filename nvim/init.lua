@@ -12,10 +12,10 @@ require("nvimtree")
 require("scroll")
 require("dashboard")
 --require("minimap")
-require("shade-win") -- Dim inactive windows
+--require("shade-win") -- Dim inactive windows
 --require("dim")
 require("buffertabs")
---require("focus-win") -- Focus active windows
+require("focus-win") -- Focus active windows
 require("true-zen-conf")
 require("treesitter")
 require("autopairs-conf")

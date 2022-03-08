@@ -8,15 +8,15 @@ vim.cmd [[hi default link UnfocusedWindow EndOfBuffer]]
 vim.cmd [[hi default link FocusedWindow Normal]]
 
 require("focus").setup({
-    excluded_filetypes = {"-MINIMAP-", "minimap"},
-    excluded_buftypes = {"-MINIMAP-", "minimap"},
-    --excluded_buftypes = { "-MINIMAP-"},
+    excluded_filetypes = {"-MINIMAP-", "minimap", "NvimTree"},
+    excluded_buftypes = {"-MINIMAP-", "minimap", "nofile"},
+    excluded_buftypes = { "-MINIMAP-", "nofile"},
     bufnew = false,
     winhighlight = true,
     cursorline = true,
     --hybridnumber = true,
-    relativenumber = true,
-    compatible_filetrees = {"nvimtree"},
+    --relativenumber = true,
+    compatible_filetrees = {"NvimTree"},
     treewidth = 10,
 })
 
