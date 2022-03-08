@@ -29,5 +29,3 @@ nvim_lsp.rust_analyzer.setup({
         }
     }
 })
-
-
