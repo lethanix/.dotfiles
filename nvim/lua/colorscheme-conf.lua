@@ -18,8 +18,8 @@ cmd 'let ayucolor = "mirage"'
 -- **************************************
 -- Font
 -- **************************************
-o.guifont="SpaceMono Nerd Font:h13"
---o.guifont="JetBrainsMono Nerd Font:h13"
+--o.guifont="SpaceMono Nerd Font:h13"
+o.guifont="JetBrainsMono Nerd Font:h14"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
@@ -113,8 +113,8 @@ g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
 
 g.neovide_window_floating_opacity = 0.87
-g.neovide_remember_window_size = false
-g.neovide_cursor_animation_length = 0.10
-g.neovide_cursor_antialiasing = false
+g.neovide_remember_window_size = true
+g.neovide_cursor_animation_length = 0.15
+g.neovide_cursor_antialiasing = true
 g.neovide_no_idle = false
 

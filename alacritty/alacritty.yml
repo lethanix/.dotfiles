@@ -10,8 +10,8 @@ env:
 window:
     # Full screen on 13" macbook pro
     dimensions:
-        columns: 80
-        lines: 20
+        columns: 100
+        lines: 35
 
     # Window position (changes require restart)
     #
