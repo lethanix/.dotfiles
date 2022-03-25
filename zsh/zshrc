@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
+
 export LANG=en_US.UTF-8
 
 # Homebrew
@@ -9,6 +13,9 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 export PATH=$HOME/.local/bin:$PATH
 
 export PATH="/usr/local/include:$PATH"
+
+# go folder
+export PATH="$HOME/go/bin:$PATH"
 
 # Bash scripts folder
 export PATH="$HOME/Documents/Bash/utils:$PATH"
@@ -45,7 +52,8 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 alias bash="/usr/local/bin/bash"
 
 # Neovide opening with some flags
-alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --multigrid --geometry=110x76"
+alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
+#alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=200x120"
 export NEOVIDE_MULTIGRID=true
 export NEOVIDE_FRAME=buttonless
 
@@ -102,3 +110,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Haskell GHCUP
 [ -f "/Users/louis/.ghcup/env" ] && source "/Users/louis/.ghcup/env" # ghcup-env
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
+
