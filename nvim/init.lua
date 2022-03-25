@@ -11,12 +11,6 @@ require("mappings")
 require("nvimtree")
 require("scroll")
 require("dashboard")
---require("minimap")
---require("shade-win") -- Dim inactive windows
---require("dim")
-require("buffertabs")
-require("focus-win") -- Focus active windows
-require("true-zen-conf")
 require("treesitter")
 require("autopairs-conf")
 require("indent")
@@ -26,6 +20,7 @@ require('nvim-ts-rainbow')
 
 -- Load LSP settings
 require("cmp-conf")
+require("go")
 require("rust")
 require("swift")
 require("lua-lsp")

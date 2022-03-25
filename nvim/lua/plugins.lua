@@ -3,43 +3,29 @@
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 return require('packer').startup(function()
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+
     -- Dim inactive windows
-    use { "beauwilliams/focus.nvim" }
-    use 'sunjon/shade.nvim'
+    --use { "beauwilliams/focus.nvim" }
+    --use 'sunjon/shade.nvim'
     --use 'blueyed/vim-diminactive'
+    
+    -- Floating terminal
+    --use 'voldikss/vim-floaterm'
 
     -- Smooth scrholling
     use 'karb94/neoscroll.nvim'
-    
+
     -- Dashboard/ greeter
     use { 'goolord/alpha-nvim', }
 
     -- Better-escape.vim is created to help Vim/Nvim users escape insert mode
     -- quickly using their customized key combinations, without experiencing the lag
     use {'jdhao/better-escape.vim', event = 'InsertEnter'}
-    
-    -- post install (yarn install | npm install) then load plugin only for editing supported files
-    --use {'prettier/vim-prettier', run = 'yarn install' }
 
     -- This tiny plugin adds vscode-like pictograms to neovim built-in lsp
     use "onsails/lspkind-nvim"
-
-    -- Provide a cleaner and less cluttered interface
-    use "Pocco81/TrueZen.nvim"
-
-    use {
-        "folke/twilight.nvim",
-        config = function()
-        require("twilight").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
-
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
 
     -- Parsers and color of code
     use {'nvim-treesitter/nvim-treesitter'}
@@ -60,12 +46,13 @@ return require('packer').startup(function()
     }
 
     -- Color scheme
+    use "rebelot/kanagawa.nvim"
+    use 'whatyouhide/vim-gotham'
     use 'bluz71/vim-nightfly-guicolors'
     use 'rktjmp/lush.nvim'
     use 'EdenEast/nightfox.nvim'
     use 'dracula/vim'
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    --use 'morhetz/gruvbox'
     use 'shaunsingh/moonlight.nvim'
     use {'ayu-theme/ayu-vim'}
     use { 'pineapplegiant/spaceduck', branch="main" }
@@ -86,23 +73,25 @@ return require('packer').startup(function()
     use {'p00f/nvim-ts-rainbow'}
 
     -- Status line
-    use({
-      "NTBBloodbath/galaxyline.nvim",
-      -- your statusline
-      config = function()
-        --require("galaxyline.themes.eviline")
-        require("statusline")
-      end,
-      -- some optional icons
-      requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    })
+    use {
+        'nvim-lualine/lualine.nvim',
+         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    --use({
+    --  "NTBBloodbath/galaxyline.nvim",
+    --  -- your statusline
+    --  config = function()
+    --    --require("galaxyline.themes.eviline")
+    --    require("statusline")
+    --  end,
+    --  -- some optional icons
+    --  requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    --})
 
     -- File navigation
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
-
-    -- Buffer tabs
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- Language Server Client
     --use { 'simrat39/rust-tools.nvim'}
@@ -122,13 +111,9 @@ return require('packer').startup(function()
     use { 'windwp/nvim-autopairs' }
 
     use { 'rcarriga/nvim-notify' }
+
     -- Show colors
-    --use { 'ap/vim-css-color' }
     use { 'norcalli/nvim-colorizer.lua' }
-
-    -- Minimap text
-    use {'wfxr/minimap.vim'}
-
 
 end)
 
