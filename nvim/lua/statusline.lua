@@ -68,7 +68,7 @@ require('lualine').setup { options = {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {{'tabs', mode = 1}}
+        lualine_z = {{'tabs', mode = 1}},
     },
     extensions = {}
 }
