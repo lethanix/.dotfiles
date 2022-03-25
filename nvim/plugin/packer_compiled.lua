@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["TrueZen.nvim"] = {
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/TrueZen.nvim",
-    url = "https://github.com/Pocco81/TrueZen.nvim"
-  },
   ["alpha-nvim"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/alpha-nvim",
@@ -95,11 +90,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/opt/better-escape.vim",
     url = "https://github.com/jdhao/better-escape.vim"
-  },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["calvera-dark.nvim"] = {
     loaded = true,
@@ -131,17 +121,6 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["focus.nvim"] = {
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/focus.nvim",
-    url = "https://github.com/beauwilliams/focus.nvim"
-  },
-  ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15statusline\frequire\0" },
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/galaxyline.nvim",
-    url = "https://github.com/NTBBloodbath/galaxyline.nvim"
-  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
@@ -168,6 +147,11 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/julia-vim",
     url = "https://github.com/JuliaEditorSupport/julia-vim"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lsp_extensions.nvim"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
@@ -177,6 +161,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["lush.nvim"] = {
     loaded = true,
@@ -283,11 +272,6 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["shade.nvim"] = {
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/shade.nvim",
-    url = "https://github.com/sunjon/shade.nvim"
-  },
   spaceduck = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/spaceduck",
@@ -308,12 +292,6 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
     url = "https://github.com/tiagovla/tokyodark.nvim"
   },
-  ["twilight.nvim"] = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
-    loaded = true,
-    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/twilight.nvim",
-    url = "https://github.com/folke/twilight.nvim"
-  },
   vim = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim",
@@ -324,6 +302,11 @@ _G.packer_plugins = {
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-dogrun",
     url = "https://github.com/wadackel/vim-dogrun"
   },
+  ["vim-gotham"] = {
+    loaded = true,
+    path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-gotham",
+    url = "https://github.com/whatyouhide/vim-gotham"
+  },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
     path = "/Users/louis/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
@@ -332,14 +315,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\2\n*\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\15statusline\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")

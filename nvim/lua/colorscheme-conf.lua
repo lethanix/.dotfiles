@@ -12,7 +12,9 @@ o.termguicolors = true
 
 --local colorsch = "material"
 --local colorsch = "dracula"
-local colorsch = "onedark"
+--local colorsch = "onedark"
+local colorsch = "kanagawa"
+--local colorsch = "gotham"
 cmd 'let ayucolor = "mirage"'
 
 -- **************************************
@@ -23,6 +25,27 @@ o.guifont="JetBrainsMono Nerd Font:h14"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
+elseif "kanagawa" == colorsch then
+    require('kanagawa').setup({
+        undercurl = true,           -- enable undercurls
+        commentStyle = "italic",
+        functionStyle = "NONE",
+        keywordStyle = "italic",
+        statementStyle = "bold",
+        typeStyle = "NONE",
+        variablebuiltinStyle = "italic",
+        specialReturn = true,       -- special highlight for the return keyword
+        specialException = true,    -- special highlight for exception handling keywords
+        transparent = false,        -- do not set background color
+        dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+        colors = {},
+        overrides = {},
+    })
+    
+    -- setup must be called before loading
+    vim.cmd("colorscheme kanagawa")
+elseif "gotham" == colorsch then
+    cmd [[colorscheme gotham]]
 elseif "onedark" then
     require('onedark').setup {
         -- Default theme style. Choose between 'dark', 'darker', 'cool',
@@ -113,7 +136,7 @@ g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
 
 g.neovide_window_floating_opacity = 0.87
-g.neovide_remember_window_size = true
+g.neovide_remember_window_size = false
 g.neovide_cursor_animation_length = 0.15
 g.neovide_cursor_antialiasing = true
 g.neovide_no_idle = false

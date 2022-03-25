@@ -2,8 +2,7 @@
 local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
-local g = vim.g      -- a table to access global variables
+local cmd = vim.cmd
 
 -- Highlight on yank
 cmd [[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
@@ -29,11 +28,18 @@ bo.fileencoding="UTF-8"
 -- **************************************
 wo.number = true
 wo.relativenumber = true
+
 -- The char of End of Buffer is a tilde, change it to space
-o.fillchars = "eob: "
+local justonce = vim.api.nvim_create_augroup("JustOnceGp", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", { command = "set fillchars=eob:∅,foldclose:", group = justonce})
 
 -- **************************************
--- Show mode in galaxy status line
+-- Global status line
+-- **************************************
+vim.api.nvim_create_autocmd("WinEnter", {command = "set laststatus=3", group = justonce})
+
+-- **************************************
+-- Show mode below the status line
 -- **************************************
 o.showmode = false
 
@@ -42,7 +48,7 @@ o.showmode = false
 -- **************************************
 wo.colorcolumn = "80"
 --bo.textwidth = 80
-wo.wrap = true
+wo.wrap = false
 
 -- **************************************
 -- Turn on syntax
@@ -58,7 +64,6 @@ o.clipboard = "unnamedplus"
 -- *****************************************
 -- Tabs using 4 spaces
 -- *****************************************
-local indent = 4
 bo.expandtab = true
 bo.tabstop = 8
 bo.softtabstop = 0

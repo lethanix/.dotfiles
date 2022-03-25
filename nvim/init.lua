@@ -1,6 +1,5 @@
 require("settings") -- Load general settings
 require("plugins")  -- Load plugins
-require("utils")
 require("colorscheme-conf")
 require("notify-conf")
 
