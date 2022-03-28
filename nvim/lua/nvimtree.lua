@@ -95,7 +95,7 @@ require'nvim-tree'.setup {
     enable = true,
     auto_open = true,
   },
-  auto_close          = true,
+  --auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,

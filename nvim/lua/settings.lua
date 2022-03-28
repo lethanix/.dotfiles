@@ -30,13 +30,14 @@ wo.number = true
 wo.relativenumber = true
 
 -- The char of End of Buffer is a tilde, change it to space
-local justonce = vim.api.nvim_create_augroup("JustOnceGp", { clear = true })
-vim.api.nvim_create_autocmd("BufEnter", { command = "set fillchars=eob:∅,foldclose:", group = justonce})
+--vim.api.nvim_create_autocmd("BufEnter", { command = "set fillchars=eob:∅,foldclose:", group = justonce})
+o.fillchars="eob:∅,foldclose:"
+o.fillchars="foldclose:"
 
 -- **************************************
 -- Global status line
 -- **************************************
-vim.api.nvim_create_autocmd("WinEnter", {command = "set laststatus=3", group = justonce})
+--vim.api.nvim_create_autocmd("WinEnter", {command = "set laststatus=3", group = justonce})
 
 -- **************************************
 -- Show mode below the status line

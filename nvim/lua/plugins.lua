@@ -78,20 +78,7 @@ return require('packer').startup(function()
          requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    --use({
-    --  "NTBBloodbath/galaxyline.nvim",
-    --  -- your statusline
-    --  config = function()
-    --    --require("galaxyline.themes.eviline")
-    --    require("statusline")
-    --  end,
-    --  -- some optional icons
-    --  requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    --})
-
-    -- File navigation
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'kyazdani42/nvim-tree.lua' }
 
     -- Language Server Client
     --use { 'simrat39/rust-tools.nvim'}
@@ -109,8 +96,6 @@ return require('packer').startup(function()
 
     -- Brackets completition
     use { 'windwp/nvim-autopairs' }
-
-    use { 'rcarriga/nvim-notify' }
 
     -- Show colors
     use { 'norcalli/nvim-colorizer.lua' }

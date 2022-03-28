@@ -1,13 +1,11 @@
 require("settings") -- Load general settings
 require("plugins")  -- Load plugins
 require("colorscheme-conf")
-require("notify-conf")
 
 -- Load general mappings
 require("mappings")
 
 -- Load plugins settings
-require("nvimtree")
 require("scroll")
 require("dashboard")
 require("treesitter")
@@ -34,5 +32,3 @@ require("haskell-lsp")
 -- NOTE: You should add this line after/below where your
 -- plugins are setup.
 require("colors-preview")
---require'colorizer'.setup()
-
