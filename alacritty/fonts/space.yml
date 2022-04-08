@@ -4,14 +4,14 @@ font:
         style: Regular
     bold:
         family: "SpaceMono Nerd Font"
-        style: Bold
+        style: Regular
     italic:
         family: "SpaceMono Nerd Font"
         style: Italic
     bold_italic:
         family: "SpaceMono Nerd Font"
-        style: Bold Italic
-    size: 14
+        style: Regular Italic
+    size: 13
     # Offset is the extra space around each character. offset.y can be thought of
     # as modifying the linespacing, and offset.x as modifying the letter spacing.
     offset:
@@ -39,3 +39,9 @@ font:
     # effect.
     use_thin_strokes: true
 
+  # Use built-in font for box drawing characters.
+    #
+    # If `true`, Alacritty will use a custom built-in font for box drawing
+    # characters (Unicode points 2500 - 259f).
+    #
+    builtin_box_drawing: true
