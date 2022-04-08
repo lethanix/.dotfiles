@@ -1,5 +1,8 @@
 ---
 simplified_ui: false
+ui:
+  pane_frames:
+    rounded_corners: true
 keybinds:
     unbind: false
     normal:
@@ -218,6 +221,7 @@ themes:
   default: # gruvbox dark
     fg: [72,133,135] # Letter background for options
     bg: [40, 42, 54]
+    gray: [0,0,0] # Tab name color
     #black: [59, 55, 54]
     black: [40,40,40] # Tab name color
     white: [184,186,55] # Zellij font color
@@ -235,6 +239,7 @@ themes:
   gruvbox_light_soft:
     fg: [17,102,119] # Letter background for options
     bg: [40, 42, 54]
+    gray: [0,0,0] # Tab name color
     #black: [59, 55, 54]
     black: [234,219,180] # Tab name color
     white: [212,93,32] # Zellij font color
@@ -252,6 +257,7 @@ themes:
   dracula:
     fg: [248, 248, 242]
     bg: [40, 42, 54]
+    gray: [0,0,0] # Tab name color
     black: [0,0,0]
     red: [255, 85, 85]
     green: [80, 250, 123]

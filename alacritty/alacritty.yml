@@ -95,11 +95,11 @@ import:
   #- ~/.config/alacritty/colors/gruvbox-light-medium.yml
   #- ~/.config/alacritty/colors/base16-gruvbox-light-soft-256.yml
   # - ~/.config/alacritty/colors/ayu.yml
-  # - ~/.config/alacritty/colors/spaceduck.yml
+  - ~/.config/alacritty/colors/spaceduck.yml
   # - ~/.config/alacritty/colors/nightfly.yml
   # - ~/.config/alacritty/colors/base16-horizon-dark-256.yml
   # - ~/.config/alacritty/colors/base16-material-palenight.yml
-  - ~/.config/alacritty/colors/base16-seti-256.yml
+  # - ~/.config/alacritty/colors/base16-seti-256.yml
   # - ~/.config/alacritty/colors/github.yml
 
 mouse:
@@ -434,6 +434,10 @@ key_bindings:
   - { key: 33, mods: Alt, chars: "\x1b[" } # abre corchetes `[`
   - { key: 30, mods: Alt, chars: "\x1b]" } # cierra corchetes `]`
   
+  # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+  - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
+
   # General quality of life improvements
   - {
     key: Comma,
@@ -444,8 +448,8 @@ key_bindings:
         args: ["-c", "open -a VimR $HOME/.config/alacritty/alacritty.yml"],
       },
     }
-  - { key: N, mods: Command, action: CreateNewWindow }
-  - { key: T, mods: Command, action: SpawnNewInstance }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: T, mods: Command, action: CreateNewWindow }
   - { key: Space, mods: Alt, chars: " " }
   - { key: Back, mods: Super, chars: "\x15" } # delete word/line
   
