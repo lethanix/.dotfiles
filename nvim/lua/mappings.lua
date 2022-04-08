@@ -17,7 +17,7 @@ vim.g.mapleader = ","
 -- **************************************
 -- Map esc to exit terminal mode
 -- **************************************
---map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
+map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
 
 -- **************************************
 -- Map ccedilla to Esc in
@@ -31,13 +31,13 @@ map('!', 'ç', '<Esc>', {noremap = false}) -- Insert and Command-line
 map('n', '<Leader><C-j>', '<cmd>m+<cr>', {noremap=true})
 map('n', '<Leader><C-k>', '<cmd>m-2<cr>', {noremap=true})
 
--- **************************************
--- Easier split navigation
--- **************************************
-map( "", "<C-J>", "<C-W><C-J>", { noremap = true,})
-map( "", "<C-K>", "<C-W><C-K>", { noremap = true,})
-map( "", "<C-H>", "<C-W><C-H>", { noremap = true,})
-map( "", "<C-L>", "<C-W><C-L>", { noremap = true,})
+-- -- **************************************
+-- -- Easier split navigation
+-- -- **************************************
+-- map( "", "<C-J>", "<C-W><C-J>", { noremap = true,})
+-- map( "", "<C-K>", "<C-W><C-K>", { noremap = true,})
+-- map( "", "<C-H>", "<C-W><C-H>", { noremap = true,})
+-- map( "", "<C-L>", "<C-W><C-L>", { noremap = true,})
 
 -- **************************************
 -- Clear highlights

@@ -1,11 +1,12 @@
+require("colorscheme-conf")
 require("settings") -- Load general settings
 require("plugins")  -- Load plugins
-require("colorscheme-conf")
 
 -- Load general mappings
 require("mappings")
 
 -- Load plugins settings
+require("comments")
 require("scroll")
 require("dashboard")
 require("treesitter")

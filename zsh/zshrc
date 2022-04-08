@@ -51,6 +51,9 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 # Using bash from brew
 alias bash="/usr/local/bin/bash"
 
+# Using python 3
+alias python="python3"
+
 # Neovide opening with some flags
 alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
 #alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=200x120"
@@ -111,9 +114,8 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Haskell GHCUP
 [ -f "/Users/louis/.ghcup/env" ] && source "/Users/louis/.ghcup/env" # ghcup-env
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

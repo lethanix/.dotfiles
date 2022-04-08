@@ -1,98 +1,154 @@
-local lspconfig = require('lspconfig')
+local lspkind = require "lspkind"
+lspkind.init()
 
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+local t = function(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
--- luasnip setup
-local luasnip = require 'luasnip'
+local cmp = require "cmp"
+local types = require "cmp.types"
+local str = require("cmp.utils.str")
+local luasnip = require("luasnip")
 
-local fmta = require("luasnip.extras.fmt").fmta
-local i = luasnip.insert_node
-local r = require("luasnip.extras").rep
-local s = luasnip.snippet
-
-luasnip.snippets={
-    all={
-        s(
-            "pt",
-            fmta(
-              [[
-              println!("<NODE_1> = {:?}", <NODE_2>);
-              ]],
-              {
-                NODE_1 = i(1, "NAME"),
-                NODE_2 = r(1),
-              }
-            )
-        ),
-    }
-}
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-local lspkind = require('lspkind')
 cmp.setup {
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    formatting = {
-        format = lspkind.cmp_format({
-            -- "symbol_text" or "text_symbol" show the name of item's kind.
-            mode = 'symbol_text', -- "symbol" only symbol annotations
-            -- prevent the popup from showing more than provided characters
-            -- (e.g 50 will not show more than 50 characters)
-            maxwidth = 50,
-
-            -- The function below will be called before any actual modifications
-            -- from lspkind
-            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function (entry, vim_item)
-                -- ...
-                return vim_item
-            end
-        })
-    },
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm {
-              behavior = cmp.ConfirmBehavior.Replace,
-              select = true,
-        },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                --luasnip.expand_or_jump()
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-            elseif has_words_before() then
-                cmp.complete()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                --luasnip.jump(-1)
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+
+        -- ['<CR>'] = cmp.mapping.confirm {
+        --       behavior = cmp.ConfirmBehavior.Replace,
+        --       select = true,
+        -- },
+
+        ["<C-CR>"] = cmp.mapping(
+            cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Insert,
+                select = true,
+            },
+            { "i", "c" }
+        ),
+
+        ["<tab>"] = cmp.config.disable,
+
+        ["<C-l>"] = cmp.mapping(function(fallback)
+			if luasnip.expand_or_jumpable() then
+				vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
+
+		["<C-h>"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
+				vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
     },
+
+    -- the order of your sources matter (by default). That gives them priority
+    -- you can configure:
+    --      keyword_length
+    --      priority
+    --      max_item_count
+    --      (more?)
     sources = {
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' },
+        { name = "nvim_lua" },
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "luasnip" },
+        { name = "buffer", keyword_length = 5 },
+    },
+
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+
+            -- copied from cmp-under, but I don't think I need the plugin for this.
+            -- I might add some more of my own.
+            function(entry1, entry2)
+                local _, entry1_under = entry1.completion_item.label:find "^_+"
+                local _, entry2_under = entry2.completion_item.label:find "^_+"
+                entry1_under = entry1_under or 0
+                entry2_under = entry2_under or 0
+                if entry1_under > entry2_under then
+                    return false
+                elseif entry1_under < entry2_under then
+                    return true
+                end
+            end,
+
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+        },
+    },
+
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+
+    formatting = {
+        format = lspkind.cmp_format({
+        mode = 'symbol', -- show only symbol annotations
+        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+        -- default symbol map
+        -- can be either 'default' (requires nerd-fonts font) or
+        -- 'codicons' for codicon preset (requires vscode-codicons font)
+        --
+        -- default: 'default'
+        -- preset = 'codicons',
+
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+        before = function (entry, vim_item)
+            -- Get the full snippet (and only keep first line)
+			local word = entry:get_insert_text()
+			if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+				word = vim.lsp.util.parse_snippet(word)
+			end
+			word = str.oneline(word)
+
+			-- concatenates the string
+			-- local max = 50
+			-- if string.len(word) >= max then
+			-- 	local before = string.sub(word, 1, math.floor((max - 3) / 2))
+			-- 	word = before .. "..."
+			-- end
+
+			if
+				entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+				and string.sub(vim_item.abbr, -1, -1) == "~"
+			then
+				word = word .. "~"
+			end
+			vim_item.abbr = word
+
+			return vim_item
+        end
+        })
+    },
+
+    experimental = {
+        -- native_menu = true,
+        ghost_text = true,
     },
 }
 
@@ -103,42 +159,11 @@ cmp.setup.cmdline('/', {
     }
 })
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
---cmp.setup.cmdline(':', {
---    sources = cmp.config.sources({
---        { name = 'path' }
---    }, {
---        { name = 'cmdline' }
---    })
---})
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls'}
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        -- on_attach = my_custom_on_attach,
-        capabilities = capabilities,
-    }
-end
-
--- Add Visual Studio Code Dark+ Theme Colors to the Menu
--- gray
-vim.cmd [[highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080]]
--- blue
-vim.cmd [[highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6]]
-vim.cmd [[ highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6]]
--- light blue
-vim.cmd [[ highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE]]
-vim.cmd [[ highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE]]
-vim.cmd [[ highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE]]
--- pink
-vim.cmd [[ highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0]]
-vim.cmd [[ highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0]]
--- front
-vim.cmd [[ highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4]]
-vim.cmd [[ highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4]]
-vim.cmd [[ highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4]]
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})

@@ -10,21 +10,27 @@ cmd 'let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"'
 cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
 o.termguicolors = true
 
---local colorsch = "material"
+local colorsch = "material"
 --local colorsch = "dracula"
 --local colorsch = "onedark"
-local colorsch = "kanagawa"
+--local colorsch = "kanagawa"
 --local colorsch = "gotham"
-cmd 'let ayucolor = "mirage"'
+--cmd 'let ayucolor = "mirage"'
 
 -- **************************************
 -- Font
 -- **************************************
---o.guifont="SpaceMono Nerd Font:h13"
-o.guifont="JetBrainsMono Nerd Font:h14"
+o.guifont="SpaceMono Nerd Font:h13"
+--o.guifont="DM Mono:h13"
+--o.guifont="JetBrainsMono Nerd Font:h14"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
+elseif "material" == colorsch  then
+    g.material_style = "deep ocean"
+    require('material-conf')
+    cmd [[colorscheme material]]
+    --require('material').set()
 elseif "kanagawa" == colorsch then
     require('kanagawa').setup({
         undercurl = true,           -- enable undercurls
@@ -41,16 +47,17 @@ elseif "kanagawa" == colorsch then
         colors = {},
         overrides = {},
     })
-    
+
     -- setup must be called before loading
-    vim.cmd("colorscheme kanagawa")
+    cmd[[ "colorscheme kanagawa"]]
+
 elseif "gotham" == colorsch then
     cmd [[colorscheme gotham]]
 elseif "onedark" then
     require('onedark').setup {
         -- Default theme style. Choose between 'dark', 'darker', 'cool',
         -- 'deep', 'warm', 'warmer' and 'light'
-        style = 'darker',
+        style = 'deep',
         transparent = false,  -- Show/hide background
         term_colors = true, -- Change terminal color as per the selected theme style
         ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -81,6 +88,7 @@ elseif "onedark" then
         },
     }
     require('onedark').load()
+
 elseif "dracula" == colorsch then
     o.background = "dark"
     cmd [[colorscheme dracula]]
@@ -106,17 +114,13 @@ elseif "fox" == colorsch then
         },
     })
     -- Load the configuration set above and apply the colorscheme
-    nightfox.load()
+    -- nightfox.load()
+    cmd [[colorscheme nightfox ]]
 elseif "cal" == colorsch  then require('calvera').set()
 elseif "ayu" == colorsch  then cmd 'colorscheme ayu'
 elseif "nord" == colorsch  then cmd 'colorscheme nord'
 elseif "srcery" == colorsch  then cmd 'colorscheme srcery'
 elseif "night" == colorsch  then cmd 'colorscheme night-owl'
-elseif "material" == colorsch  then
-    g.material_style = "deep ocean"
-    require('material-conf')
-    cmd [[colorscheme material]]
-    --require('material').set()
 elseif "tokyo" == colorsch  then
 elseif "github" == colorsch  then
     require('github-theme').setup({

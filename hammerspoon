@@ -216,17 +216,16 @@ hyper:bind({nil}, 'h', FocusLeft)
 hyper:bind({nil}, 'l', FocusRight, hyper:exit())
 hyper:bind({nil}, 'k', FocusNorth, hyper:exit())
 hyper:bind({nil}, 'j', FocusSouth, hyper:exit())
-
 ---**********************************************
 --*********** Launch Applications ***************
 --***********************************************
 
 app_list = {
-    {key = 'w', name = 'Warp'},
-    --{key = 'a', name = 'Alacritty'},
+    -- {key = 'w', name = 'Warp'},
+    {key = 'a', name = 'Alacritty'},
     {key = 'n', name = 'Neovide'},
     {key = 'f', name = 'Firefox'},
-    {key = 'g', name = 'GoLand'},
+    -- {key = 'g', name = 'GoLand'},
     --{key = 'z', name = 'CLion'},
     --{key = 'v', name = 'VimR'},
     --{key = 'x', name = 'Xcode'},

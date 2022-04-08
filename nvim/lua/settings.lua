@@ -37,7 +37,7 @@ o.fillchars="foldclose:"
 -- **************************************
 -- Global status line
 -- **************************************
---vim.api.nvim_create_autocmd("WinEnter", {command = "set laststatus=3", group = justonce})
+vim.api.nvim_create_autocmd("WinEnter", {command = "set laststatus=3", group = justonce})
 
 -- **************************************
 -- Show mode below the status line
@@ -66,9 +66,9 @@ o.clipboard = "unnamedplus"
 -- Tabs using 4 spaces
 -- *****************************************
 bo.expandtab = true
-bo.tabstop = 8
-bo.softtabstop = 0
+bo.tabstop = 4
 bo.shiftwidth = 4
+--bo.softtabstop = 4
 
 -- **************************************
 -- Folding settings
