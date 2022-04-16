@@ -10,23 +10,24 @@ cmd 'let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum"'
 cmd 'let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum"'
 o.termguicolors = true
 
-local colorsch = "material"
+-- local colorsch = "material"
 --local colorsch = "dracula"
 --local colorsch = "onedark"
---local colorsch = "kanagawa"
+local colorsch = "kanagawa"
 --local colorsch = "gotham"
 --cmd 'let ayucolor = "mirage"'
 
 -- **************************************
 -- Font
 -- **************************************
-o.guifont="SpaceMono Nerd Font:h13"
---o.guifont="DM Mono:h13"
---o.guifont="JetBrainsMono Nerd Font:h14"
+-- o.guifont="SpaceMono Nerd Font:h13"
+-- o.guifont="DMMono Nerd Font:h14"
+o.guifont="Lilex Nerd Font:h13"
+-- o.guifont="JetBrainsMono Nerd Font:h14"
 --o.guifont="FiraCode Nerd Font:h13"
 
-if "spaceduck" == colorsch  then cmd 'colorscheme spaceduck'
-elseif "material" == colorsch  then
+if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
+elseif "material"  == colorsch  then
     g.material_style = "deep ocean"
     require('material-conf')
     cmd [[colorscheme material]]
@@ -49,7 +50,7 @@ elseif "kanagawa" == colorsch then
     })
 
     -- setup must be called before loading
-    cmd[[ "colorscheme kanagawa"]]
+    cmd[[colorscheme kanagawa]]
 
 elseif "gotham" == colorsch then
     cmd [[colorscheme gotham]]
