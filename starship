@@ -2,7 +2,7 @@
 continuation_prompt = "[](bright-black) "
 
 # format = """$all"""
-right_format = """$cmd_duration$git_status$git_branch""" 
+right_format = """$cmd_duration$git_status$git_branch$battery""" 
 
 # Imprimir una nueva línea al inicio del prompt
 add_newline = true
@@ -60,8 +60,5 @@ style = "bold purple"
 [aws]
 symbol = " "
 
-[git_branch]
-# ignore_branches = ["master", "main"]
-
-# [git_status]
-
+[rust]
+format = '[$symbol]($style)'
