@@ -132,10 +132,13 @@ elseif "github" == colorsch  then
     })
 end
 
+-- Transparent background
+cmd [[ hi! Normal ctermbg=NONE guibg=NONE ]]
+cmd [[ hi! NonText ctermbg=NONE guibg=NONE ]]
 -- **************************************
 -- Neovide specific
 -- **************************************
-g.neovide_transparency = 1
+g.neovide_transparency = 0.9
 
 g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
