@@ -10,9 +10,9 @@ depends = ["shell"]
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
+"zsh/zshenv" = "~/.zshenv"
 
 [rust.files]
-"zsh/zshenv" = "~/.zshenv"
 rustup = "~/.rustup/settings.toml"
 
 [alacritty.files]
@@ -27,3 +27,8 @@ nvim = "~/.config/nvim"
 [julia.files]
 julia-startup = "~/.julia/config/startup.jl"
 
+[yabai.files]
+yabai = "~/.config/yabai"
+
+[skhd.files]
+skhd = "~/.config/skhd"
