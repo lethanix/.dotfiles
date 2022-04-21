@@ -1,0 +1,8 @@
+# The key represents the general application:
+# 	t -> Terminal
+# 	w -> Web browser
+# 	e -> Text editor
+cmd + ctrl - t : open -a /Applications/Alacritty.app
+cmd + ctrl - w : open -a /Applications/Firefox.app
+cmd + ctrl - e : open -a /Applications/Neovide.app
+

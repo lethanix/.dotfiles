@@ -47,7 +47,8 @@ alias bash="/usr/local/bin/bash"
 alias python="python3"
 
 # Neovide opening with some flags
-alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"
+# alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"
+alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
 export NEOVIDE_MULTIGRID=true
 export NEOVIDE_FRAME=buttonless
 
