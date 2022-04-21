@@ -31,8 +31,12 @@ shift + cmd - s : yabai -m window --resize top:0:20
 alt - z : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window and center on screen
+# The grid format is <rows>:<cols>:<start-x>:<start-y>:<width>:<height>,
+# where rows and cols are how many rows and columns there are in total,
+# start-x and start-y are the start indices for the row and column and
+# width and height are how many rows and columns the window spans
 alt - f : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2
+          yabai -m window --grid 7:6:1:1:4:5
 
 # Arrow Keys
 fn - h : skhd -k "left"
