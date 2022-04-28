@@ -135,7 +135,8 @@ end
 -- **************************************
 -- Neovide specific
 -- **************************************
-g.neovide_transparency = 0.93
+g.neovide_transparency = 1
+-- g.neovide_transparency = 0.93
 
 g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
