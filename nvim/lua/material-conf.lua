@@ -1,14 +1,14 @@
 require('material').setup({
 
-	contrast = {
-		sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-		floating_windows = true, -- Enable contrast for floating windows
-		line_numbers = false, -- Enable contrast background for line numbers
-		sign_column = false, -- Enable contrast background for the sign column
-		cursor_line = false, -- Enable darker background for the cursor line
-		non_current_windows = true, -- Enable darker background for non-current windows
-		popup_menu = true, -- Enable lighter background for the popup menu
-	},
+    contrast = {
+        sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+        floating_windows = true, -- Enable contrast for floating windows
+        line_numbers = false, -- Enable contrast background for line numbers
+        sign_column = false, -- Enable contrast background for the sign column
+        cursor_line = false, -- Enable darker background for the cursor line
+        non_current_windows = false, -- Enable darker background for non-current windows
+        popup_menu = true, -- Enable lighter background for the popup menu
+    },
 
     borders = false, -- Enable borders between verticaly split windows
 
@@ -28,10 +28,10 @@ require('material').setup({
         "qf", -- Darker qf list background
     },
 
-	high_visibility = {
-		lighter = false, -- Enable higher contrast text for lighter style
-		darker = false -- Enable higher contrast text for darker style
-	},
+    high_visibility = {
+        lighter = false, -- Enable higher contrast text for lighter style
+        darker = false -- Enable higher contrast text for darker style
+    },
 
     disable = {
         background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
@@ -39,8 +39,8 @@ require('material').setup({
         eob_lines = true -- Hide the end-of-buffer lines
     },
 
-	lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+    lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
 
-	async_loading = true, -- Load parts of the theme asyncronously for faster startup 
+    async_loading = true, -- Load parts of the theme asyncronously for faster startup 
 })
 
