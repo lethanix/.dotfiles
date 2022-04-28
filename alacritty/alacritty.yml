@@ -88,7 +88,7 @@ import:
   # - ~/.config/alacritty/fonts/caskaydia.yml
 
   # Change the color importing the corresponding yaml file
-  - ~/.config/alacritty/colors/kanagawa.yml
+  # - ~/.config/alacritty/colors/kanagawa.yml
   # - ~/.config/alacritty/colors/ayumirage.yml
   # - ~/.config/alacritty/colors/dracula.yml
   # - ~/.config/alacritty/colors/one_dark.yml
@@ -98,7 +98,7 @@ import:
   #- ~/.config/alacritty/colors/gruvbox-light-medium.yml
   #- ~/.config/alacritty/colors/base16-gruvbox-light-soft-256.yml
   # - ~/.config/alacritty/colors/ayu.yml
-  # - ~/.config/alacritty/colors/spaceduck.yml
+  - ~/.config/alacritty/colors/spaceduck.yml
   # - ~/.config/alacritty/colors/nightfly.yml
   # - ~/.config/alacritty/colors/base16-horizon-dark-256.yml
   # - ~/.config/alacritty/colors/base16-material-palenight.yml
