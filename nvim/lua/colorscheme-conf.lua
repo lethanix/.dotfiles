@@ -10,8 +10,8 @@ cmd [[ let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum" ]]
 cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
 
-local colorsch = "kanagawa"
--- local colorsch = "material"
+-- local colorsch = "kanagawa"
+local colorsch = "material"
 --local colorsch = "dracula"
 --local colorsch = "onedark"
 --local colorsch = "gotham"
@@ -22,8 +22,8 @@ local colorsch = "kanagawa"
 -- **************************************
 -- o.guifont="SpaceMono Nerd Font:h13"
 -- o.guifont="DMMono Nerd Font:h14"
-o.guifont="Lilex Nerd Font:h13"
--- o.guifont="JetBrainsMono Nerd Font:h14"
+-- o.guifont="Lilex Nerd Font:h13"
+o.guifont="JetBrainsMono Nerd Font:h13"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'

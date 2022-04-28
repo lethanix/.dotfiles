@@ -6,18 +6,18 @@
 -- *******************************************
 
 -- Simplify the api to create mappings
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 -- **************************************
 -- Map leader to Space or Comma
 -- **************************************
---vim.g.mapleader = " "
-vim.g.mapleader = ","
+--vim.g.mapleader = ' '
+vim.g.mapleader = ','
 
 -- **************************************
 -- Map esc to exit terminal mode
 -- **************************************
-map('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
+map('t', '<Esc>', '<C-\\><C-n>')
 
 -- **************************************
 -- Map ccedilla to Esc in
@@ -28,24 +28,31 @@ map('!', 'ç', '<Esc>', {noremap = false}) -- Insert and Command-line
 -- **************************************
 -- Move lines up and down with shortcuts
 -- **************************************
-map('n', '<Leader><C-j>', '<cmd>m+<cr>', {noremap=true})
-map('n', '<Leader><C-k>', '<cmd>m-2<cr>', {noremap=true})
+map('n', '<Leader><C-j>', '<cmd>m+<cr>')
+map('n', '<Leader><C-k>', '<cmd>m-2<cr>')
 
--- -- **************************************
--- -- Easier split navigation
--- -- **************************************
--- map( "", "<C-J>", "<C-W><C-J>", { noremap = true,})
--- map( "", "<C-K>", "<C-W><C-K>", { noremap = true,})
--- map( "", "<C-H>", "<C-W><C-H>", { noremap = true,})
--- map( "", "<C-L>", "<C-W><C-L>", { noremap = true,})
+-- **************************************
+-- Easier split navigation
+-- **************************************
+map('n', '<Leader>j', '<C-W><C-J>')
+map('n', '<Leader>k', '<C-W><C-K>')
+map('n', '<Leader>h', '<C-W><C-H>')
+map('n', '<Leader>l', '<C-W><C-L>')
+
+-- **************************************
+-- Easier buffer navigation
+-- **************************************
+map('n', 'b]', '<cmd>bn<cr>')
+map('n', 'b[', '<cmd>bp<cr>')
 
 -- **************************************
 -- Clear highlights
 -- **************************************
-map('n', '<Leader><C-h>', '<cmd>noh<cr>', { noremap = true,})
+map('n', '<Leader><C-h>', '<cmd>noh<cr>')
 
 -- **************************************
 -- Toggle styles
 -- **************************************
-local options = { noremap = true, silent = true }
-map('n', '<leader>mm', [[<cmd>lua require('material.functions').toggle_style()<CR>]], options)
+map('n', '<leader>mm', function ()
+    require('material.functions').toggle_style()
+end)

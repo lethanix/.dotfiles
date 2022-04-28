@@ -29,11 +29,14 @@ bo.fileencoding="UTF-8"
 wo.number = true
 wo.relativenumber = true
 
-local justonce = vim.api.nvim_create_augroup("JustOnce", { clear = true })
--- The char of End of Buffer is a tilde, change it to space
-vim.api.nvim_create_autocmd("BufEnter", { command = "set fillchars=eob:∅,foldclose:", group = justonce})
--- o.fillchars="eob:∅,foldclose:"
--- o.fillchars="foldclose:"
+vim.api.nvim_create_augroup("JustOnce", { clear = true })
+-- The char of End of Buffer is a tilde, change it
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function ()
+        vim.opt.fillchars = { eob = "∅", fold = "" }
+    end,
+    group = "JustOnce"
+})
 
 -- **************************************
 -- Global status line
@@ -48,7 +51,7 @@ o.showmode = false
 -- **************************************
 -- Maximum highlight limit
 -- **************************************
-wo.colorcolumn = "80"
+-- wo.colorcolumn = "80"
 --bo.textwidth = 80
 wo.wrap = false
 
