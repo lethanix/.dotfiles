@@ -83,7 +83,7 @@ return require('packer').startup(function()
 
     -- Language Server Client
     --use { 'simrat39/rust-tools.nvim'}
-    use { 'neovim/nvim-lspconfig' }
+    use { 'neovim/nvim-lspconfig', tag = 'v0.1.3', }
 
 	-- Completion
     use { 'hrsh7th/nvim-cmp' }

@@ -23,7 +23,7 @@ local colorsch = "material"
 -- o.guifont="SpaceMono Nerd Font:h13"
 -- o.guifont="DMMono Nerd Font:h14"
 -- o.guifont="Lilex Nerd Font:h13"
-o.guifont="JetBrainsMono Nerd Font:h13"
+o.guifont="JetBrainsMono Nerd Font Mono:h13"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
