@@ -30,13 +30,14 @@ wo.number = true
 wo.relativenumber = true
 
 vim.api.nvim_create_augroup("JustOnce", { clear = true })
+-- FIXME: This causes diagnostics to break
 -- The char of End of Buffer is a tilde, change it
-vim.api.nvim_create_autocmd("BufEnter", {
-    callback = function ()
-        vim.opt.fillchars = { eob = "∅", fold = "" }
-    end,
-    group = "JustOnce"
-})
+-- vim.api.nvim_create_autocmd("BuffEnter", {
+--     callback = function ()
+--         vim.opt.fillchars = { eob = "∅", fold = "" }
+--     end,
+--     group = "JustOnce"
+-- })
 
 -- **************************************
 -- Global status line

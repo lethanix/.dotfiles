@@ -18,17 +18,17 @@ require('nvim-ts-rainbow')
 
 -- Load LSP settings
 require("lsp-conf")
--- require("cmp-conf")
--- require("go")
--- require("rust")
--- require("swift")
--- require("lua-lsp")
--- require("bash-lsp")
--- require("julia-server")
---require("type-javascript")
--- require("deno-lsp")
--- require("html-lsp")
--- require("haskell-lsp")
+require("cmp-conf")
+require("go")
+require("rust")
+require("swift")
+require("lua-lsp")
+require("bash-lsp")
+require("julia-server")
+require("type-javascript")
+require("deno-lsp")
+require("html-lsp")
+require("haskell-lsp")
 
 -- Load a high-performance color highlighter for Neovim
 -- NOTE: You should add this line after/below where your

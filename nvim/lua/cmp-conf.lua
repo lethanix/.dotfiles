@@ -32,7 +32,7 @@ cmp.setup {
             { "i", "c" }
         ),
 
-        ["<tab>"] = cmp.config.disable,
+        ["<Tab>"] = cmp.config.disable,
 
         ["<C-l>"] = cmp.mapping(function(fallback)
 			if luasnip.expand_or_jumpable() then
@@ -150,20 +150,24 @@ cmp.setup {
         -- native_menu = true,
         ghost_text = true,
     },
+
+    view = {
+		entries = "native"
+	}
 }
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-    sources = {
-        { name = 'buffer' }
-    }
-})
-
+-- cmp.setup.cmdline('/', {
+--     sources = {
+--         { name = 'buffer' }
+--     }
+-- })
+--
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    })
-})
+-- cmp.setup.cmdline(':', {
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--         { name = 'cmdline' }
+--     })
+-- })

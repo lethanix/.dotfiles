@@ -42,8 +42,8 @@ map('n', '<Leader>l', '<C-W><C-L>')
 -- **************************************
 -- Easier buffer navigation
 -- **************************************
-map('n', 'b]', '<cmd>bn<cr>')
-map('n', 'b[', '<cmd>bp<cr>')
+map('n', ']b', '<cmd>bn<cr>')
+map('n', '[b', '<cmd>bp<cr>')
 
 -- **************************************
 -- Clear highlights
