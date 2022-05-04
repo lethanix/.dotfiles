@@ -17,8 +17,6 @@ require('telescope-config')
 require('nvim-ts-rainbow')
 
 -- Load LSP settings
-require("lsp-conf")
-require("cmp-conf")
 require("go")
 require("rust")
 require("swift")
