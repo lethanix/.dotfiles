@@ -11,10 +11,10 @@ cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
 
 -- local colorsch = "kanagawa"
-local colorsch = "material"
---local colorsch = "dracula"
---local colorsch = "onedark"
---local colorsch = "gotham"
+-- local colorsch = "material"
+-- local colorsch = "dracula"
+local colorsch = "onedark"
+-- local colorsch = "gotham"
 --cmd 'let ayucolor = "mirage"'
 
 -- **************************************
@@ -23,28 +23,30 @@ local colorsch = "material"
 -- o.guifont="SpaceMono Nerd Font:h13"
 -- o.guifont="DMMono Nerd Font:h14"
 -- o.guifont="Lilex Nerd Font:h13"
-o.guifont="JetBrainsMono Nerd Font Mono:h13"
+o.guifont="JetBrainsMono Nerd Font Mono:h19"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
 elseif "material"  == colorsch  then
     g.material_style = "deep ocean"
+    -- g.material_style = "palenight"
     require('material-conf')
     cmd [[colorscheme material]]
     --require('material').set()
 elseif "kanagawa" == colorsch then
     require('kanagawa').setup({
         undercurl = true,           -- enable undercurls
-        commentStyle = "italic",
-        functionStyle = "NONE",
-        keywordStyle = "italic",
-        statementStyle = "bold",
-        typeStyle = "NONE",
-        variablebuiltinStyle = "italic",
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true},
+        statementStyle = { bold = true },
+        typeStyle = {},
+        variablebuiltinStyle = { italic = true},
         specialReturn = true,       -- special highlight for the return keyword
         specialException = true,    -- special highlight for exception handling keywords
         transparent = false,        -- do not set background color
         dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+        globalStatus = false,       -- adjust window separators highlight for laststatus=3
         colors = {},
         overrides = {},
     })
@@ -53,17 +55,17 @@ elseif "kanagawa" == colorsch then
     cmd[[colorscheme kanagawa]]
 
 elseif "gotham" == colorsch then
-    cmd [[colorscheme gotham]]
+    cmd [[colorscheme gotham256]]
 elseif "onedark" then
     require('onedark').setup {
         -- Default theme style. Choose between 'dark', 'darker', 'cool',
         -- 'deep', 'warm', 'warmer' and 'light'
         style = 'deep',
         transparent = false,  -- Show/hide background
-        term_colors = true, -- Change terminal color as per the selected theme style
+        term_colors = false, -- Change terminal color as per the selected theme style
         ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
         -- toggle theme style ---
-        toggle_style_key = '<leader>ss', -- Default keybinding to toggle
+        toggle_style_key = '<leader>cs', -- Default keybinding to toggle
         toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
         -- Change code style ---
@@ -71,9 +73,9 @@ elseif "onedark" then
         -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
         code_style = {
             comments = 'italic',
-            keywords = 'none',
-            functions = 'none',
-            strings = 'none',
+            keywords = 'italic',
+            functions = 'italic',
+            strings = 'underline',
             variables = 'none'
         },
 
@@ -88,8 +90,10 @@ elseif "onedark" then
             background = true,    -- use background color for virtual text
         },
     }
-    require('onedark').load()
 
+    require('onedark').load()
+    -- cmd [[colorscheme onedark]]
+    
 elseif "dracula" == colorsch then
     o.background = "dark"
     cmd [[colorscheme dracula]]

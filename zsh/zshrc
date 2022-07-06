@@ -57,6 +57,7 @@ alias aseprite="nohup aseprite &"
 
 # ls change to exa 
 alias ls="exa --icons -a"
+alias exa="exa --icons"
 
 alias tree="exa --icons -T"
 

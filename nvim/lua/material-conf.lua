@@ -5,7 +5,7 @@ require('material').setup({
         floating_windows = true, -- Enable contrast for floating windows
         line_numbers = false, -- Enable contrast background for line numbers
         sign_column = false, -- Enable contrast background for the sign column
-        cursor_line = false, -- Enable darker background for the cursor line
+        cursor_line = true, -- Enable darker background for the cursor line
         non_current_windows = false, -- Enable darker background for non-current windows
         popup_menu = true, -- Enable lighter background for the popup menu
     },
@@ -17,7 +17,7 @@ require('material').setup({
     italics = {
         comments = true, -- Enable italic comments
         keywords = true, -- Enable italic keywords
-        functions = false, -- Enable italic functions
+        functions = true, -- Enable italic functions
         strings = false, -- Enable italic strings
         variables = false -- Enable italic variables
     },
@@ -30,7 +30,7 @@ require('material').setup({
 
     high_visibility = {
         lighter = false, -- Enable higher contrast text for lighter style
-        darker = false -- Enable higher contrast text for darker style
+        darker = true -- Enable higher contrast text for darker style
     },
 
     disable = {
