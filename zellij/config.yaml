@@ -2,7 +2,7 @@
 simplified_ui: false
 ui:
   pane_frames:
-    rounded_corners: true
+   rounded_corners: true
 keybinds:
     unbind: false
     normal:
@@ -21,13 +21,13 @@ keybinds:
         - action: [NewPane: ]
           key: [ Alt: 'n',]
         - action: [MoveFocusOrTab: Left,]
-          key: [ Alt: 'h',]
+          key: [ Alt: '[',]
         - action: [MoveFocusOrTab: Right,]
-          key: [ Alt: 'l',]
+          key: [ Alt: ']',]
         - action: [MoveFocus: Down,]
-          key: [ Alt: 'j',]
+          key: [ Alt: '-',]
         - action: [MoveFocus: Up,]
-          key: [ Alt: 'k',]
+          key: [ Alt: '=',]
         - action: [FocusPreviousPane,]
           key: [ Alt: '[',]
         - action: [FocusNextPane,]
@@ -217,53 +217,69 @@ keybinds:
           key: [ Alt: '[',]
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
+
+# theme: dracula
+theme: catppuccin
 themes:
-  default: # gruvbox dark
-    fg: [72,133,135] # Letter background for options
-    bg: [40, 42, 54]
-    gray: [0,0,0] # Tab name color
-    #black: [59, 55, 54]
-    black: [40,40,40] # Tab name color
-    white: [184,186,55] # Zellij font color
-    red: [214, 152, 49] # Letters colors for options
-    yellow: [214, 152, 49]
-    green: [184,186,55]
-    #green: [17,102,119] # Tab and pane colors
-    blue: [17,102,119]
-    magenta: [142,65,112]
-    cyan: [40,40,40] # Top and bottom bars' background
-    #cyan: [188,174,148] # Top and bottom bars' background
-    #cyan: [124,111,101]
-    orange: [212,93,32]
-
-  gruvbox_light_soft:
-    fg: [17,102,119] # Letter background for options
-    bg: [40, 42, 54]
-    gray: [0,0,0] # Tab name color
-    #black: [59, 55, 54]
-    black: [234,219,180] # Tab name color
-    white: [212,93,32] # Zellij font color
-    red: [214, 152, 49] # Letters colors for options
-    yellow: [214, 152, 49]
-    #green: [152,150,41]
-    green: [17,102,119] # Tab and pane colors
-    blue: [17,102,119]
-    magenta: [142,65,112]
-    cyan: [213,196,163] # Top and bottom bars' background
-    #cyan: [188,174,148] # Top and bottom bars' background
-    #cyan: [124,111,101]
-    orange: [212,93,32]
-
   dracula:
-    fg: [248, 248, 242]
+    # From https://github.com/dracula/zellij
     bg: [40, 42, 54]
-    gray: [0,0,0] # Tab name color
-    black: [0,0,0]
     red: [255, 85, 85]
     green: [80, 250, 123]
     yellow: [241, 250, 140]
-    blue: [0,0,0]
-    magenta: [0,0,0]
-    cyan: [189, 147, 249]
-    white: [68, 71, 90]
+    blue: [98, 114, 164]
+    magenta: [255, 121, 198]
     orange: [255, 184, 108]
+    fg: [248, 248, 242]
+    cyan: [139, 233, 253]
+    black: [0, 0, 0]
+    white: [255, 255, 255]
+  catppuccin:
+    bg:
+    - 48
+    - 45
+    - 65
+    black:
+    - 22
+    - 19
+    - 32
+    blue:
+    - 150
+    - 205
+    - 251
+    cyan:
+    - 26
+    - 24
+    - 38
+    fg:
+    - 217
+    - 224
+    - 238
+    gray:
+    - 87
+    - 82
+    - 104
+    green:
+    - 171
+    - 233
+    - 179
+    magenta:
+    - 245
+    - 194
+    - 231
+    orange:
+    - 248
+    - 189
+    - 150
+    red:
+    - 242
+    - 143
+    - 173
+    white:
+    - 217
+    - 224
+    - 238
+    yellow:
+    - 250
+    - 227
+    - 176

@@ -93,7 +93,8 @@ import:
   # - ~/.config/alacritty/colors/ayumirage.yml
   # - ~/.config/alacritty/colors/dracula.yml
   # - ~/.config/alacritty/colors/one_dark.yml
-  - ~/.config/alacritty/colors/gotham.yml
+  # - ~/.config/alacritty/colors/gotham.yml
+  - ~/.config/alacritty/colors/catppuccin.yml
   # - ~/.config/alacritty/colors/gruvbox.yml
   #- ~/.config/alacritty/colors/gruvbox-light.yml
   #- ~/.config/alacritty/colors/gruvbox-light-medium.yml

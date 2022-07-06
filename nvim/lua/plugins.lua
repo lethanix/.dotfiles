@@ -47,6 +47,10 @@ return require('packer').startup(function()
     }
 
     -- Color scheme
+        use({
+        	"catppuccin/nvim",
+        	as = "catppuccin"
+        })
     use "rebelot/kanagawa.nvim"
     use 'whatyouhide/vim-gotham'
     use 'bluz71/vim-nightfly-guicolors'
