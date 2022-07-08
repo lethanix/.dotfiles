@@ -1,11 +1,26 @@
--- **************************************
--- Color scheme
--- **************************************
 -- 3 kinds of options: global, buffer-local & window-local
 local o = vim.o
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local g = vim.g      -- a table to access global variables
 
+-- **************************************
+-- Neovide specific
+-- **************************************
+-- g.neovide_transparency = 1
+g.neovide_transparency = 0.93
+
+g.neovide_floating_blur = true
+g.neovide_floating_opacity = 0.87
+
+g.neovide_window_floating_opacity = 0.87
+g.neovide_remember_window_size = false
+g.neovide_cursor_animation_length = 0.15
+g.neovide_cursor_antialiasing = true
+g.neovide_no_idle = false
+
+-- **************************************
+-- Color scheme
+-- **************************************
 cmd [[ let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum" ]]
 cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
@@ -33,7 +48,7 @@ elseif "catppuccin" == colorsch then
     -- configure it
     catppuccin.setup({
         transparent_background = false,
-        term_colors = false,
+        term_colors = true,
         styles = {
         	comments = "italic",
         	conditionals = "italic",
@@ -213,18 +228,4 @@ elseif "github" == colorsch  then
     })
 end
 
--- **************************************
--- Neovide specific
--- **************************************
-g.neovide_transparency = 1
--- g.neovide_transparency = 0.93
-
-g.neovide_floating_blur = true
-g.neovide_floating_opacity = 0.87
-
-g.neovide_window_floating_opacity = 0.87
-g.neovide_remember_window_size = false
-g.neovide_cursor_animation_length = 0.15
-g.neovide_cursor_antialiasing = true
-g.neovide_no_idle = false
 

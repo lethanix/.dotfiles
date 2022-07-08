@@ -4,6 +4,12 @@ local bo = vim.bo
 local wo = vim.wo
 local cmd = vim.cmd
 
+-- cmd [[ highlight Normal ctermbg=none ]]
+-- cmd [[ highlight NonText ctermbg=none ]]
+
+cmd [[ au ColorScheme * hi Normal ctermbg=none guibg=none ]]
+cmd [[ au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red ]]
+
 -- Highlight on yank
 cmd [[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
 
@@ -70,9 +76,9 @@ o.clipboard = "unnamedplus"
 -- *****************************************
 -- Tabs using 4 spaces
 -- *****************************************
-bo.tabstop = 4
-bo.shiftwidth = 4
 bo.expandtab = true
+bo.shiftwidth = 4
+bo.tabstop = 4
 --bo.softtabstop = 4
 
 -- **************************************
