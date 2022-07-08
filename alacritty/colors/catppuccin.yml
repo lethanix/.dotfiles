@@ -335,7 +335,7 @@ color_schemes:
 
 
 
-colors: *macchiato
-# colors: *mocha
+# colors: *macchiato
+colors: *mocha
 # colors: *latte
 # colors: *frappe

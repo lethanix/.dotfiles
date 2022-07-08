@@ -437,8 +437,8 @@ key_bindings:
   - { key: T, mods: Alt, chars: "\x1bt"}
   - { key: 27, mods: Alt, chars: "\x1b-"}
   - { key: 24, mods: Alt, chars: "\x1b+"}
-  - { key: 33, mods: Alt, chars: "\x1b[" } # abre corchetes `[`
   - { key: 30, mods: Alt, chars: "\x1b]" } # cierra corchetes `]`
+  - { key: 33, mods: Alt, chars: "\x1b[" } # abre corchetes `[`
   
   # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
   - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }

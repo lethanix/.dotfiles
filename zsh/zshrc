@@ -9,6 +9,9 @@ export PATH=$HOME/.local/bin:$PATH
 # go folder
 export PATH="$HOME/go/bin:$PATH"
 
+# Zig zls path
+export PATH="$HOME/zls:$PATH"
+
 # Bash scripts folder
 export PATH="$HOME/Documents/Bash/utils:$PATH"
 

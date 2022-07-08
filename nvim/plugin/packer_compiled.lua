@@ -316,6 +316,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["zig.vim"] = {
+    loaded = true,
+    path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/zig.vim",
+    url = "https://github.com/ziglang/zig.vim"
   }
 }
 

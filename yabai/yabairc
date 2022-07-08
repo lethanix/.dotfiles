@@ -53,5 +53,6 @@ yabai -m rule --add app="^Permute 3$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Craft$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
+yabai -m rule --add app="^Keka$" manage=off
 
 echo "yabai configuration loaded.."

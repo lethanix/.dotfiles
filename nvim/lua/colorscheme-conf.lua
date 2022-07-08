@@ -102,7 +102,7 @@ elseif "catppuccin" == colorsch then
         	symbols_outline = true,
         }
     })
-    g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+    g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
     cmd [[colorscheme catppuccin]]
 elseif "material"  == colorsch  then
     g.material_style = "deep ocean"

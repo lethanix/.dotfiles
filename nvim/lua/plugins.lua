@@ -102,6 +102,8 @@ return require('packer').startup(function()
     use { 'JuliaEditorSupport/julia-vim' }
     use { 'nvim-lua/lsp_extensions.nvim' }
 
+    use { 'ziglang/zig.vim' }
+
     -- Brackets completition
     use { 'windwp/nvim-autopairs' }
 
