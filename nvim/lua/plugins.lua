@@ -1,5 +1,5 @@
 
--- Neovim automatically run :PackerCompile whenever plugins.lua is updated 
+-- Neovim automatically run :PackerCompile whenever plugins.lua is updated
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 
 return require('packer').startup(function()

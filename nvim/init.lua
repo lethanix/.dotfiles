@@ -28,6 +28,7 @@ require("type-javascript")
 require("deno-lsp")
 require("html-lsp")
 require("haskell-lsp")
+require("latex")
 
 -- Load a high-performance color highlighter for Neovim
 -- NOTE: You should add this line after/below where your
