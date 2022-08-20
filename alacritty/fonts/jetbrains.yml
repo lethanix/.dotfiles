@@ -40,7 +40,7 @@ font:
     #
     # This is a global setting and will require a log out   orrestart to take
     # effect.
-    use_thin_strokes: true
+    # use_thin_strokes: true
 
     # Use built-in font for box drawing characters.
     #

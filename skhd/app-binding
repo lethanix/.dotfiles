@@ -2,7 +2,9 @@
 # 	t -> Terminal
 # 	w -> Web browser
 # 	e -> Text editor
-cmd + ctrl - t : open -a /Applications/Alacritty.app
+cmd + ctrl - t : open -a /Applications/Warp.app
+# cmd + ctrl - t : open -a /Applications/Alacritty.app
 cmd + ctrl - w : open -a /Applications/Firefox.app
-cmd + ctrl - e : open -a /Applications/Neovide.app
+# cmd + ctrl - e : open -a /Applications/Neovide.app
+cmd + ctrl - e : open -a /Applications/Vimr.app
 cmd + ctrl - m : open "https://music.youtube.com/"

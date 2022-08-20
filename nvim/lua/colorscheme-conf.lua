@@ -6,8 +6,8 @@ local g = vim.g      -- a table to access global variables
 -- **************************************
 -- Neovide specific
 -- **************************************
--- g.neovide_transparency = 1
-g.neovide_transparency = 0.93
+g.neovide_transparency = 1
+-- g.neovide_transparency = 0.93
 
 g.neovide_floating_blur = true
 g.neovide_floating_opacity = 0.87
@@ -30,16 +30,14 @@ o.termguicolors = true
 -- local colorsch = "dracula"
 -- local colorsch = "onedark"
 local colorsch = "catppuccin"
--- local colorsch = "gotham"
---cmd 'let ayucolor = "mirage"'
-
+-- local colorsch = "gotham" cmd 'let ayucolor = "mirage"'
 -- **************************************
 -- Font
 -- **************************************
 -- o.guifont="SpaceMono Nerd Font:h13"
 -- o.guifont="DMMono Nerd Font:h14"
 -- o.guifont="Lilex Nerd Font:h13"
-o.guifont="JetBrainsMono Nerd Font Mono:h19"
+o.guifont="JetBrainsMono Nerd Font Mono:h17"
 --o.guifont="FiraCode Nerd Font:h13"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
@@ -47,37 +45,46 @@ elseif "catppuccin" == colorsch then
     local catppuccin = require("catppuccin")
     -- configure it
     catppuccin.setup({
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
         transparent_background = false,
         term_colors = true,
+	compile = {
+		enabled = false,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+	},
         styles = {
-        	comments = "italic",
-        	conditionals = "italic",
-        	loops = "NONE",
-        	functions = "italic",
-        	keywords = "italic",
-        	strings = "underline",
-        	variables = "NONE",
-        	numbers = "NONE",
-        	booleans = "NONE",
-        	properties = "NONE",
-        	types = "NONE",
-        	operators = "NONE",
+        	comments ={ "italic"},
+        	conditionals = {"italic"},
+        	loops = {},
+        	functions = {"italic"},
+        	keywords = {"italic"},
+        	strings = {"underline"},
+        	variables = {},
+        	numbers = {},
+        	booleans = {},
+        	properties = {},
+        	types = {},
+        	operators = {},
         },
         integrations = {
         	treesitter = true,
         	native_lsp = {
         		enabled = true,
         		virtual_text = {
-        			errors = "italic",
-        			hints = "italic",
-        			warnings = "italic",
-        			information = "italic",
+        			errors = 	{"italic"},
+        			hints = 	{"italic"},
+        			warnings = 	{"italic"},
+        			information = 	{"italic"},
         		},
         		underlines = {
-        			errors = "underline",
-        			hints = "underline",
-        			warnings = "underline",
-        			information = "underline",
+        			errors = 	{"underline"},
+        			hints = 	{"underline"},
+        			warnings = 	{"underline"},
+        			information = 	{"underline"},
         		},
         	},
             coc_nvim = false,

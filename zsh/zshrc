@@ -82,7 +82,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 
 # Old prompt
-#PROMPT='%F{78}%(!.#. )%f '
+# PROMPT='%F{78}%(!.#. )%f '
 #PROMPT='%B%F{5}%1~ %f%b%F{10}%(!.#. )%f '
 #PROMPT='%B%F{10}%1~ %f%b%F{31}%(!.#.λ:)%f '
 #PROMPT='%B%F{blue}%(!.#.λ)%f %F{10}|%2~|%b%f '

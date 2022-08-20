@@ -2,7 +2,8 @@
 continuation_prompt = "[](bright-black) "
 
 # format = """$all"""
-right_format = """$cmd_duration$git_status$git_branch$battery""" 
+right_format = """$cmd_duration$git_status$git_branch$battery"""
+# format = """$cmd_duration$git_status$git_branch$battery$all""" 
 
 # Imprimir una nueva línea al inicio del prompt
 add_newline = false
@@ -47,7 +48,7 @@ style = "bold green"
 [directory]
 format = "[ $path]($style)[$read_only]($read_only_style) "
 style = "bold #e39400"
-truncation_length = 2
+truncation_length = 1
 truncation_symbol = "…/"
 
 [memory_usage]
