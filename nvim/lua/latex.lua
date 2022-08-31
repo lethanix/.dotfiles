@@ -15,13 +15,14 @@ nvim_lsp.texlab.setup{
 	settings = {
 		texlab = {
 			build = {
-				executable = "tectonic",
-				args = {
-					"-X",
-					"build",
-					"--keep-logs",
-					"--keep-intermediates",
-				},
+				executable = "lualatex",
+				-- executable = "tectonic",
+				-- args = {
+				-- 	"-X",
+				-- 	"build",
+				-- 	"--keep-logs",
+				-- 	"--keep-intermediates",
+				-- },
 			    onSave = true,
 			}
 		},

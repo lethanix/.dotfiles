@@ -19,10 +19,11 @@ cmp.setup {
         ['<C-e>'] = cmp.mapping.close(),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 
-        -- ['<CR>'] = cmp.mapping.confirm {
-        --       behavior = cmp.ConfirmBehavior.Replace,
-        --       select = true,
-        -- },
+        ['<CR>'] = cmp.mapping.confirm {
+              -- behavior = cmp.ConfirmBehavior.Replace,
+              select = true,
+        },
+	['<CR>'] = cmp.mapping.confirm({ select = true }),
 
         ["<C-CR>"] = cmp.mapping(
             cmp.mapping.confirm {
@@ -64,8 +65,8 @@ cmp.setup {
     --      max_item_count
     --      (more?)
     sources = {
-        { name = "nvim_lua" },
         { name = "nvim_lsp" },
+        { name = "nvim_lua" },
         { name = "path" },
         { name = "luasnip" },
         { name = "buffer", keyword_length = 5 },

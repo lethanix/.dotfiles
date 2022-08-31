@@ -2,7 +2,7 @@
 continuation_prompt = "[](bright-black) "
 
 # format = """$all"""
-right_format = """$cmd_duration$git_status$git_branch$battery"""
+# right_format = """$cmd_duration$git_status$git_branch$battery"""
 # format = """$cmd_duration$git_status$git_branch$battery$all""" 
 
 # Imprimir una nueva línea al inicio del prompt
