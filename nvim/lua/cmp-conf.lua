@@ -23,7 +23,7 @@ cmp.setup {
               -- behavior = cmp.ConfirmBehavior.Replace,
               select = true,
         },
-	['<CR>'] = cmp.mapping.confirm({ select = true }),
+	    ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
         ["<C-CR>"] = cmp.mapping(
             cmp.mapping.confirm {

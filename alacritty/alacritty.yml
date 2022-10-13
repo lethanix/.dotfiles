@@ -64,7 +64,7 @@ window:
         Alacritty
 
         # Allow terminal applications to change Alacritty's window title.
-    dynamic_title: true
+    dynamic_title: false
 
 scrolling:
     # maximum number of lines in the scrollback buffer.
@@ -73,7 +73,7 @@ scrolling:
 
     # Number of lines the viewport will move for every line scrolled when
     # scrollback is enabled (history > 0).
-    multiplier: 4
+    multiplier: 3
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
@@ -122,14 +122,14 @@ mouse:
 
 bell:
     animation: EaseOutExpo
-    color: "0x332244"
+    color: '#ffffff'
     duration: 10
 
 selection:
     semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
     # When set to `true`, selected text will be copied to the primary clipboard.
-    save_to_clipboard: false
+    save_to_clipboard: true
 
 cursor:
     # Cursor style

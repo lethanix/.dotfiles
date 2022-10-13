@@ -1,36 +1,40 @@
-require("colorscheme-conf")
-require("settings") -- Load general settings
-require("plugins")  -- Load plugins
+if vim.g.vscode then 
 
--- Load general mappings
-require("mappings")
+else
+    require("colorscheme-conf")
+    require("settings") -- Load general settings
+    require("plugins")  -- Load plugins
 
--- Load plugins settings
-require("comments")
-require("scroll")
-require("dashboard")
-require("treesitter")
-require("autopairs-conf")
-require("indent")
-require("statusline")
-require('telescope-config')
-require('nvim-ts-rainbow')
+    -- Load general mappings
+    require("mappings")
 
--- Load LSP settings
-require("go")
-require("rust")
-require("swift")
-require("lua-lsp")
-require("bash-lsp")
-require("zig-server")
-require("julia-server")
-require("type-javascript")
-require("deno-lsp")
-require("html-lsp")
-require("haskell-lsp")
-require("latex")
+    -- Load plugins settings
+    require("comments")
+    require("scroll")
+    require("dashboard")
+    require("treesitter")
+    require("autopairs-conf")
+    require("indent")
+    require("statusline")
+    require('telescope-config')
+    require('nvim-ts-rainbow')
 
--- Load a high-performance color highlighter for Neovim
--- NOTE: You should add this line after/below where your
--- plugins are setup.
-require("colors-preview")
+    -- Load LSP settings
+    require("go")
+    require("rust")
+    require("swift")
+    require("lua-lsp")
+    require("bash-lsp")
+    require("zig-server")
+    require("julia-server")
+    require("type-javascript")
+    require("deno-lsp")
+    require("html-lsp")
+    require("haskell-lsp")
+    require("latex")
+
+    -- Load a high-performance color highlighter for Neovim
+    -- NOTE: You should add this line after/below where your
+    -- plugins are setup.
+    require("colors-preview")
+end 

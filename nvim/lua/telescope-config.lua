@@ -1,7 +1,7 @@
 -- Find files using Telescope command-line sugar.
 local map = vim.api.nvim_set_keymap
 
-options = { noremap = true, silent = true }
+local options = { noremap = true, silent = true }
 map('n', '<leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<cr>]], options)
 map('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<cr>]], options)
 map('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<cr>]], options)

@@ -34,7 +34,7 @@ export PATH=$PATH:/usr/local/lib/node_modules
 export PATH=$PATH:$HOME/Documents/Rust/DataWarrior/target/release
 
 #Julia lang
-export PATH=$PATH:/Applications/Julia-1.7.app/Contents/Resources/julia/bin
+export PATH=$PATH:/Applications/Julia-1.8.app/Contents/Resources/julia/bin
 
 # Aseprite bin
 export PATH=$PATH:$HOME/aseprite/build/bin/

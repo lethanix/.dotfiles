@@ -18,6 +18,8 @@ g.neovide_cursor_animation_length = 0.15
 g.neovide_cursor_antialiasing = true
 g.neovide_no_idle = false
 
+g.neovide_underline_automatic_scaling = true
+
 -- **************************************
 -- Color scheme
 -- **************************************
@@ -30,15 +32,17 @@ o.termguicolors = true
 -- local colorsch = "dracula"
 -- local colorsch = "onedark"
 local colorsch = "catppuccin"
--- local colorsch = "gotham" cmd 'let ayucolor = "mirage"'
+-- local colorsch = "gotham"
+
+cmd 'let ayucolor = "mirage"'
 -- **************************************
 -- Font
 -- **************************************
--- o.guifont="SpaceMono Nerd Font:h13"
+-- o.guifont="SpaceMono Nerd Font:h15"
 -- o.guifont="DMMono Nerd Font:h14"
 -- o.guifont="Lilex Nerd Font:h13"
-o.guifont="JetBrainsMono Nerd Font Mono:h17"
---o.guifont="FiraCode Nerd Font:h13"
+o.guifont="JetBrainsMono_Nerd_Font:h15"
+-- o.guifont="FiraCode Nerd Font:h15"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
 elseif "catppuccin" == colorsch then
@@ -131,7 +135,7 @@ elseif "material"  == colorsch  then
     -- g.material_style = "palenight"
     require('material-conf')
     cmd [[colorscheme material]]
-    --require('material').set()
+    -- require('material').set()
 elseif "kanagawa" == colorsch then
     require('kanagawa').setup({
         undercurl = true,           -- enable undercurls
@@ -159,7 +163,7 @@ elseif "onedark" then
     require('onedark').setup {
         -- Default theme style. Choose between 'dark', 'darker', 'cool',
         -- 'deep', 'warm', 'warmer' and 'light'
-        style = 'deep',
+        style = 'darker',
         transparent = false,  -- Show/hide background
         term_colors = false, -- Change terminal color as per the selected theme style
         ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
