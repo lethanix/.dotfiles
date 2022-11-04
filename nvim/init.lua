@@ -1,5 +1,8 @@
 if vim.g.vscode then 
-
+    require("settings") -- Load general settings
+    require("comments")
+    -- Load general mappings
+    require("mappings")
 else
     require("colorscheme-conf")
     require("settings") -- Load general settings
@@ -21,13 +24,15 @@ else
 
     -- Load LSP settings
     require("go")
+    require("python-lsp")
+    require("java-lsp")
     require("rust")
     require("swift")
     require("lua-lsp")
     require("bash-lsp")
     require("zig-server")
     require("julia-server")
-    require("type-javascript")
+    -- require("type-javascript")
     require("deno-lsp")
     require("html-lsp")
     require("haskell-lsp")

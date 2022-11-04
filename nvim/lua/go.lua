@@ -4,7 +4,6 @@ util = require "lspconfig/util"
 local on_attach = function()
     require("cmp-conf")
     require("lsp-conf")
-    vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 200)]]
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

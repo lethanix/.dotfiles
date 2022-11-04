@@ -104,6 +104,8 @@ return require('packer').startup(function()
 
     use { 'ziglang/zig.vim' }
 
+    use {'mfussenegger/nvim-jdtls'}
+
     -- Brackets completition
     use { 'windwp/nvim-autopairs' }
 

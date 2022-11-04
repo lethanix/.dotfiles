@@ -1,12 +1,12 @@
 # A continuation prompt that displays two filled in arrows
 continuation_prompt = "[](bright-black) "
 
-# format = """$all"""
+format = """$all"""
 # right_format = """$cmd_duration$git_status$git_branch$battery"""
 # format = """$cmd_duration$git_status$git_branch$battery$all""" 
 
 # Imprimir una nueva línea al inicio del prompt
-add_newline = false
+add_newline = true
 
 # Reemplaza el símbolo "❯" por "➜" del prompt
 [character] 
@@ -21,7 +21,7 @@ vicmd_symbol = "[ ](bold green)"
 disabled = true
 
 [line_break]
-disabled = true
+disabled = false
 
 [cmd_duration]
 disabled = false

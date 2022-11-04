@@ -219,67 +219,17 @@ keybinds:
           key: [ Alt: ']',]
 
 # theme: dracula
-theme: catppuccin
+theme: catppuccin-mocha
 themes:
-  dracula:
-    # From https://github.com/dracula/zellij
-    bg: [40, 42, 54]
-    red: [255, 85, 85]
-    green: [80, 250, 123]
-    yellow: [241, 250, 140]
-    blue: [98, 114, 164]
-    magenta: [255, 121, 198]
-    orange: [255, 184, 108]
-    fg: [248, 248, 242]
-    cyan: [139, 233, 253]
-    black: [0, 0, 0]
-    white: [255, 255, 255]
-  catppuccin:
-    bg:
-    - 48
-    - 45
-    - 65
-    black:
-    - 22
-    - 19
-    - 32
-    blue:
-    - 150
-    - 205
-    - 251
-    cyan:
-    - 26
-    - 24
-    - 38
-    fg:
-    - 217
-    - 224
-    - 238
-    gray:
-    - 87
-    - 82
-    - 104
-    green:
-    - 171
-    - 233
-    - 179
-    magenta:
-    - 245
-    - 194
-    - 231
-    orange:
-    - 248
-    - 189
-    - 150
-    red:
-    - 242
-    - 143
-    - 173
-    white:
-    - 217
-    - 224
-    - 238
-    yellow:
-    - 250
-    - 227
-    - 176
+  catppuccin-mocha:
+      bg: "#585b70" # Surface2
+      fg: "#cdd6f4"
+      red: "#f38ba8"
+      green: "#a6e3a1"
+      blue: "#89b4fa"
+      yellow: "#f9e2af"
+      magenta: "#f5c2e7" # Pink
+      orange: "#fab387" # Peach
+      cyan: "#89dceb" # Sky
+      black: "#181825" # Mantle
+      white: "#cdd6f4"

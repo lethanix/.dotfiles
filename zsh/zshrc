@@ -46,8 +46,9 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 # Using bash from brew
 alias bash="/usr/local/bin/bash"
 
-# Using python 3
-alias python="python3"
+# Using python 3.11
+alias python3="python3.11"
+alias python="python3.11"
 
 # Neovide opening with some flags
 # alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"

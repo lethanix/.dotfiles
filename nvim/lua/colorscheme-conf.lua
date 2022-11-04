@@ -6,19 +6,19 @@ local g = vim.g      -- a table to access global variables
 -- **************************************
 -- Neovide specific
 -- **************************************
-g.neovide_transparency = 1
--- g.neovide_transparency = 0.93
-
-g.neovide_floating_blur = true
-g.neovide_floating_opacity = 0.87
-
-g.neovide_window_floating_opacity = 0.87
-g.neovide_remember_window_size = false
-g.neovide_cursor_animation_length = 0.15
-g.neovide_cursor_antialiasing = true
-g.neovide_no_idle = false
-
-g.neovide_underline_automatic_scaling = true
+if vim.g.neovide then
+    g.neovide_transparency = 1
+    -- g.neovide_transparency = 0.93
+    g.neovide_floating_blur = true
+    g.neovide_floating_opacity = 0.87
+    g.neovide_window_floating_opacity = 0.87
+    g.neovide_remember_window_size = false
+    g.neovide_cursor_animation_length = 0.15
+    g.neovide_cursor_antialiasing = true
+    g.neovide_no_idle = false
+    g.neovide_underline_automatic_scaling = false
+    g.neovide_scale_factor = 1.5
+end
 
 -- **************************************
 -- Color scheme
@@ -28,21 +28,18 @@ cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
 
 -- local colorsch = "kanagawa"
--- local colorsch = "material"
+local colorsch = "material"
 -- local colorsch = "dracula"
 -- local colorsch = "onedark"
-local colorsch = "catppuccin"
+-- local colorsch = "catppuccin"
 -- local colorsch = "gotham"
 
 cmd 'let ayucolor = "mirage"'
 -- **************************************
 -- Font
 -- **************************************
--- o.guifont="SpaceMono Nerd Font:h15"
--- o.guifont="DMMono Nerd Font:h14"
--- o.guifont="Lilex Nerd Font:h13"
-o.guifont="JetBrainsMono_Nerd_Font:h15"
--- o.guifont="FiraCode Nerd Font:h15"
+-- o.guifont="JetBrainsMono Nerd Font:h17"
+o.guifont="JetBrainsMono NF:h13"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
 elseif "catppuccin" == colorsch then
@@ -131,11 +128,12 @@ elseif "catppuccin" == colorsch then
     g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
     cmd [[colorscheme catppuccin]]
 elseif "material"  == colorsch  then
+    require('material-conf')
+
     g.material_style = "deep ocean"
     -- g.material_style = "palenight"
-    require('material-conf')
+
     cmd [[colorscheme material]]
-    -- require('material').set()
 elseif "kanagawa" == colorsch then
     require('kanagawa').setup({
         undercurl = true,           -- enable undercurls
