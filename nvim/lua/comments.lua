@@ -12,15 +12,17 @@ require('Comment').setup({
     ---Could be a regex string or a function that returns a regex string.
     ---Example: Use '^$' to ignore empty lines
     ---@type string|fun():string
-    ignore = nil,
+    ignore = '^$',
 
     ---LHS of toggle mappings in NORMAL + VISUAL mode
     ---@type table
     toggler = {
-        ---Line-comment toggle keymap
+        -- -Line-comment toggle keymap
         line = 'gcc',
+        -- line = '<D-/>', -- Command + /
         ---Block-comment toggle keymap
         block = 'gbc',
+        -- block = 'g<D-/>',
     },
 
     ---LHS of operator-pending mappings in NORMAL + VISUAL mode
@@ -28,7 +30,9 @@ require('Comment').setup({
     opleader = {
         ---Line-comment keymap
         line = 'gc',
+        -- line = '<D-/>',
         ---Block-comment keymap
+        -- block = 'g<D-/>',
         block = 'gb',
     },
 
@@ -40,7 +44,7 @@ require('Comment').setup({
         ---Add comment on the line below
         below = 'gco',
         ---Add comment at the end of line
-        eol = 'gcA',
+        eol = 'gca',
     },
 
     ---Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode

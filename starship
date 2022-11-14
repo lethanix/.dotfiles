@@ -6,7 +6,7 @@ format = """$all"""
 # format = """$cmd_duration$git_status$git_branch$battery$all""" 
 
 # Imprimir una nueva línea al inicio del prompt
-add_newline = true
+add_newline = false
 
 # Reemplaza el símbolo "❯" por "➜" del prompt
 [character] 

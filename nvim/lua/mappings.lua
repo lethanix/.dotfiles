@@ -40,10 +40,17 @@ map('n', '<Leader>h', '<C-W><C-H>')
 map('n', '<Leader>l', '<C-W><C-L>')
 
 -- **************************************
+-- Nicer scroll/jump navigation
+-- **************************************
+map('n', '<C-u>', '<C-u>zz')
+map('n', '<C-d>', '<C-d>zz')
+map('n', 'n', 'nzz')
+
+-- **************************************
 -- Easier buffer navigation
 -- **************************************
-map('n', ']b', '<cmd>bn<cr>')
-map('n', '[b', '<cmd>bp<cr>')
+map('n', '<D-]>', '<cmd>bn<cr>')
+map('n', '<D-[>', '<cmd>bp<cr>')
 
 -- **************************************
 -- Easier tab navigation

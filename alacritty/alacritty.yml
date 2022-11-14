@@ -126,7 +126,7 @@ bell:
     duration: 10
 
 selection:
-    semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+    # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
     # When set to `true`, selected text will be copied to the primary clipboard.
     save_to_clipboard: true
@@ -439,6 +439,8 @@ key_bindings:
   - { key: 24, mods: Alt, chars: "\x1b+"}
   - { key: 30, mods: Alt, chars: "\x1b]" } # cierra corchetes `]`
   - { key: 33, mods: Alt, chars: "\x1b[" } # abre corchetes `[`
+  - { key: 30, mods: Control, chars: "\x1b]" } # cierra corchetes `]`
+  - { key: 33, mods: Control, chars: "\x1b[" } # abre corchetes `[`
   
   # https://stackoverflow.com/questions/16359878/how-to-map-shift-enter
   - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
@@ -451,7 +453,8 @@ key_bindings:
     command:
       {
         program: "zsh",
-        args: ["-c", "open -a VimR $HOME/.config/alacritty/alacritty.yml"],
+        # args: ["-c", "open -a VimR $HOME/.config/alacritty/alacritty.yml"],
+        args: ["-c", "neovide $HOME/.dotfiles/alacritty/alacritty.yml"],
       },
     }
   - { key: N, mods: Command, action: SpawnNewInstance }
@@ -467,8 +470,8 @@ key_bindings:
   #    - { key: Key6, mods: Alt, chars: "¬" } # negación en lógica `¬`
   #    - { key: 39, mods: Alt, chars: "{" } # abre llaves `{`
   #    - { key: 42, mods: Alt, chars: "}" } # cierra llaves `}`
-  #    - { key: 33, mods: Alt, chars: "[" } # abre corchetes `[`
-  #    - { key: 30, mods: Alt, chars: "]" } # cierra corchetes `]`
+  # - { key: 30, mods: Alt, chars: "]" } # cierra corchetes `]`
+  # - { key: 33, mods: Alt, chars: "[" } # abre corchetes `[`
 
   # Others
   - { key: Return, mods: Command, action: ToggleFullscreen }

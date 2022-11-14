@@ -41,7 +41,10 @@ keymap.set('n', '<leader>so', require('telescope.builtin').lsp_document_symbols,
 
 -- Format file commands and keymaps
 vim.api.nvim_create_user_command("Format", function ()
-    vim.lsp.buf.format{ async = true }
+    vim.lsp.buf.format{
+	async = true,
+	filter = function(client) return client.name ~= "pyright" end
+    }
 end, {})
 
 keymap.set('n', '<leader>df', function ()

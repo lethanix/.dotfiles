@@ -15,9 +15,6 @@ return require('packer').startup(function()
     --use 'sunjon/shade.nvim'
     --use 'blueyed/vim-diminactive'
 
-    -- Smooth scrholling
-    use 'karb94/neoscroll.nvim'
-
     -- Dashboard/ greeter
     use { 'goolord/alpha-nvim', }
 
@@ -103,6 +100,8 @@ return require('packer').startup(function()
     use { 'nvim-lua/lsp_extensions.nvim' }
 
     use { 'ziglang/zig.vim' }
+    -- Zellij configuration using kdl
+    use { 'imsnif/kdl.vim' }
 
     use {'mfussenegger/nvim-jdtls'}
 

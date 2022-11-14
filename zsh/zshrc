@@ -47,8 +47,8 @@ export PATH=$PATH:$HOME/aseprite/build/bin/
 alias bash="/usr/local/bin/bash"
 
 # Using python 3.11
-alias python3="python3.11"
-alias python="python3.11"
+# alias python3="python3.11"
+# alias python="python3.11"
 
 # Neovide opening with some flags
 # alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"
@@ -101,3 +101,6 @@ eval "$(starship init zsh)"
 alias luamake=/Users/lethanix/lua-language-server/3rd/luamake/luamake
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# Autostart Zellij session on shell creation
+eval "$(zellij setup --generate-auto-start zsh)"

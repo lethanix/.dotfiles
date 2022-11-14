@@ -17,7 +17,9 @@ if vim.g.neovide then
     g.neovide_cursor_antialiasing = true
     g.neovide_no_idle = false
     g.neovide_underline_automatic_scaling = false
-    g.neovide_scale_factor = 1.5
+    g.neovide_scale_factor = 1.3
+    g.neovide_font_hinting = 'Full'
+    g.neovide_font_edging = 'AntiAlias'
 end
 
 -- **************************************
@@ -39,7 +41,7 @@ cmd 'let ayucolor = "mirage"'
 -- Font
 -- **************************************
 -- o.guifont="JetBrainsMono Nerd Font:h17"
-o.guifont="JetBrainsMono NF:h13"
+o.guifont="JetBrainsMono NF:h15"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
 elseif "catppuccin" == colorsch then

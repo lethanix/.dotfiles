@@ -13,7 +13,6 @@ else
 
     -- Load plugins settings
     require("comments")
-    require("scroll")
     require("dashboard")
     require("treesitter")
     require("autopairs-conf")
