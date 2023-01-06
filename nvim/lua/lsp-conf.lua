@@ -38,10 +38,9 @@ vim.api.nvim_buf_create_user_command(0, "Format", function()
     }
 end, { desc = 'Format current buffer with LSP' })
 
-vim.keymap.set('n', '<leader>df', function()
+vim.keymap.set('n', '<leader>F', function()
     vim.lsp.buf.format { async = true }
-end)
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format { async=true }]]
+end, { desc = '[F]ormat file' })
 
 -- Use LSP as the handler for formatexpr.
 --    See `:help formatexpr` for more information.
