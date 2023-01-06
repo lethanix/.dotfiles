@@ -2,11 +2,19 @@
 local map = vim.api.nvim_set_keymap
 
 local options = { noremap = true, silent = true }
+map('n', '<leader>sd', [[<Cmd>lua require('telescope.builtin').diagnostics()<cr>]], options)
 map('n', '<leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<cr>]], options)
 map('n', '<leader>fg', [[<Cmd>lua require('telescope.builtin').live_grep()<cr>]], options)
 map('n', '<leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<cr>]], options)
 map('n', '<leader>fh', [[<Cmd>lua require('telescope.builtin').help_tags()<cr>]], options)
 map('n', '<leader>tf', [[<Cmd>lua require('telescope.builtin').file_browser()<cr>]], options)
+
+-- Enable telescope fzf native, if installed
+pcall(require('telescope').load_extension, 'fzf')
+
+-- TODO: Create additional configuration using Telescope
+-- You can pass additional configuration to telescope to change theme, layout, etc.
+map('n', '<leader>/', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find( require('telescope.themes').get_dropdown{ winblend = 10, previewer = false, })<cr>]], options)
 
 require('telescope').setup{
   defaults = {

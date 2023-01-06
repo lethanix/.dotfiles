@@ -23,8 +23,8 @@ yabai -m config window_topmost               off
 yabai -m config window_shadow                on
 yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.0
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.75
+yabai -m config active_window_opacity        0.97
+yabai -m config normal_window_opacity        0.80
 yabai -m config window_border                off
 yabai -m config window_border_width          2
 yabai -m config active_window_border_color   0xff8055AA
@@ -54,5 +54,6 @@ yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Craft$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^Affinity$" manage=off
 
 echo "yabai configuration loaded.."

@@ -29,8 +29,9 @@ cmd [[ let &t_8f = "\\<Esc>[38;2;%lu;%lu;%lum" ]]
 cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
 
+local colorsch = "tokyo"
 -- local colorsch = "kanagawa"
-local colorsch = "material"
+-- local colorsch = "material"
 -- local colorsch = "dracula"
 -- local colorsch = "onedark"
 -- local colorsch = "catppuccin"
@@ -156,49 +157,46 @@ elseif "kanagawa" == colorsch then
 
     -- setup must be called before loading
     cmd[[colorscheme kanagawa]]
-
 elseif "gotham" == colorsch then
     cmd [[colorscheme gotham256]]
-elseif "onedark" then
-    require('onedark').setup {
-        -- Default theme style. Choose between 'dark', 'darker', 'cool',
-        -- 'deep', 'warm', 'warmer' and 'light'
-        style = 'darker',
-        transparent = false,  -- Show/hide background
-        term_colors = false, -- Change terminal color as per the selected theme style
-        ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-        -- toggle theme style ---
-        toggle_style_key = '<leader>cs', -- Default keybinding to toggle
-        toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+-- elseif "onedark" then
+--     require('onedark').setup {
+--         -- Default theme style. Choose between 'dark', 'darker', 'cool',
+--         -- 'deep', 'warm', 'warmer' and 'light'
+--         style = 'darker',
+--         transparent = false,  -- Show/hide background
+--         term_colors = false, -- Change terminal color as per the selected theme style
+--         ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+--         -- toggle theme style ---
+--         toggle_style_key = '<leader>cs', -- Default keybinding to toggle
+--         toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
-        -- Change code style ---
-        -- Options are italic, bold, underline, none
-        -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
-        code_style = {
-            comments = 'italic',
-            keywords = 'italic',
-            functions = 'italic',
-            strings = 'underline',
-            variables = 'none'
-        },
+--         -- Change code style ---
+--         -- Options are italic, bold, underline, none
+--         -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+--         code_style = {
+--             comments = 'italic',
+--             keywords = 'italic',
+--             functions = 'italic',
+--             strings = 'underline',
+--             variables = 'none'
+--         },
 
-        -- Custom Highlights --
-        colors = {}, -- Override default colors
-        highlights = {}, -- Override highlight groups
+--         -- Custom Highlights --
+--         colors = {}, -- Override default colors
+--         highlights = {}, -- Override highlight groups
 
-        -- Plugins Config --
-        diagnostics = {
-            darker = true, -- darker colors for diagnostic
-            undercurl = true,   -- use undercurl instead of underline for diagnostics
-            background = true,    -- use background color for virtual text
-        },
-    }
-
-    require('onedark').load()
-    -- cmd [[colorscheme onedark]]
-    
+--         -- Plugins Config --
+--         diagnostics = {
+--             darker = true, -- darker colors for diagnostic
+--             undercurl = true,   -- use undercurl instead of underline for diagnostics
+--             background = true,    -- use background color for virtual text
+--         },
+--     }
+--     require('onedark').load()
+--     -- cmd [[colorscheme onedark]]
 elseif "dracula" == colorsch then
-    o.background = "dark"
+    -- o.background = "dark"
     cmd [[colorscheme dracula]]
 elseif "gruvbox" == colorsch then
     g.gruvbox_contrast_dark = "hard" -- soft, medium or hard
@@ -229,7 +227,12 @@ elseif "ayu" == colorsch  then cmd 'colorscheme ayu'
 elseif "nord" == colorsch  then cmd 'colorscheme nord'
 elseif "srcery" == colorsch  then cmd 'colorscheme srcery'
 elseif "night" == colorsch  then cmd 'colorscheme night-owl'
-elseif "tokyo" == colorsch  then
+elseif "tokyo" == colorsch  then 
+    g.tokyodark_transparent_background = false
+    g.tokyodark_enable_italic_comment = true
+    g.tokyodark_enable_italic = true
+    g.tokyodark_color_gamma = "1.0"
+    cmd 'colorscheme tokyodark'
 elseif "github" == colorsch  then
     require('github-theme').setup({
         themeStyle = "dark_default",

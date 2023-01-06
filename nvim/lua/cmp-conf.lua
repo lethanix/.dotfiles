@@ -20,10 +20,9 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 
         ['<CR>'] = cmp.mapping.confirm {
-              -- behavior = cmp.ConfirmBehavior.Replace,
+              behavior = cmp.ConfirmBehavior.Replace,
               select = true,
         },
-	    ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
         ["<C-CR>"] = cmp.mapping(
             cmp.mapping.confirm {
@@ -108,7 +107,7 @@ cmp.setup {
     formatting = {
         format = lspkind.cmp_format({
         mode = 'symbol', -- show only symbol annotations
-        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
         -- default symbol map
         -- can be either 'default' (requires nerd-fonts font) or
@@ -156,19 +155,3 @@ cmp.setup {
 		entries = "native"
 	}
 }
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline('/', {
---     sources = {
---         { name = 'buffer' }
---     }
--- })
---
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline(':', {
---     sources = cmp.config.sources({
---         { name = 'path' }
---     }, {
---         { name = 'cmdline' }
---     })
--- })

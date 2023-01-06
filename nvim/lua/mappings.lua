@@ -49,8 +49,8 @@ map('n', 'n', 'nzz')
 -- **************************************
 -- Easier buffer navigation
 -- **************************************
-map('n', '<D-]>', '<cmd>bn<cr>')
-map('n', '<D-[>', '<cmd>bp<cr>')
+map('n', ']b', '<cmd>bn<cr>')
+map('n', '[b', '<cmd>bp<cr>')
 
 -- **************************************
 -- Easier tab navigation

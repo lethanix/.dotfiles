@@ -5,7 +5,7 @@ env:
     # each instance of Alacritty. If it is not present, alacritty will
     # check the local terminfo database and use `alacritty` if it is
     # available, otherwise `xterm-256color` is used.
-    TERM: xterm-256color
+    TERM: alacritty
 
 window:
     # Full screen on 13" macbook pro
@@ -89,12 +89,13 @@ import:
   # - ~/.config/alacritty/fonts/caskaydia.yml
 
   # Change the color importing the corresponding yaml file
+  - ~/.config/alacritty/colors/tokyo.yml
   # - ~/.config/alacritty/colors/kanagawa.yml
   # - ~/.config/alacritty/colors/ayumirage.yml
   # - ~/.config/alacritty/colors/dracula.yml
   # - ~/.config/alacritty/colors/one_dark.yml
   # - ~/.config/alacritty/colors/gotham.yml
-  - ~/.config/alacritty/colors/catppuccin.yml
+  # - ~/.config/alacritty/colors/catppuccin.yml
   # - ~/.config/alacritty/colors/gruvbox.yml
   #- ~/.config/alacritty/colors/gruvbox-light.yml
   #- ~/.config/alacritty/colors/gruvbox-light-medium.yml

@@ -60,7 +60,7 @@ export NEOVIDE_FRAME=buttonless
 alias aseprite="nohup aseprite &"
 
 # ls change to exa 
-alias ls="exa --icons -a"
+alias ls="exa --icons"
 alias exa="exa --icons"
 
 alias tree="exa --icons -T"
@@ -103,4 +103,8 @@ alias luamake=/Users/lethanix/lua-language-server/3rd/luamake/luamake
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Autostart Zellij session on shell creation
-eval "$(zellij setup --generate-auto-start zsh)"
+# if [ $TERM = "alacritty" ]
+# then
+#     eval "$(zellij setup --generate-auto-start zsh)"
+# fi
+

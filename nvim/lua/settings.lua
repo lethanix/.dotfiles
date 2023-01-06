@@ -12,6 +12,10 @@ api.nvim_create_autocmd("TextYankPost", {
     group = yankGrp,
 })
 
+-- Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 -- **************************************
 -- Encoding
 -- **************************************
@@ -23,7 +27,6 @@ bo.fileencoding="UTF-8"
 -- **************************************
 wo.number = true
 wo.relativenumber = true
-
 
 -- **************************************
 -- Global status line
@@ -42,6 +45,7 @@ o.showmode = false
 -- wo.colorcolumn = "80"
 --bo.textwidth = 80
 wo.wrap = false
+o.breakindent = true
 
 -- **************************************
 -- Turn on syntax
@@ -69,7 +73,7 @@ bo.softtabstop = 4
 wo.foldmethod = "syntax"
 
 -- **************************************
--- Fixes mouse issues
+-- Enable mouse mode
 -- **************************************
 o.mouse = "a"
 
