@@ -2,7 +2,7 @@ local lspkind = require "lspkind"
 lspkind.init()
 
 local t = function(str)
-	return vim.api.nvim_replace_termcodes(str, true, true, true)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local cmp = require "cmp"
@@ -11,6 +11,17 @@ local str = require("cmp.utils.str")
 local luasnip = require("luasnip")
 
 cmp.setup {
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+
+    window = {
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
+    },
+
     mapping = {
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -20,8 +31,8 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 
         ['<CR>'] = cmp.mapping.confirm {
-              behavior = cmp.ConfirmBehavior.Replace,
-              select = true,
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
         },
 
         ["<C-CR>"] = cmp.mapping(
@@ -35,26 +46,26 @@ cmp.setup {
         ["<Tab>"] = cmp.config.disable,
 
         ["<C-l>"] = cmp.mapping(function(fallback)
-			if luasnip.expand_or_jumpable() then
-				vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
+            if luasnip.expand_or_jumpable() then
+                vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"), "")
+            else
+                fallback()
+            end
+        end, {
+            "i",
+            "s",
+        }),
 
-		["<C-h>"] = cmp.mapping(function(fallback)
-			if luasnip.jumpable(-1) then
-				vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
+        ["<C-h>"] = cmp.mapping(function(fallback)
+            if luasnip.jumpable(-1) then
+                vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
+            else
+                fallback()
+            end
+        end, {
+            "i",
+            "s",
+        }),
     },
 
     -- the order of your sources matter (by default). That gives them priority
@@ -64,11 +75,12 @@ cmp.setup {
     --      max_item_count
     --      (more?)
     sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lua" },
-        { name = "path" },
-        { name = "luasnip" },
-        { name = "buffer", keyword_length = 5 },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip"'},
+        { name = 'nvim_lua' },
+        { name = 'path' },
+        { name = 'cmdline' },
+        { name = 'buffer' }, -- { name = "buffer", keyword_length = 5 },
     },
 
     sorting = {
@@ -98,51 +110,44 @@ cmp.setup {
         },
     },
 
-    snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-        end,
-    },
-
     formatting = {
         format = lspkind.cmp_format({
-        mode = 'symbol', -- show only symbol annotations
-        maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
-        -- default symbol map
-        -- can be either 'default' (requires nerd-fonts font) or
-        -- 'codicons' for codicon preset (requires vscode-codicons font)
-        --
-        -- default: 'default'
-        -- preset = 'codicons',
+            -- default symbol map
+            -- can be either 'default' (requires nerd-fonts font) or
+            -- 'codicons' for codicon preset (requires vscode-codicons font)
+            --
+            -- default: 'default'
+            -- preset = 'codicons',
 
-        -- The function below will be called before any actual modifications from lspkind
-        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-        before = function (entry, vim_item)
-            -- Get the full snippet (and only keep first line)
-			local word = entry:get_insert_text()
-			if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
-				word = vim.lsp.util.parse_snippet(word)
-			end
-			word = str.oneline(word)
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            before = function(entry, vim_item)
+                -- Get the full snippet (and only keep first line)
+                local word = entry:get_insert_text()
+                if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+                    word = vim.lsp.util.parse_snippet(word)
+                end
+                word = str.oneline(word)
 
-			-- concatenates the string
-			-- local max = 50
-			-- if string.len(word) >= max then
-			-- 	local before = string.sub(word, 1, math.floor((max - 3) / 2))
-			-- 	word = before .. "..."
-			-- end
+                -- concatenates the string
+                -- local max = 50
+                -- if string.len(word) >= max then
+                -- 	local before = string.sub(word, 1, math.floor((max - 3) / 2))
+                -- 	word = before .. "..."
+                -- end
 
-			if
-				entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
-				and string.sub(vim_item.abbr, -1, -1) == "~"
-			then
-				word = word .. "~"
-			end
-			vim_item.abbr = word
+                if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+                    and string.sub(vim_item.abbr, -1, -1) == "~"
+                then
+                    word = word .. "~"
+                end
+                vim_item.abbr = word
 
-			return vim_item
-        end
+                return vim_item
+            end
         })
     },
 
@@ -152,6 +157,6 @@ cmp.setup {
     },
 
     view = {
-		entries = "native"
-	}
+        entries = "native"
+    }
 }
