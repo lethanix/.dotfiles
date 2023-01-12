@@ -6,6 +6,9 @@ export PATH="/usr/local/sbin:$PATH"
 # Fixed directory for user specific data
 export PATH=$HOME/.local/bin:$PATH
 
+# Python, pipenv, and others' path
+# export PATH="/Users/lethanix/Library/Python/3.11/bin:$PATH"
+
 # go folder
 export PATH="$HOME/go/bin:$PATH"
 
@@ -49,6 +52,7 @@ alias bash="/usr/local/bin/bash"
 # Using python 3.11
 # alias python3="python3.11"
 # alias python="python3.11"
+# alias pip="pip3"
 
 # Neovide opening with some flags
 # alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"
@@ -102,9 +106,12 @@ alias luamake=/Users/lethanix/lua-language-server/3rd/luamake/luamake
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# Poetry completion
+# fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # Autostart Zellij session on shell creation
 # if [ $TERM = "alacritty" ]
 # then
 #     eval "$(zellij setup --generate-auto-start zsh)"
 # fi
-

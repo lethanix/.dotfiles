@@ -5,6 +5,12 @@ local wo = vim.wo
 local api = vim.api
 -- local cmd = vim.cmd
 
+-- Never less than 8 characters at the edges while scrolling
+vim.opt.scrolloff = 8
+
+-- **************************************
+-- Highlight config
+-- **************************************
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
 api.nvim_create_autocmd("TextYankPost", {
@@ -15,6 +21,9 @@ api.nvim_create_autocmd("TextYankPost", {
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- **************************************
 -- Encoding
@@ -61,10 +70,17 @@ o.clipboard = "unnamedplus"
 -- *****************************************
 -- Tabs using 4 spaces
 -- *****************************************
-bo.expandtab = false
-bo.tabstop = 8
-bo.shiftwidth = 4
+bo.tabstop = 4
 bo.softtabstop = 4
+bo.shiftwidth = 4
+bo.expandtab = true
+vim.opt.smartindent = true
+
+-- *****************************************
+-- No backup
+-- *****************************************
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- **************************************
 -- Folding settings

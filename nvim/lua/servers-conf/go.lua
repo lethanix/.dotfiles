@@ -1,5 +1,5 @@
 local nvim_lsp = require("lspconfig")
-util = require "lspconfig/util"
+local util = require "lspconfig/util"
 
 local on_attach = function()
     require("cmp-conf")
