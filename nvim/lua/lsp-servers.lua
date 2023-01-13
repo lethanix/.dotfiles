@@ -21,6 +21,12 @@ local servers = {
     },
 }
 
+-- on_new_config = function(config, root_dir)
+--     local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
+--     if string.len(env) > 0 then
+--       config.settings.python.pythonPath = env .. '/bin/python'
+--     end
+--   end
 
 -- Setup mason so it can manage external tooling
 require('mason').setup()
@@ -50,6 +56,16 @@ mason_lspconfig.setup_handlers {
         }
     end,
 }
+-- require("lspconfig").pyright.setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     on_new_config = function(config, root_dir)
+--         local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
+--         if string.len(env) > 0 then
+--             config.settings.python.pythonPath = env .. '/bin/python'
+--         end
+--     end
+-- }
 
 -- Setup neovim lua configuration
 require('neodev').setup()

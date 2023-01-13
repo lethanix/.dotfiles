@@ -32,3 +32,6 @@ yabai = "~/.config/yabai"
 
 [skhd.files]
 skhd = "~/.config/skhd"
+
+[tmux.files]
+tmux = "~/.tmux.conf"

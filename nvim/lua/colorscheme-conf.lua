@@ -3,9 +3,13 @@ local o = vim.o
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local g = vim.g      -- a table to access global variables
 
+o.guifont="Lethani JetBrainsMono,JetBrainsMono Nerd Font:h21"
+-- o.guifont="JetBrainsMono NF:h15"
+
 -- **************************************
 -- Neovide specific
 -- **************************************
+
 if vim.g.neovide then
     g.neovide_transparency = 1
     -- g.neovide_transparency = 0.93
@@ -15,11 +19,11 @@ if vim.g.neovide then
     g.neovide_remember_window_size = false
     g.neovide_cursor_animation_length = 0.15
     g.neovide_cursor_antialiasing = true
-    g.neovide_no_idle = false
+    g.neovide_no_idle = true
     g.neovide_underline_automatic_scaling = false
-    g.neovide_scale_factor = 1.3
-    g.neovide_font_hinting = 'Full'
-    g.neovide_font_edging = 'AntiAlias'
+    g.neovide_scale_factor = 1
+    g.neovide_font_hinting = 'Normal'
+    g.neovide_font_edging = 'SubPixelAntiAlias'
 end
 
 -- **************************************
@@ -38,11 +42,6 @@ local colorsch = "tokyo"
 -- local colorsch = "gotham"
 
 cmd 'let ayucolor = "mirage"'
--- **************************************
--- Font
--- **************************************
--- o.guifont="JetBrainsMono Nerd Font:h17"
-o.guifont="JetBrainsMono NF:h15"
 
 if "spaceduck"  == colorsch  then cmd 'colorscheme spaceduck'
 elseif "catppuccin" == colorsch then
