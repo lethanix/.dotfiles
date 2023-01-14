@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
     }
 
     -- Motion plugin
+    use 'ggandor/lightspeed.nvim'
     -- use {
     --     'ggandor/leap.nvim',
     --     config = function ()

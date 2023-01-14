@@ -167,6 +167,11 @@ _G.packer_plugins = {
     path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/kdl.vim",
     url = "https://github.com/imsnif/kdl.vim"
   },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
+    url = "https://github.com/ggandor/lightspeed.nvim"
+  },
   ["lsp_extensions.nvim"] = {
     loaded = true,
     path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
@@ -258,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["poet-v"] = {
-    loaded = true,
-    path = "/Users/lethanix/.local/share/nvim/site/pack/packer/start/poet-v",
-    url = "https://github.com/petobens/poet-v"
   },
   ["popup.nvim"] = {
     loaded = true,
