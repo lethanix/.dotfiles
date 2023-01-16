@@ -50,4 +50,10 @@ shift + alt - n : yabai -m space --create && \
                   yabai -m window --space "${index}" && \
                   yabai -m space --focus "${index}"
 
-cmd - 0x39: skhd -k "hyper - a"
+# Move window to the next/prev space
+shift + cmd - left: yabai -m window --space prev
+shift + cmd - right: yabai -m window --space next
+
+# alt - p : yabai -m window --toggle sticky --toggle topmost --toggle pip
+
+# cmd - 0x39: skhd -k "hyper - a"

@@ -25,7 +25,7 @@ yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        0.97
 yabai -m config normal_window_opacity        0.80
-yabai -m config window_border                off
+yabai -m config window_border                on
 yabai -m config window_border_width          2
 yabai -m config active_window_border_color   0xff8055AA
 yabai -m config normal_window_border_color   0x00555555
@@ -45,6 +45,14 @@ yabai -m config left_padding                 12
 yabai -m config right_padding                12
 yabai -m config window_gap                   06
 
+# yabai -m space --create
+# yabai -m space --create
+yabai -m space 1 --label main
+yabai -m space 2 --label web
+
+# Open apps in custom space
+yabai -m rule --add app="^Firefox$" space="^web"
+
 # float system preferences
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Preferences$" manage=off
@@ -56,4 +64,5 @@ yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Affinity$" manage=off
 
-echo "yabai configuration loaded.."
+
+echo "yabai configuration loaded..."

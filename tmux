@@ -8,11 +8,18 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
-# Prefix r to source tmux config file
+# Prefix + r to source tmux config file
 bind r source-file ~/.tmux.conf
 
+# Split binds config
+unbind %
+bind | split-window -h 
+
+unbind '"'
+bind - split-window -v
+
 # vim-like pane switching
-bind -r ^ last-window
+# bind -r ^ last-window
 bind -r k select-pane -U
 bind -r j select-pane -D
 bind -r h select-pane -L
@@ -22,6 +29,9 @@ bind -r l select-pane -R
 set -g mode-keys vi
 set -g status-keys vi
 
+# Maximize pane
+bind -r m resize-pane -Z
+
 # **************************************
 # Tmux Plugin Manager
 # **************************************
@@ -29,15 +39,15 @@ set -g status-keys vi
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
+set -g @plugin 'tmux-plugins/tmux-resurrect' # persist tmux sessions after computer restart
+set -g @plugin 'tmux-plugins/tmux-continuum' # automatically saves sessions for you every 15 minutes
+
+set -g @resurrect-capture-pane-contents 'on'
+set -g @continuum-restore 'on'
+
 # Theme
 set -g @plugin 'catppuccin/tmux'
 set -g @catppuccin_flavour 'mocha' # or frappe, macchiato, mocha
-
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'github_username/plugin_name#branch'
-# set -g @plugin 'git@github.com:user/plugin'
-# set -g @plugin 'git@bitbucket.com:user/plugin'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
