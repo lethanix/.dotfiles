@@ -6,6 +6,8 @@ export PATH="/usr/local/sbin:$PATH"
 # Fixed directory for user specific data
 export PATH=$HOME/.local/bin:$PATH
 
+export PATH="$HOME/Qt/6.4.2/macos/bin:$PATH"
+
 # Python, pipenv, and others' path
 # export PATH="/Users/lethanix/Library/Python/3.11/bin:$PATH"
 

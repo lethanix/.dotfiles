@@ -49,7 +49,7 @@ elseif "catppuccin" == colorsch then
     -- configure it
     catppuccin.setup({
         dim_inactive = {
-            enabled = true,
+            enabled = false,
             shade = "dark",
             percentage = 0.1,
         },
@@ -74,6 +74,8 @@ elseif "catppuccin" == colorsch then
             operators = {},
         },
         integrations = {
+            fidget = true,
+            mason = true,
             treesitter = true,
             native_lsp = {
                 enabled = true,

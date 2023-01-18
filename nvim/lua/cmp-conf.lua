@@ -30,20 +30,20 @@ cmp.setup {
         ['<C-e>'] = cmp.mapping.close(),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 
-        ['<CR>'] = cmp.mapping.confirm {
+        ['<C-CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
 
-        ["<C-CR>"] = cmp.mapping(
-            cmp.mapping.confirm {
-                behavior = cmp.ConfirmBehavior.Insert,
-                select = true,
-            },
-            { "i", "c" }
-        ),
+        -- ["<CR>"] = cmp.mapping(
+        --     cmp.mapping.confirm {
+        --         behavior = cmp.ConfirmBehavior.Insert,
+        --         select = true,
+        --     },
+        --     { "i", "c" }
+        -- ),
 
-        ["<Tab>"] = cmp.config.disable,
+        -- ["<Tab>"] = cmp.config.disable,
 
         ["<C-l>"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_jumpable() then
@@ -76,11 +76,11 @@ cmp.setup {
     --      (more?)
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'luasnip"'},
+        { name = 'luasnip' },
         { name = 'nvim_lua' },
         { name = 'path' },
-        { name = 'cmdline' },
-        { name = 'buffer' }, -- { name = "buffer", keyword_length = 5 },
+        -- { name = 'cmdline' },
+        { name = 'buffer', keyword_length = 3 }, -- { name = "buffer", keyword_length = 5 },
     },
 
     sorting = {
