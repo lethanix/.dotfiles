@@ -23,58 +23,41 @@ local servers = {
     },
 }
 
--- on_new_config = function(config, root_dir)
---     local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
---     if string.len(env) > 0 then
---       config.settings.python.pythonPath = env .. '/bin/python'
---     end
---   end
-
 -- Setup mason so it can manage external tooling
-require('mason').setup()
+require("mason").setup()
 
 -- Ensure the servers above are installed
-local mason_lspconfig = require 'mason-lspconfig'
+local mason_lspconfig = require("mason-lspconfig")
 
-mason_lspconfig.setup {
+mason_lspconfig.setup({
     ensure_installed = vim.tbl_keys(servers),
-}
+})
 
 local on_attach = function()
-    require('lsp-conf')
-    require('cmp-conf')
-    require('diagnostic-conf')
+    require("lsp-conf")
+    require("cmp-conf")
+    require("diagnostic-conf")
 end
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-mason_lspconfig.setup_handlers {
+mason_lspconfig.setup_handlers({
     function(server_name)
-        require('lspconfig')[server_name].setup {
+        require("lspconfig")[server_name].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             settings = servers[server_name],
-        }
+        })
     end,
-}
--- require("lspconfig").pyright.setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     on_new_config = function(config, root_dir)
---         local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
---         if string.len(env) > 0 then
---             config.settings.python.pythonPath = env .. '/bin/python'
---         end
---     end
--- }
+})
 
 -- Setup neovim lua configuration
-require('neodev').setup()
+require("neodev").setup()
 
 -- Turn on lsp status information
-require('fidget').setup({
+require("fidget").setup({
     window = {
         blend = 0,
-    }
+    },
 })

@@ -9,6 +9,7 @@ else
     require("colorscheme-conf") -- Load nvim theme and colors
 
     -- Load plugins settings
+    require("null")
     require("indent")
     require("comments")
     require("dashboard")
