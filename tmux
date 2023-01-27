@@ -1,5 +1,6 @@
-set-option -ga terminal-overrides ",alacritty:Tc"
-set-option -g default-terminal "alacritty"
+set-option -g default-terminal "tmux-256color"
+set-option -ga terminal-overrides ",*:RGB"
+
 set -s escape-time 0
 set -g base-index 1
 
@@ -20,10 +21,10 @@ bind - split-window -v
 
 # vim-like pane switching
 # bind -r ^ last-window
-bind -r k select-pane -U
-bind -r j select-pane -D
-bind -r h select-pane -L
-bind -r l select-pane -R
+bind k select-pane -U
+bind j select-pane -D
+bind h select-pane -L
+bind l select-pane -R
 
 # vim-like keybinding for copy mode and command prompt
 set -g mode-keys vi

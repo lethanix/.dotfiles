@@ -129,6 +129,7 @@ elseif "catppuccin" == colorsch then
             symbols_outline = true,
         }
     })
+    o.termguicolors = true
     g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
     cmd [[colorscheme catppuccin]]
 elseif "material" == colorsch then
