@@ -39,7 +39,7 @@ window:
     # - none: neither borders nor title bar
     # - transparent: title bar, transparent background and  title bar buttons
     # - buttonless: title bar, transparent background, but no title bar buttons
-    decorations: buttonless
+    decorations: full
 
     #Background opacity
     #
