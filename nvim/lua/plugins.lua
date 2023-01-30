@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'mbbill/undotree'
+
     -- Status line
     use { 'kyazdani42/nvim-web-devicons' }
     use {
@@ -62,17 +64,16 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
-
     -- Color schemes
+    use 'shaunsingh/moonlight.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'rebelot/kanagawa.nvim'
-    use 'whatyouhide/vim-gotham'
-    use 'dracula/vim'
     use 'ayu-theme/ayu-vim'
     use 'pineapplegiant/spaceduck'
     use 'marko-cerovac/material.nvim'
     use 'tiagovla/tokyodark.nvim'
     use 'navarasu/onedark.nvim'
+    use 'folke/tokyonight.nvim'
 
     -- LSP Configuration and Plugins
     use {

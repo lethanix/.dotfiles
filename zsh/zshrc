@@ -1,71 +1,19 @@
 export LANG=en_US.UTF-8
 
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
-
-# Fixed directory for user specific data
-export PATH=$HOME/.local/bin:$PATH
-
-export PATH="$HOME/Qt/6.4.2/macos/bin:$PATH"
-
-# Python, pipenv, and others' path
-# export PATH="/Users/lethanix/Library/Python/3.11/bin:$PATH"
-
 # go folder
 export PATH="$HOME/go/bin:$PATH"
-
-# Zig zls path
-export PATH="$HOME/zls:$PATH"
-
-# Bash scripts folder
-export PATH="$HOME/Documents/Bash/utils:$PATH"
-
-# Indigo (universal molecular toolkit) command line utilities
-export PATH="$HOME/indigo-utils:$PATH"
-
-# Lua lsp
-export PATH="$HOME/lua-language-server/bin/macOS:$PATH"
-
-# Swift lsp (sourcekit-lsp)
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp
-
-# Ripgrep file configuration
-export RIPGREP_CONFIG_PATH=$HOME/.config/.ripgreprc
-
-# NPM installed globally
-export PATH=$PATH:/usr/local/lib/node_modules
-
-# DataWarrior program
-export PATH=$PATH:$HOME/Documents/Rust/DataWarrior/target/release
-
-#Julia lang
-export PATH=$PATH:/Applications/Julia-1.8.app/Contents/Resources/julia/bin
-
-# Aseprite bin
-export PATH=$PATH:$HOME/aseprite/build/bin/
 
 #**************************
 # Tools and aliases
 #**************************
 
-# Using bash from brew
-alias bash="/usr/local/bin/bash"
-
-# Using python 3.11
-# alias python3="python3.11"
-# alias python="python3.11"
-# alias pip="pip3"
-
 # Neovide opening with some flags
 # alias nv="/Applications/Neovide.app/Contents/MacOS/neovide --geometry=119x47"
-alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
+# alias nv="/Applications/Neovide.app/Contents/MacOS/neovide"
 export NEOVIDE_MULTIGRID=true
 export NEOVIDE_FRAME=buttonless
 
-# Aseprite launch
-alias aseprite="nohup aseprite &"
-
-# ls change to exa 
+# ls change to exa
 alias ls="exa --icons"
 alias exa="exa --icons"
 
@@ -73,9 +21,6 @@ alias tree="exa --icons -T"
 
 # cat change to bat
 alias cat="bat"
-
-# Fix usb problem connecting/disconnecting iphone
-alias usbfix="sudo killall -STOP -c usbd"
 
 # cd change to zoxide 
 eval "$(zoxide init zsh)"
@@ -89,7 +34,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 
 # Old prompt
-# PROMPT='%F{78}%(!.#. )%f '
+#PROMPT='%F{78}%(!.#. )%f '
 #PROMPT='%B%F{5}%1~ %f%b%F{10}%(!.#. )%f '
 #PROMPT='%B%F{10}%1~ %f%b%F{31}%(!.#.λ:)%f '
 #PROMPT='%B%F{blue}%(!.#.λ)%f %F{10}|%2~|%b%f '
@@ -104,13 +49,11 @@ eval "$(starship init zsh)"
 # ******************************************
 # ******************************************
 
-alias luamake=/Users/lethanix/lua-language-server/3rd/luamake/luamake
-
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Poetry completion
 # fpath+=~/.zfunc
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 # Autostart Zellij session on shell creation
 # if [ $TERM = "alacritty" ]

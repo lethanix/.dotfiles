@@ -2,6 +2,14 @@
 starship = "~/.config/starship.toml"
 ripgrep = "~/.config/.ripgreprc"
 
+[bash]
+depends = ["shell"]
+
+[bash.files]
+"bash/bashrc" = "~/.bashrc"
+"bash/bash_profile" = "~/.bash_profile"
+"bash/bash_logout" = "~/.bash_logout"
+
 [zsh]
 depends = ["shell"]
 

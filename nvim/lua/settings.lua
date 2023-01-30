@@ -85,8 +85,9 @@ vim.opt.backup = false
 -- **************************************
 -- Folding settings
 -- **************************************
--- wo.foldmethod = "indent"
-wo.foldmethod = "syntax"
+wo.foldlevel = 20
+wo.foldmethod = "expr"
+wo.foldexpr="nvim_treesitter#foldexpr()"
 
 -- **************************************
 -- Enable mouse mode

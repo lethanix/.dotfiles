@@ -6,7 +6,7 @@ else
     require("settings") -- Load general settings
     require("mappings") -- Load general mappings
     require("plugins") -- Load plugins
-    require("colorscheme-conf") -- Load nvim theme and colors
+    require("colorscheme_conf") -- Load nvim theme and colors
 
     -- Load plugins settings
     require("null")
@@ -20,6 +20,10 @@ else
 
     -- Load LSP settings
     require("lsp-servers")
+
+    if vim.g.neovide then
+        require("neovide_conf")
+    end
 
     require("preview-colors") -- Load color highlighter NOTE: add this line after/below where your plugins are setup.
 end
