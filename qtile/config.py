@@ -1,4 +1,6 @@
-from libqtile import bar, layout, widget
+import os
+import subprocess
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -95,11 +97,15 @@ for i in groups:
         ]
     )
 
+lavender = f"#{Flavour.mocha().lavender.hex}"
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.Columns(
         border_focus_stack=["#74c7ec", "#cba6f7"],
-        border_width=4,
+        # border_focus = '#881111'
+        border_focus=lavender,
+        grow_amount=1,
+        margin=[5, 5, 5, 5],
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -199,6 +205,13 @@ reconfigure_screens = True
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
 auto_minimize = True
+
+
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser("~")
+    subprocess.call([home + "/.config/qtile/autostart.sh"])
+
 
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None

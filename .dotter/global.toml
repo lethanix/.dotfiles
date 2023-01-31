@@ -34,3 +34,6 @@ tmux = "~/.tmux.conf"
 
 [qtile.files]
 qtile = "~/.config/qtile"
+
+[picom.files]
+picom = "~/.config/picom"
