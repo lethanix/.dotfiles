@@ -44,8 +44,8 @@ require('lualine').setup { options = {
             'fileformat',
             symbols = {
                 unix = '', -- fedora '' '',
-                dos = '', -- e70f
-                mac = '', -- e711
+                -- dos = '', -- e70f
+                -- mac = '', -- e711
             },
             separator = { right = '' },
         } },
