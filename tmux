@@ -45,6 +45,7 @@ set -g @plugin 'tmux-plugins/tmux-continuum' # automatically saves sessions for 
 
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
+set -g @continuum-save-interval '5' # Save every 5 minutes
 
 # Theme
 set -g @plugin 'catppuccin/tmux'
