@@ -32,6 +32,9 @@ julia-startup = "~/.julia/config/startup.jl"
 [tmux.files]
 tmux = "~/.tmux.conf"
 
+[wpaperd.files]
+wpaperd = "~/.config/wpaperd/"
+
 [qtile.files]
 qtile = "~/.config/qtile"
 

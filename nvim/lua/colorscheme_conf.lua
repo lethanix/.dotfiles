@@ -3,11 +3,11 @@ local o = vim.o
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
 local g = vim.g -- a table to access global variables
 
-o.guifont = "JetBrainsMono Nerd Font:h17"
+o.guifont = "JetBrainsMono Nerd Font:h15"
 
-local theme = "cat"
+local theme = "tokyo"
 local themes = {
-    gh = "github",
+    -- gh = "github",
     duck = "spaceduck",
     moon = "moonlight",
     one_dark = "onedark",

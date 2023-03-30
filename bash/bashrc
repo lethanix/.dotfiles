@@ -1,9 +1,9 @@
 # .bashrc
 
 # Start tmux automatically
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t fedorix || tmux new -s fedorix
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#     tmux attach -t fedorix || tmux new -s fedorix
+# fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -30,12 +30,21 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 # ******************************************
+# Hyprland & Wayland fixes
+# ******************************************
+MOZ_ENABLE_WAYLAND=1
+
+# Neovide waiting for PR to work properly in wayland
+export WINIT_UNIX_BACKEND=x11
+
+# ******************************************
 # Tools and aliases
 # ******************************************
 unset rc
 . "$HOME/.cargo/env"
 
 export GOPATH=$HOME/go
+export PATH="$HOME/go/bin:$PATH"
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 # ls change to exa
@@ -57,6 +66,3 @@ alias cd=z
 # Starship configuration
 export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init bash)"
-
-
-eval "$(gh completion -s bash)"

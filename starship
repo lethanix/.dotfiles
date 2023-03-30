@@ -18,13 +18,13 @@ error_symbol = "[ ](bold red)"
 vicmd_symbol = "[ ](bold green)"
 
 [package]
-disabled = false
+disabled = true
 
 [line_break]
 disabled = false
 
 [cmd_duration]
-disabled = false
+disabled = true
 min_time = 500
 format = "[龍$duration]($style) "
 

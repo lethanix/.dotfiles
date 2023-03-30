@@ -45,11 +45,12 @@ set -g @plugin 'tmux-plugins/tmux-continuum' # automatically saves sessions for 
 
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
-set -g @continuum-save-interval '5' # Save every 5 minutes
+set -g @continuum-save-interval '1' # Save every 5 minutes
 
-# Theme
-set -g @plugin 'catppuccin/tmux'
-set -g @catppuccin_flavour 'mocha' # or frappe, macchiato, mocha
+# Themes
+set -g @plugin 'janoamaral/tokyo-night-tmux'
+# set -g @plugin 'catppuccin/tmux'
+# set -g @catppuccin_flavour 'mocha' # or frappe, macchiato, mocha
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
