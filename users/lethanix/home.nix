@@ -26,6 +26,10 @@
     enable = true;
     pinentryFlavor = "qt";
   };
+  programs.gh = {
+    enable = true;
+    enableGitCredentialHelper = true;
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
