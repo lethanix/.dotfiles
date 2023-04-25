@@ -42,6 +42,7 @@
     pinentry_qt
 
     # Utilities
+    xdg-utils
     hyprpaper
     starship
     neovide
