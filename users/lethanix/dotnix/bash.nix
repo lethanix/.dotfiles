@@ -3,7 +3,7 @@
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      . ~/.dotnix/bashrc
+      . ~/.dotfiles/users/lethanix/dotany/bashrc
     '';
   };
 }

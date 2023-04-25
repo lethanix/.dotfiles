@@ -1,10 +1,10 @@
 { config, pkgs, ... }: {
   imports = [
-    ./hyprland.nix
-    ./neovim.nix
-    ./git.nix
-    ./bash.nix
-    ./tmux.nix
+    ./dotnix/hyprland.nix
+    ./dotnix/neovim.nix
+    ./dotnix/git.nix
+    ./dotnix/bash.nix
+    ./dotnix/tmux.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -35,6 +35,7 @@
     cargo
     gcc
     go
+    gh
 
     git-crypt
     gnupg
@@ -77,14 +78,14 @@
 
     # Alacritty config folder from GitHub repository
     ".config/alacritty".recursive = true;
-    ".config/alacritty".source = ~/.dotnix/alacritty;
+    ".config/alacritty".source = ./dotany/alacritty;
 
     # Neovim config folder
     ".config/nvim".recursive = true;
-    ".config/nvim".source = ~/.dotnix/nvim;
+    ".config/nvim".source = ./dotany/nvim;
 
-    ".config/starship.toml".source = ~/.dotnix/starship.toml;
-    # ".config/tmux.conf".source = ~/.dotnix/tmux.conf;
+    ".config/starship.toml".source = ./dotany/starship.toml;
+    # ".config/tmux.conf".source = ./dotany/tmux.conf;
   };
 
   # You can also manage environment variables but you will have to manually
