@@ -1,5 +1,5 @@
 # A continuation prompt that displays two filled in arrows
-continuation_prompt = "[](bright-black) "
+continuation_prompt = "[](bright-black) "
 
 # format = """$all"""
 # right_format = """$cmd_duration$git_status$git_branch"""
@@ -11,10 +11,11 @@ add_newline = false
 # Reemplaza el símbolo "❯" por "➜" del prompt
 [character] 
 #"[     ]" "[]" "[ ]" "[ ]" 
-success_symbol = "[ ](bold fg:78)"
+success_symbol = "[󰊠 ](bold fg:78)"
+# success_symbol = "[ ](bold fg:78)"
 #error_symbol = "[  🤯 ](bold red)"
 # error_symbol = "[🤯 ](bold red)"
-error_symbol = "[ ](bold red)"
+error_symbol = "[ ](bold red)"
 vicmd_symbol = "[ ](bold green)"
 
 [package]
@@ -26,7 +27,7 @@ disabled = false
 [cmd_duration]
 disabled = true
 min_time = 500
-format = "[龍$duration]($style) "
+format = "[󰄉 $duration]($style) "
 
 [directory]
 format = "[ $path]($style)[$read_only]($read_only_style) "
@@ -38,11 +39,11 @@ truncation_symbol = "…/"
 disabled = false
 threshold = 90
 format = "[|](bold cyan) [$symbol ${ram_pct}]($style) "
-symbol = "﬙"
+symbol = "󰍛"
 style = "bold purple"
 
 [aws]
-symbol = " "
+symbol = "󰸏 "
 
 [rust]
 format = '[$symbol]($style)'

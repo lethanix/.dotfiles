@@ -11,6 +11,7 @@
   # manage.
   home.username = "lethanix";
   home.homeDirectory = "/home/lethanix";
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -31,6 +32,8 @@
     enableGitCredentialHelper = true;
   };
 
+  fonts.fontconfig.enable = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     alacritty
@@ -49,6 +52,8 @@
     xdg-utils
     hyprpaper
     starship
+    # emojione
+    # obinskit
     neovide
     ripgrep
     zoxide
@@ -56,8 +61,9 @@
     bat
     exa
 
+
     # Install Nerd Fonts with a limited number of fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

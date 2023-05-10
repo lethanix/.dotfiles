@@ -3,7 +3,8 @@ local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
 local api = vim.api
--- local cmd = vim.cmd
+--local cmd = vim.cmd
+
 
 -- Never less than 8 characters at the edges while scrolling
 vim.opt.scrolloff = 8

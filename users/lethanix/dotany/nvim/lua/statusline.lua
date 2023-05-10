@@ -1,12 +1,13 @@
 -- Icons to display according to vim.fn.mode
 local nerd_icons = {
-    n = "",
+    -- n = "",
+    n = "󰇥",
     i = "",
-    v = "",
+    v = "󰈈",
     c = " ",
-    [''] = " ",
-    V = " ",
-    no = "",
+    [''] = "󰡫",
+    V = "󱣿",
+    no = "󰇥",
     R = "",
 }
 require('lualine').setup { options = {
