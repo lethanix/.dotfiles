@@ -6,6 +6,7 @@
 local servers = {
     clangd = {},
     cmake = {},
+    jdtls = {},
     gopls = {},
     pyright = {},
     rust_analyzer = {},

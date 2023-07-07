@@ -52,15 +52,14 @@
     xdg-utils
     hyprpaper
     starship
-    # emojione
     # obinskit
     neovide
     ripgrep
     zoxide
+    direnv
     unzip
     bat
     exa
-
 
     # Install Nerd Fonts with a limited number of fonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })

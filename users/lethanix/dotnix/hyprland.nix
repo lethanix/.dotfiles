@@ -49,7 +49,7 @@ in
               kb_options =
               kb_rules =
 
-              follow_mouse = 1
+              follow_mouse = 0
 
               touchpad {
                   natural_scroll = no
@@ -78,7 +78,7 @@ in
 
       decoration {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          active_opacity = 0.8
+          active_opacity = 0.9
           inactive_opacity = 0.55
 
           rounding = 10
@@ -135,8 +135,16 @@ in
 
       # Example windowrule v1
       # windowrule = float, ^(kitty)$
-      windowrule=tile,^(neovide)$
+      windowrule = tile, ^(neovide)$
+      windowrule = workspace 3, ^(neovide)$
+
       # Example windowrule v2
+      # windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*)(YouTube)(.*)$
+
+      windowrulev2 = float, title:^(Picture-in-Picture)$
+      windowrulev2 = pin, title:^(Picture-in-Picture)$
+      # windowrulev2 = opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$
+
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
@@ -145,9 +153,9 @@ in
       $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, T, exec, alacritty
+      bind = $mainMod, T, exec, [workspace 2] alacritty
       bind = $mainMod, K, exec, kitty
-      bind = $mainMod, F, exec, firefox
+      bind = $mainMod, F, exec, [workspace 1] firefox
       bind = $mainMod, W, killactive, 
       bind = $mainMod, M, exit, 
       bind = $mainMod, E, exec, dolphin
