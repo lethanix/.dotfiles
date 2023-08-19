@@ -12,7 +12,7 @@ in
   # Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
 
     extraConfig = ''
       # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -49,7 +49,7 @@ in
               kb_options =
               kb_rules =
 
-              follow_mouse = 0
+              follow_mouse = 1
 
               touchpad {
                   natural_scroll = no
@@ -78,14 +78,16 @@ in
 
       decoration {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          active_opacity = 0.9
-          inactive_opacity = 0.55
+          active_opacity = 0.95
+          inactive_opacity = 0.85
 
           rounding = 10
-          blur = true
-          blur_size = 8
-          blur_passes = 2
-          blur_new_optimizations = on
+          blur {
+              enabled = true
+              size = 8
+              passes = 2
+              new_optimizations = on
+          }
 
           dim_inactive = true
           dim_strength = 0.3
@@ -137,6 +139,7 @@ in
       # windowrule = float, ^(kitty)$
       windowrule = tile, ^(neovide)$
       windowrule = workspace 3, ^(neovide)$
+      windowrule = forceinput, ^(neovide)$
 
       # Example windowrule v2
       # windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*)(YouTube)(.*)$
@@ -153,7 +156,7 @@ in
       $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, T, exec, [workspace 2] alacritty
+      bind = $mainMod, T, exec, [workspace 2; focus] alacritty
       bind = $mainMod, K, exec, kitty
       bind = $mainMod, F, exec, [workspace 1] firefox
       bind = $mainMod, W, killactive, 

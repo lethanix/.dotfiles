@@ -29,7 +29,7 @@
   };
   programs.gh = {
     enable = true;
-    enableGitCredentialHelper = true;
+    gitCredentialHelper.enable = true;
   };
 
   fonts.fontconfig.enable = true;
@@ -49,6 +49,8 @@
     pinentry_qt
 
     # Utilities
+    # protonvpn-cli
+    # protonvpn-gui
     xdg-utils
     hyprpaper
     starship

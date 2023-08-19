@@ -2,11 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -31,6 +32,7 @@
 
   networking.hostName = "nixy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.userControlled.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -69,11 +71,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	neovim
-	kitty
-	firefox
-	catppuccin-gtk # gtk theme. Other: dracula-theme 
-	catppuccin-cursors # gnome3.adwaita-icon-theme default gnome cursors
+    neovim
+    kitty
+    firefox
+    catppuccin-gtk # gtk theme. Other: dracula-theme 
+    catppuccin-cursors # gnome3.adwaita-icon-theme default gnome cursors
   ];
 
   # List services that you want to enable:
@@ -100,14 +102,19 @@
   # **********************************************************************
   # NOTE: Using flake.nix for Hyprland 
 
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+
   # Enable automatic login for the user.
   services.getty.autologinUser = "lethanix";
 
   # NOTE: Start without a login display manager
   programs.bash.loginShellInit = ''
-  	if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        	exec Hyprland
-        fi
+    	if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+          	exec Hyprland
+          fi
   '';
 
   programs.xwayland.enable = true;
@@ -115,17 +122,25 @@
   # Enabling PipeWire
   security.rtkit.enable = true;
   services.pipewire = {
-  	enable = true;
-        alsa.enable = true;
-        pulse.enable = true;
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
   };
-  
+
 
   # **********************************************************************
   # Bluetooth
   # **********************************************************************
-  hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.package = pkgs.bluezFull;
+  hardware.bluetooth.settings = {
+    General = {
+      MultiProfile = "multiple";
+    };
+  };
+
 
   # **********************************************************************
   # NixOS release
