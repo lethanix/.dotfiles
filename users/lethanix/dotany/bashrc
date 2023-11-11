@@ -20,6 +20,9 @@ alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 alias nv="neovide"
 
+export HISTCONTROL="ignoredups:ignorespace:erasedups"
+export HISTIGNORE="history*"
+
 # ls change to exa
 alias ls="exa --icons"
 alias exa="exa --icons"

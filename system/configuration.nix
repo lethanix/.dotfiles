@@ -134,7 +134,7 @@
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.package = pkgs.bluezFull;
+  hardware.bluetooth.package = pkgs.bluez;
   hardware.bluetooth.settings = {
     General = {
       MultiProfile = "multiple";
