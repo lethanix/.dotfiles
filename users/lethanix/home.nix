@@ -63,6 +63,7 @@
     unzip
     bat
     eza
+    fd
 
     # Install Nerd Fonts with a limited number of fonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
