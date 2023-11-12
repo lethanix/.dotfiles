@@ -46,6 +46,6 @@ vim.cmd([[
     autocmd FileType alpha setlocal nofoldenable
 ]])
 
-vim.cmd([[
-    autocmd FileType alpha IndentBlanklineDisable
-]])
+-- vim.cmd([[
+--     autocmd FileType alpha IndentBlanklineDisable
+-- ]])

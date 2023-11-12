@@ -10,7 +10,7 @@ else
 
     -- Load plugins settings
     require("null")
-    require("indent")
+    -- require("indent")
     require("comments")
     require("dashboard")
     require("treesitter")
