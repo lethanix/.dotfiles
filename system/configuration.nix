@@ -59,6 +59,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lethanix = {
     isNormalUser = true;
+    home = "/home/lethanix";
     extraGroups = [ "networkmanager" "wheel" ]; # Enable 'sudo' for the user
   };
 
@@ -153,4 +154,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
 
+  system.autoUpgrade.enable = true;
 }
