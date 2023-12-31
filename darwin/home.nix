@@ -1,6 +1,6 @@
 { pkgs, shared, ... }: {
   imports = [
-    ./shared/nvim/neovim.nix
+    ../shared/nvim/neovim.nix
     #./dotnix/git.nix
     #./dotnix/bash.nix
     #./dotnix/tmux.nix
@@ -13,7 +13,7 @@
     packages = with pkgs; [ 
    	ripgrep
 	fd
-	neovim 
+	(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
   programs.home-manager.enable = true;
@@ -40,7 +40,6 @@
     # ".config/alacritty".recursive = true;
     # ".config/alacritty".source = ./dotany/alacritty;
  
-    ".shared" = { source = ./shared; recursive = true; };
     # Neovim config folder
     ".config/nvim".recursive = true;
     ".config/nvim".source = ../shared/nvim;
