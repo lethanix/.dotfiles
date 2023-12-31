@@ -12,7 +12,10 @@
 		in
   {
 
-    packages.hello = pkgs.hello;
+    packages.hello = [
+	pkgs.hello
+	pkgs.neovim
+    ];
 
 
   });
