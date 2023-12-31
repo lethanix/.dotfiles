@@ -11,9 +11,25 @@
     username = "lethani";
     homeDirectory = "/Users/lethani";
     packages = with pkgs; [ 
-   	ripgrep
-	fd
-	(nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      alacritty
+      nodejs
+      rustc
+      cargo
+      go
+      gh
+
+      # Utilities
+      starship
+      # neovide
+      ripgrep
+      zoxide
+      direnv
+      unzip
+      bat
+      eza
+      fd
+
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
   programs.home-manager.enable = true;
