@@ -53,8 +53,8 @@
     # '';
 
     # Alacritty config folder from GitHub repository
-    # ".config/alacritty".recursive = true;
-    # ".config/alacritty".source = ./dotany/alacritty;
+    ".config/alacritty".recursive = true;
+    ".config/alacritty".source = ../shared/alacritty;
  
     # Neovim config folder
     ".config/nvim".recursive = true;
