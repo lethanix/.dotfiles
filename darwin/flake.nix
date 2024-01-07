@@ -16,16 +16,17 @@
         username = "lethani";
         pkgs = nixpkgs.legacyPackages.${system};
       in
-      with pkgs;
+      # with pkgs;
       {
-        homeConfigurations.${username} = {
-          "lethani" = home-manager.lib.homeManagerConfiguration {
-            inherit system username pkgs;
+        homeConfigurations = {
+          ${username} = home-manager.lib.homeManagerConfiguration {
+            inherit username pkgs;
             # darwin is the macOS kernel and aarch64 means ARM, i.e. apple silicon
             # pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+            # pkgs = nixpkgs.legacyPackages.${system};
+            system = "aarch64-darwin";
             modules = [ ./home.nix ];
           };
         };
-
       });
 }

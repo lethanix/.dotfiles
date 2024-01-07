@@ -10,7 +10,7 @@
     stateVersion = "23.11";
     username = "lethani";
     homeDirectory = "/Users/lethani";
-    packages = with pkgs; [ 
+    packages = with pkgs; [
       alacritty
       nodejs
       rustc
@@ -50,7 +50,7 @@
     # Alacritty config folder from GitHub repository
     ".config/alacritty".recursive = true;
     ".config/alacritty".source = ../shared/alacritty;
- 
+
     # Neovim config folder
     ".config/nvim".recursive = true;
     ".config/nvim".source = ../shared/nvim;
