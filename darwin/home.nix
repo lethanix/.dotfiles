@@ -1,4 +1,9 @@
-{ pkgs, shared, ... }: {
+{ pkgs, system, ... }:
+let
+  pkgs = nixpkgs.legacyPackages.${system};
+in
+{
+  inherit pkgs;
   imports = [
     ../shared/nvim/neovim.nix
     ../shared/bash/bash.nix
