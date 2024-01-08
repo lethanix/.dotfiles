@@ -22,11 +22,13 @@
 
       # Utilities
       starship
-      # neovide
+      xcbuild # Add to fix neovide build
+      neovide
       ripgrep
       zoxide
       direnv
       unzip
+      bash
       bat
       eza
       fd
