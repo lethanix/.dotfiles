@@ -7,6 +7,11 @@
     #./dotnix/tmux.nix
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnsupportedSystem = true;
+  };
+
   # This is required information for home-manager to do its job
   home = {
     stateVersion = "23.11";
@@ -22,7 +27,6 @@
 
       # Utilities
       starship
-      xcbuild # Add to fix neovide build
       neovide
       ripgrep
       zoxide

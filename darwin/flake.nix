@@ -2,7 +2,7 @@
   description = "macOS flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # 	flake-utils.url = "flake-utils";
     home-manager = {
       url = "home-manager";
