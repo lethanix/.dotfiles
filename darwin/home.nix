@@ -31,6 +31,9 @@
       eza
       fd
 
+      # macOS
+      iina
+
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
