@@ -77,6 +77,8 @@
     firefox
     catppuccin-gtk # gtk theme. Other: dracula-theme 
     catppuccin-cursors # gnome3.adwaita-icon-theme default gnome cursors
+    wireplumber
+    obs-studio
   ];
 
   # List services that you want to enable:
@@ -126,6 +128,11 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
   };
 
 

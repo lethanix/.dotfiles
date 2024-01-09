@@ -33,7 +33,8 @@
     gitCredentialHelper.enable = true;
   };
 
-  fonts.fontconfig.enable = true;
+  # fonts.enableDefaultPackages = true;
+  # fonts.fontconfig.enable = true;
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
