@@ -32,7 +32,7 @@ in
 
       # Some default env vars.
       env = XCURSOR_SIZE,24
-      env = XCURSOR_THEME,Catppuccin
+      # env = XCURSOR_THEME,Catppuccin
       env = LIBVA_DRIVER_NAME,nvidia
       env = XDG_SESSION_TYPE,wayland
       env = GBM_BACKEND,nvidia-drm
@@ -40,7 +40,7 @@ in
       env = WLR_NO_HARDWARE_CURSORS,1
 
       # Some apps wont render, i.e. neovide
-      # env = WAYLAND_DISPLAY,1
+      env = WAYLAND_DISPLAY,1
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input {

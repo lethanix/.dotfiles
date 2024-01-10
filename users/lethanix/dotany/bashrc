@@ -8,7 +8,7 @@
 # ******************************************
 # Hyprland & Wayland fixes
 # ******************************************
-# MOZ_ENABLE_WAYLAND=1
+export MOZ_ENABLE_WAYLAND=1
 
 # Some apps wont render, i.e. neovide
 export WAYLAND_DISPLAY=1
@@ -23,11 +23,11 @@ alias nv="neovide"
 export HISTCONTROL="ignoredups:ignorespace:erasedups"
 export HISTIGNORE="history*"
 
-# ls change to exa
-alias ls="exa --icons"
-alias exa="exa --icons"
+# ls change to eza
+alias ls="eza --icons"
+alias eza="eza --icons"
 
-alias tree="exa -T"
+alias tree="eza -T"
 
 # cat change to bat
 alias cat="bat"
