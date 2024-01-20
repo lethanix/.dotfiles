@@ -3,6 +3,7 @@
   imports = [
     ../shared/nvim/neovim.nix
     ../shared/git.nix
+    ../shared/bash/bash.nix
     #./dotnix/bash.nix
     #./dotnix/tmux.nix
   ];
