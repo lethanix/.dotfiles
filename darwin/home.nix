@@ -15,6 +15,7 @@
     homeDirectory = "/Users/lethani";
     packages = with pkgs; [
       alacritty
+      neovide
       nodejs
       rustc
       cargo
