@@ -4,7 +4,6 @@
     ../shared/nvim/neovim.nix
     ../shared/git.nix
     ../shared/bash/bash.nix
-    #./dotnix/bash.nix
     #./dotnix/tmux.nix
   ];
 
@@ -67,7 +66,7 @@
     ".config/nvim".recursive = true;
     ".config/nvim".source = ../shared/nvim;
 
-    # ".config/starship.toml".source = ./dotany/starship.toml;
+    ".config/starship.toml".source = ../shared/starship.toml;
     # ".config/tmux.conf".source = ./dotany/tmux.conf;
   };
 }
