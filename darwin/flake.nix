@@ -16,15 +16,14 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        homeConfigurations = {
-          lethani = home-manager.lib.homeManagerConfiguration {
-            inherit system pkgs;
-            # darwin is the macOS kernel and aarch64 means ARM, i.e. apple silicon
-            # pkgs = nixpkgs.legacyPackages.${system};
-            modules = [ ./home.nix ];
+        packages = {
+          homeConfigurations = {
+            lethani = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [ ./home.nix ];
+            };
           };
         };
-
       }
     );
 }
