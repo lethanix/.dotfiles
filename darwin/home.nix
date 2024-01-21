@@ -14,7 +14,7 @@
     homeDirectory = "/Users/lethani";
     packages = with pkgs; [
       alacritty
-      neovide
+      # neovide
       nodejs
       rustc
       cargo
@@ -39,6 +39,10 @@
     ];
   };
   programs.home-manager.enable = true;
+
+  # This is to ensure programs are using ~/.config rather than
+  # /Users/<username/Library/whatever
+  xdg.enable = true;
 
   # I use fish, but bash and zsh work just as well here. This will setup
   # the shell to use home-manager properly on startup, neat!
