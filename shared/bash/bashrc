@@ -16,9 +16,12 @@ export WAYLAND_DISPLAY=1
 # ******************************************
 # Tools and aliases
 # ******************************************
+# Adding neovide build from source
+export PATH="$HOME/.cargo/bin/:$PATH"
+alias nv="neovide --frame buttonless"
+
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
-alias nv="neovide"
 
 export HISTCONTROL="ignoredups:ignorespace:erasedups"
 export HISTIGNORE="history*"
