@@ -3,7 +3,7 @@ local o = vim.o
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
 local g = vim.g -- a table to access global variables
 
-local theme = "material"
+local theme = "catppuccin"
 local themes = {
     -- gh = "github",
     -- duck = "spaceduck",
