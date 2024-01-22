@@ -4,7 +4,7 @@
     ../shared/nvim/neovim.nix
     ../shared/git.nix
     ../shared/bash/bash.nix
-    #./dotnix/tmux.nix
+    ../shared/tmux/tmux.nix
   ];
 
   # This is required information for home-manager to do its job
@@ -71,6 +71,6 @@
     ".config/nvim".source = ../shared/nvim;
 
     ".config/starship.toml".source = ../shared/starship.toml;
-    # ".config/tmux.conf".source = ./dotany/tmux.conf;
+    ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
   };
 }
