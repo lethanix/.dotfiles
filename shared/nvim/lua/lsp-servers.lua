@@ -59,7 +59,9 @@ require("neodev").setup()
 
 -- Turn on lsp status information
 require("fidget").setup({
-    window = {
-        blend = 0,
+    notification = {
+        window = {
+            winblend = 0,
+        },
     },
 })

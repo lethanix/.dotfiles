@@ -18,8 +18,8 @@ cmp.setup {
     },
 
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
 
     mapping = {
@@ -80,7 +80,7 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'path' },
         -- { name = 'cmdline' },
-        { name = 'buffer', keyword_length = 3 }, -- { name = "buffer", keyword_length = 5 },
+        { name = 'buffer',  keyword_length = 3 }, -- { name = "buffer", keyword_length = 5 },
     },
 
     sorting = {
@@ -113,14 +113,14 @@ cmp.setup {
     formatting = {
         format = lspkind.cmp_format({
             mode = 'symbol', -- show only symbol annotations
-            maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            maxwidth = 80,   -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
             -- default symbol map
             -- can be either 'default' (requires nerd-fonts font) or
             -- 'codicons' for codicon preset (requires vscode-codicons font)
             --
             -- default: 'default'
-            -- preset = 'codicons',
+            preset = 'codicons',
 
             -- The function below will be called before any actual modifications from lspkind
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
