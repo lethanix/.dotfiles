@@ -23,8 +23,7 @@ require("lazy").setup("plugins") -- Load plugins
 require("colorscheme_conf") -- Load nvim theme and colors
 
 -- Load plugins settings
-require("null")
--- require("indent")
+require("indent")
 require("comments")
 require("dashboard")
 require("treesitter")
