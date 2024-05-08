@@ -35,7 +35,7 @@ require('lualine').setup { options = {
             { 'filetype', icon_only = true }
         },
         lualine_c = { 'branch', 'diff', 'diagnostics' },
-        lualine_x = {},
+        lualine_x = { "require'lsp-status'.status()" },
         lualine_y = { {
             'progress',
             right_padding = 0,

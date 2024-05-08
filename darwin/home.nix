@@ -27,7 +27,7 @@
       zoxide
       direnv
       unzip
-      bash
+      bashInteractive
       bat
       eza
       fd
@@ -41,7 +41,7 @@
   programs.home-manager.enable = true;
 
   # This is to ensure programs are using ~/.config rather than
-  # /Users/<username/Library/whatever
+  # /Users/<username>/Library/whatever
   xdg.enable = true;
 
   # I use fish, but bash and zsh work just as well here. This will setup
@@ -72,5 +72,9 @@
 
     ".config/starship.toml".source = ../shared/starship.toml;
     ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
+
+    # Remote login message when opening a new terminal
+    ".hushlogin".recursive = true;
+    ".hushlogin".source = ./dotany/hushlogin;
   };
 }
