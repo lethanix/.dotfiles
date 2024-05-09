@@ -18,6 +18,7 @@
       rustc
       cargo
       gnumake
+      cmake
       go
       gh
 
