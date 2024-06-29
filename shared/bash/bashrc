@@ -16,6 +16,13 @@ export WAYLAND_DISPLAY=1
 # ******************************************
 # Tools and aliases
 # ******************************************
+# Brew in macOS
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add Node Version Manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Adding neovide build from source
 export PATH="$HOME/.cargo/bin/:$PATH"
 alias nv="neovide --frame buttonless"

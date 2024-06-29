@@ -14,7 +14,6 @@
     homeDirectory = "/Users/lethani";
     packages = with pkgs; [
       alacritty
-      nodejs
       rustc
       cargo
       gnumake
@@ -36,7 +35,7 @@
       # macOS
       iina
 
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "SpaceMono" ]; })
     ];
   };
   programs.home-manager.enable = true;

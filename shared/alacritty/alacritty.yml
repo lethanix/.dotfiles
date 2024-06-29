@@ -11,8 +11,9 @@
 import:
   # - ~/.config/alacritty/colors/moonlight.yml
   # - ~/.config/alacritty/colors/tokyo.yml
+  # - ~/.config/alacritty/fonts/jetbrains.yml
   - ~/.config/alacritty/colors/catppuccin.yml
-  - ~/.config/alacritty/fonts/jetbrains.yml
+  - ~/.config/alacritty/fonts/space.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables

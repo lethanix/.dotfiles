@@ -18,8 +18,6 @@
       {
         packages = {
 
-          # programs.bash.enable = true;
-
           homeConfigurations = {
             lethani = home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
