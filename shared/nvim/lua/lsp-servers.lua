@@ -4,18 +4,18 @@
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  tsserver = {},
-  clangd = {},
-  cmake = {},
-  jdtls = {},
-  gopls = {},
-  pyright = {},
-  rust_analyzer = {},
-  zls = {},
-  bashls = {},
+  -- tsserver = {},
+  -- clangd = {},
+  -- cmake = {},
+  -- jdtls = {},
+  -- gopls = {},
+  -- pyright = {},
+  -- rust_analyzer = {},
+  -- zls = {},
+  -- bashls = {},
   -- julials = {},
   -- texlab = {},
-  html = {},
+  -- html = {},
 
   -- sumneko_lua = {
   --     Lua = {
