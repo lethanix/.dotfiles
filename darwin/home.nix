@@ -34,6 +34,7 @@
 
       # macOS
       iina
+      luajitPackages.luarocks # For neovim to work with some plugins, e.g. Mason
 
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "SpaceMono" ]; })
     ];
