@@ -88,7 +88,7 @@ vim.opt.backup = false
 -- **************************************
 wo.foldlevel = 20
 wo.foldmethod = "expr"
-wo.foldexpr="nvim_treesitter#foldexpr()"
+-- wo.foldexpr="nvim_treesitter#foldexpr()"
 
 -- **************************************
 -- Enable mouse mode
