@@ -1,0 +1,54 @@
+# .bashrc
+
+# Start tmux automatically
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#     tmux attach -t fedorix || tmux new -s fedorix
+# fi
+
+# ******************************************
+# Hyprland & Wayland fixes
+# ******************************************
+# MOZ_ENABLE_WAYLAND=1
+
+# Some apps wont render, i.e. neovide
+export WAYLAND_DISPLAY=1
+
+# ******************************************
+# Tools and aliases
+# ******************************************
+# Brew in macOS
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add Node Version Manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Adding neovide build from source
+export PATH="$HOME/.cargo/bin/:$PATH"
+alias nv="neovide --frame buttonless"
+
+alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+
+
+export HISTCONTROL="ignoredups:ignorespace:erasedups"
+export HISTIGNORE="history*"
+
+# ls change to exa
+alias ls="exa --icons"
+alias exa="exa --icons"
+
+alias tree="exa -T"
+
+# cat change to bat
+alias cat="bat"
+
+# cd change to zoxide 
+eval "$(zoxide init bash)"
+alias cd=z
+
+# ******************************************
+# Prompt
+# ******************************************
+# Starship configuration
+export STARSHIP_CONFIG=~/.config/starship.toml
+eval "$(starship init bash)"
