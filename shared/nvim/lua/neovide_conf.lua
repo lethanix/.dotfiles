@@ -14,6 +14,6 @@ vim.g.neovide_no_idle = true
 -- vim.g.neovide_font_edging = 'SubPixelAntiAlias'
 -- -- theme = "material"
 vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_scale_factor = 1.1
+vim.g.neovide_scale_factor = 1
 -- vim.o.guifont = "JetBrainsMono Nerd Font:h17"
 vim.o.guifont = "SpaceMono Nerd Font:h15"
