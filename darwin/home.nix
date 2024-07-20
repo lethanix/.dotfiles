@@ -22,9 +22,6 @@
       go
       gh
 
-      # IaC
-      terraform
-
       # Utilities
       starship
       ripgrep
