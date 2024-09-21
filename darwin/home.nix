@@ -24,6 +24,7 @@
 
       # Utilities
       starship
+      tealdeer
       ripgrep
       zoxide
       ffmpeg
