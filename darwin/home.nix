@@ -26,6 +26,7 @@
       starship
       ripgrep
       zoxide
+      ffmpeg
       direnv
       unzip
       bashInteractive
