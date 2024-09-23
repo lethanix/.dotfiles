@@ -23,7 +23,6 @@
       gh
 
       # Utilities
-      imagemagick
       starship
       tealdeer
       ripgrep
@@ -32,6 +31,7 @@
       direnv
       unzip
       bashInteractive
+      glow
       bat
       eza
       fd
