@@ -23,6 +23,7 @@
       gh
 
       # Utilities
+      imagemagick
       starship
       tealdeer
       ripgrep
