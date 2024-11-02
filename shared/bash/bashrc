@@ -52,3 +52,6 @@ alias cd=z
 # Starship configuration
 export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init bash)"
+
+# JDK Manager
+source "$HOME/.sdkman/bin/sdkman-init.sh"
