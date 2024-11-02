@@ -79,6 +79,8 @@
     ".config/nvim".recursive = true;
     ".config/nvim".source = ../shared/nvim;
 
+    # Other config files
+    ".config/aerospace/aerospace.toml".source = ./dotany/aerospace.toml;
     ".config/starship.toml".source = ../shared/starship.toml;
     ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
 
