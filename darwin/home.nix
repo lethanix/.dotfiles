@@ -81,6 +81,7 @@
 
     # Other config files
     ".config/aerospace/aerospace.toml".source = ./dotany/aerospace.toml;
+    ".wezterm.lua".source = ./dotany/wezterm.lua;
     ".config/starship.toml".source = ../shared/starship.toml;
     ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
 
