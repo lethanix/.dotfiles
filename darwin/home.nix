@@ -84,6 +84,8 @@
     ".wezterm.lua".source = ./dotany/wezterm.lua;
     ".config/starship.toml".source = ../shared/starship.toml;
     ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
+    ".config/eza/theme.yml".recursive = true;
+    ".config/eza/theme.yml".source = ./dotany/eza_tokyonight.yml;
 
     # Remote login message when opening a new terminal
     ".hushlogin".recursive = true;
