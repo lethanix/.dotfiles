@@ -2,6 +2,12 @@ return {
     -- Color schemes
     { "catppuccin/nvim",                             name = "catppuccin",                                                                                                                   priority = 1000 },
     { 'marko-cerovac/material.nvim' },
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    }
 
     -- Status line
     { "nvim-tree/nvim-web-devicons",                 lazy = true },
