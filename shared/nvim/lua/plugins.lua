@@ -7,7 +7,7 @@ return {
       lazy = false,
       priority = 1000,
       opts = {},
-    }
+    },
 
     -- Status line
     { "nvim-tree/nvim-web-devicons",                 lazy = true },

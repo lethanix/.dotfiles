@@ -1,7 +1,7 @@
 -- 3 kinds of' options: global, buffer-local & window-local
 local o = vim.o
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
-local g = vim.g -- a table to access global variables
+local g = vim.g     -- a table to access global variables
 
 local theme = "tokyonight"
 local themes = {
@@ -25,14 +25,15 @@ cmd [[ let &t_8b = "\\<Esc>[48;2;%lu;%lu;%lum" ]]
 o.termguicolors = true
 
 
-if "spaceduck" == themes[theme] then cmd [[colorscheme spaceduck]]
+if "spaceduck" == themes[theme] then
+    cmd [[colorscheme spaceduck]]
 elseif "tokyonight" == themes[theme] then
     require("tokyonight").setup({
         -- your configuration comes here
         -- or leave it empty to use the default settings
-        style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        light_style = "day", -- The theme is used when the background is set to light
-        transparent = false, -- Enable this to disable setting the background color
+        style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        light_style = "day",    -- The theme is used when the background is set to light
+        transparent = false,    -- Enable this to disable setting the background color
         terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
         styles = {
             -- Style to be applied to different syntax groups
@@ -42,14 +43,14 @@ elseif "tokyonight" == themes[theme] then
             functions = {},
             variables = {},
             -- Background styles. Can be "dark", "transparent" or "normal"
-            sidebars = "dark", -- style for sidebars, see below
-            floats = "dark", -- style for floating windows
+            sidebars = "dark",            -- style for sidebars, see below
+            floats = "dark",              -- style for floating windows
         },
-        sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-        day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+        sidebars = { "qf", "help" },      -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+        day_brightness = 0.3,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
         hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-        dim_inactive = true, -- dims inactive windows
-        lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+        dim_inactive = true,              -- dims inactive windows
+        lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
 
         --- You can override specific color groups to use other groups or a hex color
         --- function will be called with a ColorScheme table
@@ -64,10 +65,8 @@ elseif "tokyonight" == themes[theme] then
     })
 
     cmd [[colorscheme tokyonight]]
-
 elseif "moonlight" == themes[theme] then
     require('moonlight').set()
-
 elseif "catppuccin" == themes[theme] then
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -136,8 +135,6 @@ elseif "catppuccin" == themes[theme] then
     })
 
     cmd [[colorscheme catppuccin]]
-
-
 elseif "material" == themes[theme] then
     require('material-conf')
     g.material_style = "deep ocean"
@@ -151,11 +148,11 @@ elseif "kanagawa" == themes[theme] then
         statementStyle = { bold = true },
         typeStyle = {},
         variablebuiltinStyle = { italic = true },
-        specialReturn = true, -- special highlight for the return keyword
+        specialReturn = true,    -- special highlight for the return keyword
         specialException = true, -- special highlight for exception handling keywords
-        transparent = false, -- do not set background color
-        dimInactive = true, -- dim inactive window `:h hl-NormalNC`
-        globalStatus = false, -- adjust window separators highlight for laststatus=3
+        transparent = false,     -- do not set background color
+        dimInactive = true,      -- dim inactive window `:h hl-NormalNC`
+        globalStatus = false,    -- adjust window separators highlight for laststatus=3
         colors = {},
         overrides = {},
     })
@@ -167,11 +164,11 @@ elseif "onedark" == themes[theme] then
         -- Default theme style. Choose between 'dark', 'darker', 'cool',
         -- 'deep', 'warm', 'warmer' and 'light'
         style = 'darker',
-        transparent = false, -- Show/hide background
-        term_colors = false, -- Change terminal color as per the selected theme style
-        ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+        transparent = false,                                                                 -- Show/hide background
+        term_colors = false,                                                                 -- Change terminal color as per the selected theme style
+        ending_tildes = false,                                                               -- Show the end-of-buffer tildes. By default they are hidden
         -- toggle theme style ---
-        toggle_style_key = '<leader>cs', -- Default keybinding to toggle
+        toggle_style_key = '<leader>cs',                                                     -- Default keybinding to toggle
         toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
         -- Change code style ---
@@ -186,13 +183,13 @@ elseif "onedark" == themes[theme] then
         },
 
         -- Custom Highlights --
-        colors = {}, -- Override default colors
+        colors = {},     -- Override default colors
         highlights = {}, -- Override highlight groups
 
         -- Plugins Config --
         diagnostics = {
-            darker = true, -- darker colors for diagnostic
-            undercurl = true, -- use undercurl instead of underline for diagnostics
+            darker = true,     -- darker colors for diagnostic
+            undercurl = true,  -- use undercurl instead of underline for diagnostics
             background = true, -- use background color for virtual text
         },
     }
@@ -214,7 +211,7 @@ elseif "fox" == themes[theme] then
     -- This function set the configuration of nightfox. If a value is not passed in the setup function
     -- it will be taken from the default configuration above
     nightfox.setup({
-        fox = "nightfox", -- change the colorscheme to use nordfox
+        fox = "nightfox",        -- change the colorscheme to use nordfox
         styles = {
             comments = "italic", -- change style of comments to be italic
             keywords = "italic", -- change style of keywords to be bold
@@ -225,11 +222,13 @@ elseif "fox" == themes[theme] then
     -- Load the configuration set above and apply the colorscheme
     -- nightfox.load()
     cmd [[colorscheme nightfox ]]
-elseif "cal" == themes[theme] then require('calvera').set()
+elseif "cal" == themes[theme] then
+    require('calvera').set()
 elseif "ayu" == themes[theme] then
     cmd [[let ayucolor = "mirage"]]
     cmd [[colorscheme ayu]]
-elseif "night-owl" == themes[theme] then cmd [[colorscheme night-owl]]
+elseif "night-owl" == themes[theme] then
+    cmd [[colorscheme night-owl]]
 elseif "tokyodark" == themes[theme] then
     g.tokyodark_transparent_background = false
     g.tokyodark_enable_italic_comment = true
