@@ -33,11 +33,12 @@ alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 export HISTCONTROL="ignoredups:ignorespace:erasedups"
 export HISTIGNORE="history*"
 
-# ls change to exa
-alias ls="exa --icons"
-alias exa="exa --icons"
+# ls change to eza
+export EZA_CONFIG_DIR="$HOME/.config/eza/"
+alias ls="eza --icons"
+alias eza="eza --icons"
 
-alias tree="exa -T"
+alias tree="eza -T"
 
 # cat change to bat
 alias cat="bat"
