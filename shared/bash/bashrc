@@ -32,6 +32,8 @@ alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 export HISTCONTROL="ignoredups:ignorespace:erasedups"
 export HISTIGNORE="history*"
+bind '"\e[A": history-search-backward'            # arrow up
+bind '"\e[B": history-search-forward'             # arrow down
 
 # ls change to eza
 export EZA_CONFIG_DIR="$HOME/.config/eza/"
