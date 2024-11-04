@@ -4,7 +4,7 @@
     ../shared/nvim/neovim.nix
     ../shared/git.nix
     ../shared/bash/bash.nix
-    ../shared/tmux/tmux.nix
+    # ../shared/tmux/tmux.nix
   ];
 
   # This is required information for home-manager to do its job
@@ -31,6 +31,7 @@
       direnv
       unzip
       bashInteractive
+      tmux
       glow
       bat
       eza
@@ -83,7 +84,7 @@
     ".config/aerospace/aerospace.toml".source = ./dotany/aerospace.toml;
     ".wezterm.lua".source = ./dotany/wezterm.lua;
     ".config/starship.toml".source = ../shared/starship.toml;
-    ".config/tmux.conf".source = ../shared/tmux/tmux.conf;
+    ".tmux.conf".source = ../shared/tmux/tmux.conf;
     ".config/eza/theme.yml".recursive = true;
     ".config/eza/theme.yml".source = ./dotany/eza_tokyonight.yml;
 
