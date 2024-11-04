@@ -62,6 +62,11 @@ elseif "tokyonight" == themes[theme] then
         ---@param highlights Highlights
         ---@param colors ColorScheme
         on_highlights = function(highlights, colors) end,
+	plugins = {
+		-- uses your plugin manager to automatically enable needed plugins
+		-- currently only lazy.nvim is supported
+		auto = true,
+	},
     })
 
     cmd [[colorscheme tokyonight]]
