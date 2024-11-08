@@ -58,3 +58,6 @@ eval "$(starship init bash)"
 
 # JDK Manager
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"

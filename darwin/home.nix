@@ -35,6 +35,7 @@
       glow
       bat
       eza
+      fzf
       fd
 
       # macOS
