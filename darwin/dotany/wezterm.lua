@@ -35,6 +35,15 @@ config.enable_tab_bar = false
 -- config.tab_bar_at_bottom = true
 
 config.window_decorations = "RESIZE"
+-- Enable detection of Hyperkey in macOS with tmux modifier
+config.use_ime = false
+config.keys = {
+    {
+        key = "A",
+        mods = "SHIFT|ALT|CTRL|CMD",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+}
 
 -- and finally, return the configuration to wezterm
 return config
