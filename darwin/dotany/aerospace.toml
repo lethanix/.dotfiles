@@ -215,6 +215,12 @@ alt-shift-l = ['join-with right', 'mode main']
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace 2"
 
+# Add rule for Picture-in-Picture windows
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
+
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace 1" 
