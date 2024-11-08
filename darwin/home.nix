@@ -35,7 +35,7 @@
       glow
       bat
       eza
-      fzf
+      # fzf => Install it using brew to get a newer version and eval the shell integration in bashrc
       fd
 
       # macOS
