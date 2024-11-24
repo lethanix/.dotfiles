@@ -28,6 +28,7 @@
       ripgrep
       zoxide
       ffmpeg
+      bottom
       direnv
       unzip
       bashInteractive
