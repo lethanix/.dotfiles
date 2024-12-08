@@ -219,6 +219,10 @@ run = "move-node-to-workspace 2"
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'me.proton.pass.electron'
+run = 'layout floating'
+
 # Add rule for Picture-in-Picture windows
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
