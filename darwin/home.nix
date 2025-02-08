@@ -40,7 +40,7 @@
       fd
 
       # macOS
-      iina
+      # iina
       luajitPackages.luarocks # For neovim to work with some plugins, e.g. Mason
 
       # For neovim to work with some plugins, e.g. Mason
