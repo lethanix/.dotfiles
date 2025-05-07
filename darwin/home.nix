@@ -22,6 +22,10 @@
       go
       gh
 
+      # DevOps
+      kubectl
+      k9s
+
       # Utilities
       starship
       tealdeer
