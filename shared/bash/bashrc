@@ -16,6 +16,9 @@ export WAYLAND_DISPLAY=1
 # ******************************************
 # Tools and aliases
 # ******************************************
+# kubectl alias
+alias k="kubectl"
+
 # Brew in macOS
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
