@@ -59,6 +59,10 @@ alias cat="bat"
 eval "$(zoxide init bash)"
 alias cd=z
 
+# glow completion 
+## For macOS
+glow completion bash > $(brew --prefix)/etc/bash_completion.d/glow
+
 # ******************************************
 # Prompt
 # ******************************************
