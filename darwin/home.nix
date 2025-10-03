@@ -9,18 +9,25 @@
 
   # This is required information for home-manager to do its job
   home = {
-    stateVersion = "23.11";
+    stateVersion = "24.05";
     username = "lethani";
     homeDirectory = "/Users/lethani";
     packages = with pkgs; [
-      alacritty
-      nodejs
+
+      # neovim => this will be enabled when using the option programs.neovim.enable = true in the neovim.nix file
+
+      # Using better bash (not macOS/Apple)
+      bash
+      direnv
+      bashInteractive
+
+      # alacritty
+      # nodejs
       # rustc
-      cargo
-      gnumake
-      cmake
-      go
-      gh
+      # cargo
+      # gnumake
+      # cmake
+      # go
 
       # DevOps
       kubectl
@@ -33,15 +40,16 @@
       zoxide
       ffmpeg
       bottom
-      direnv
-      unzip
-      bashInteractive
+
       tmux
       glow
       bat
       eza
-      # fzf => Install it using brew to get a newer version and eval the shell integration in bashrc
+      fzf 
       fd
+      gh
+
+      # unzip
 
       # macOS
       # iina
@@ -51,7 +59,9 @@
       lua
       luajitPackages.luarocks
 
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "SpaceMono" ]; })
+      nerd-fonts.fira-code 
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.space-mono
     ];
   };
   programs.home-manager.enable = true;
@@ -78,9 +88,9 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # Alacritty config folder from GitHub repository
-    ".config/alacritty".recursive = true;
-    ".config/alacritty".source = ../shared/alacritty;
+    # # Alacritty config folder from GitHub repository
+    # ".config/alacritty".recursive = true;
+    # ".config/alacritty".source = ../shared/alacritty;
 
     # Neovim config folder
     ".config/nvim".recursive = true;
