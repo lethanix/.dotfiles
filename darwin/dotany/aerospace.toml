@@ -224,6 +224,9 @@ if.app-id = 'me.proton.pass.electron'
 run = 'layout floating'
 
 # Add rule for Picture-in-Picture windows
+## Make sure you're ordering those correctly – detecting Picture in Picture should come first, then move to the workspace rule.
+## https://github.com/nikitabobko/AeroSpace/issues/246#issuecomment-2283321474
+
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
@@ -235,12 +238,12 @@ run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
-run = "move-node-to-workspace 1" 
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
-if.window-title-regex-substring = 'Picture-in-Picture'
-run = 'layout floating'
+run = "move-node-to-workspace 1" 
 
 [[on-window-detected]]
 if.app-id = 'io.rancherdesktop.app'
