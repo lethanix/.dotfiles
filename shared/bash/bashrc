@@ -55,10 +55,6 @@ alias tree="eza -T"
 # cat change to bat
 alias cat="bat"
 
-# cd change to zoxide 
-eval "$(zoxide init bash)"
-alias cd=z
-
 # glow completion 
 ## For macOS
 glow completion bash > $(brew --prefix)/etc/bash_completion.d/glow
@@ -78,3 +74,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+# cd change to zoxide 
+eval "$(zoxide init bash)"
+alias cd=z
