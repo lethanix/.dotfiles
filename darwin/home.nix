@@ -41,6 +41,7 @@
       ffmpeg
       bottom
 
+      asdf
       tmux
       glow
       bat
