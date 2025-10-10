@@ -16,6 +16,9 @@ export WAYLAND_DISPLAY=1
 # ******************************************
 # Tools and aliases
 # ******************************************
+# Enable Vi mode for command line editing
+set -o vi
+
 # kubectl alias and alias completion 
 alias k="kubectl"
 complete -o default -F __start_kubectl k
