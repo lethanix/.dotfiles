@@ -65,9 +65,6 @@ glow completion bash > $(brew --prefix)/etc/bash_completion.d/glow
 # Enable shell history for Elixir iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# ASDF tool path required
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
 # ******************************************
 # Prompt
 # ******************************************
