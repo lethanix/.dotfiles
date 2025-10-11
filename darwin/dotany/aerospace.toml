@@ -193,6 +193,10 @@ alt-shift-semicolon = 'mode service'
 
 alt-shift-f = 'fullscreen'
 
+# Disable annoying and useless "hide application" shortcut
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -218,6 +222,15 @@ run = "move-node-to-workspace 2"
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
 
 [[on-window-detected]]
 if.app-id = 'me.proton.pass.electron'
