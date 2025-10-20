@@ -26,8 +26,8 @@ complete -o default -F __start_kubectl k
 # Brew in macOS
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Add path for Rancher Desktop in macOS 
-export PATH="$HOME/.rd/bin/:$PATH"
+# # Add path for Rancher Desktop in macOS 
+# export PATH="$HOME/.rd/bin/:$PATH"
 
 # PHP Herd 
 export PATH="$HOME/.config/herd-lite/bin/:$PATH"
