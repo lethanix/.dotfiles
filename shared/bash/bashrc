@@ -26,6 +26,11 @@ complete -o default -F __start_kubectl k
 # Brew in macOS
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# GNU "make" has been installed as "gmake" using brew
+# In order to use it as "make", we need to add a "gnubin" directory
+# to the PATH: 
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+
 # # Add path for Rancher Desktop in macOS 
 # export PATH="$HOME/.rd/bin/:$PATH"
 
