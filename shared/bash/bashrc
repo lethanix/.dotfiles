@@ -73,6 +73,10 @@ glow completion bash > $(brew --prefix)/etc/bash_completion.d/glow
 # Enable shell history for Elixir iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# Adding path for Goose AI Agent
+export GOOSE_BIN_DIR="$HOME/.local/bin/" 
+export PATH="$GOOSE_BIN_DIR:$PATH"
+
 # ******************************************
 # Prompt
 # ******************************************
