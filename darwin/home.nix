@@ -30,8 +30,8 @@
       # go
 
       # DevOps
-      kubectl
-      k9s
+      # kubectl => use asdf instead in order to avoid version conflicts with K8s API
+      # k9s
 
       # Utilities
       starship
