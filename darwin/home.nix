@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   imports = [
-    ../shared/nvim/neovim.nix
+    # ../shared/nvim/neovim.nix
     ../shared/git.nix
     ../shared/bash/bash.nix
     # ../shared/tmux/tmux.nix
@@ -17,9 +17,9 @@
       # neovim => this will be enabled when using the option programs.neovim.enable = true in the neovim.nix file
 
       # Using better bash (not macOS/Apple)
-      bash
-      direnv
-      bashInteractive
+      # bash
+      # direnv
+      # bashInteractive
 
       # alacritty
       # nodejs
@@ -53,11 +53,11 @@
 
       # macOS
       # iina
-      luajitPackages.luarocks # For neovim to work with some plugins, e.g. Mason
+      # luajitPackages.luarocks # For neovim to work with some plugins, e.g. Mason
 
       # For neovim to work with some plugins, e.g. Mason
-      lua
-      luajitPackages.luarocks
+      # lua
+      # luajitPackages.luarocks
 
       nerd-fonts.fira-code 
       nerd-fonts.jetbrains-mono
