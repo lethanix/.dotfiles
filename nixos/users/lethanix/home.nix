@@ -37,7 +37,7 @@
 
     # Needed for neovim
     gcc
-    cmake
+    gnumake
     nodejs
 
     # Fonts 
