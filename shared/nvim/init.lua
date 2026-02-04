@@ -28,6 +28,7 @@ require("comments")
 require("dashboard")
 require("treesitter")
 require("statusline")
+require("gitsign-conf")
 require("autopairs-conf")
 require('telescope-config')
 
