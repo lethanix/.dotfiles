@@ -5,6 +5,7 @@
         settings = {
             user.name = "lethanix";
             user.email = "me@lethanix.com";
+	    credential.helper = "oauth";
         };
     };
 
