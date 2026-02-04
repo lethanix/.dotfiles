@@ -18,7 +18,6 @@ return {
     { "lukas-reineke/indent-blankline.nvim",         main = "ibl",                                                                                                                          opts = {} },    -- Adds indentation guides to all lines
     { "goolord/alpha-nvim" },                                                                                                                                                                               -- Dashboard/greeter
     { "max397574/better-escape.nvim",                config = function() require("better_escape").setup() end, },                                                                                           -- Escape using jk/jj
-    { "lewis6991/gitsigns.nvim" },
 
     -- Fuzzy Finder (files, lsp, etc)
     { "nvim-telescope/telescope.nvim",               tag = "v0.2.1", dependencies = { "nvim-lua/plenary.nvim" } },
