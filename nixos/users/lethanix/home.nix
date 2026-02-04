@@ -27,15 +27,18 @@
     ghostty
     neovide
     ripgrep
-    nodejs
     zoxide
     direnv
     unzip
     bat
     eza
-    gcc
     fzf
     fd
+
+    # Needed for neovim
+    gcc
+    cmake
+    nodejs
 
     # Fonts 
     nerd-fonts.fira-code

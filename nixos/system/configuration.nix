@@ -64,9 +64,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     git
-    kitty # Needed for Hyprland
-    neovim
-    ghostty
+    kitty
   ];
 
   fonts.packages = with pkgs; [
