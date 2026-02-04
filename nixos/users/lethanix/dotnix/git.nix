@@ -2,8 +2,10 @@
 {
     programs.git = {
         enable = true;
-        userName = "lethanix";
-        userEmail = "louismurguia@proton.me";
+        settings = {
+            user.name = "lethanix";
+            user.email = "me@lethanix.com";
+        };
     };
 
 }
