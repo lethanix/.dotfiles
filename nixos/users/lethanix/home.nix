@@ -39,6 +39,9 @@
     gnumake
     nodejs
 
+    # Hyprland utils
+    hyprpaper
+
     # Fonts 
     nerd-fonts.fira-code
     nerd-fonts.space-mono
