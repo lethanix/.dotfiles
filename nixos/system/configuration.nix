@@ -65,6 +65,7 @@
     vim 
     git
     kitty
+    wireplumber
   ];
 
   fonts.packages = with pkgs; [
@@ -77,6 +78,11 @@
   };
 
   programs.firefox.enable = true;
+  
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # **********************************************************************
   # Graphics
