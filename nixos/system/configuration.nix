@@ -71,8 +71,11 @@
   	nerd-fonts.jetbrains-mono 
   ];
 
-  programs.hyprland.enable = true;
-  programs.xwayland.enable = true;
+  programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+  };
+
   programs.firefox.enable = true;
 
   # **********************************************************************
