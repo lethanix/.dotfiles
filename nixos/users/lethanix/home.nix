@@ -55,6 +55,9 @@
 
     ".config/hypr".recursive = true;
     ".config/hypr".source = ./dotany/hypr;
+    
+    ".config/ghostty".recursive = true;
+    ".config/ghostty".source = ./dotany/ghostty;
   };
 
   home.sessionVariables = {
