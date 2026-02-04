@@ -54,6 +54,8 @@
     ".config/starship.toml".source = ../../../shared/starship.toml;
     ".tmux.conf".source = ../../../shared/tmux/tmux.conf;
 
+    ".config/hypr".recursive = true;
+    ".config/hypr".source = ./dotany/hypr;
   };
 
   home.sessionVariables = {
