@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   imports = [
-    # ./dotnix/hyprland.nix
     ./dotnix/neovim.nix
     ./dotnix/git.nix
     ./dotnix/bash.nix
