@@ -6,14 +6,6 @@
 # fi
 
 # ******************************************
-# Hyprland & Wayland fixes
-# ******************************************
-# MOZ_ENABLE_WAYLAND=1
-
-# Some apps wont render, i.e. neovide
-export WAYLAND_DISPLAY=1
-
-# ******************************************
 # Tools and aliases
 # ******************************************
 # Enable Vi mode for command line editing
