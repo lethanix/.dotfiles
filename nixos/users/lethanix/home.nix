@@ -41,13 +41,17 @@
 
     # Hyprland utils
     hyprpaper
-
+    wl-clipboard
+    hyprcursor
+    catppuccin-cursors.mochaMauve
+    catppuccin-cursors.mochaDark
+    
     # Fonts 
     nerd-fonts.fira-code
     nerd-fonts.space-mono
     nerd-fonts.jetbrains-mono
   ];
-
+  
   # Home Manager dotfiles management
   home.file = {
     ".config/nvim".recursive = true;
