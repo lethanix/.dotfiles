@@ -10,8 +10,8 @@ local config = wezterm.config_builder()
 -- Change the color scheme depending of the system preference:
 function scheme_for_appearance(appearance)
 	if appearance:find "Dark" then
-		return 'Tokyo Night'
-		-- return "Catppuccin Mocha"
+		-- return 'Tokyo Night'
+		return "Catppuccin Mocha"
 	else
 		return 'Tokyo Night Day'
 		-- return "Catppuccin Latte"
@@ -23,8 +23,9 @@ config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 --**********************************************
 -- Font configuration
 --**********************************************
--- config.font = wezterm.font 'SpaceMono Nerd Font'
-config.font = wezterm.font 'JetBrainsMono Nerd Font'
+-- config.font = wezterm.font 'CommitMonoLig'
+config.font = wezterm.font 'SpaceMono Nerd Font'
+-- config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 17
 
 --**********************************************
