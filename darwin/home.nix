@@ -23,6 +23,7 @@
 
       # alacritty
       # nodejs
+      rustup
       # rustc
       # cargo
       # gnumake
@@ -62,6 +63,8 @@
       nerd-fonts.fira-code 
       nerd-fonts.jetbrains-mono
       nerd-fonts.space-mono
+      # nerd-fonts.commit-mono
+      commit-mono
     ];
   };
   programs.home-manager.enable = true;
