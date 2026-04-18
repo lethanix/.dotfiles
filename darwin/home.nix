@@ -35,6 +35,7 @@
       # k9s
 
       # Utilities
+      ghostty-bin
       starship
       tealdeer
       ripgrep
@@ -98,6 +99,10 @@
     # Neovim config folder
     ".config/nvim".recursive = true;
     ".config/nvim".source = ../shared/nvim;
+
+    # Ghostty config path
+    ".config/ghostty".recursive = true;
+    ".config/ghostty".source = ./dotany/ghostty;
 
     # Other config files
     ".config/aerospace/aerospace.toml".source = ./dotany/aerospace.toml;
