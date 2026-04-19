@@ -103,10 +103,25 @@
 
   programs.firefox.enable = true;
   
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  
+  # **********************************************************************
+  # Audio
+  # **********************************************************************
+  services.pulseaudio.enable = false;
+  
+  security.rtkit.enable = true;
+  
   services.pipewire = {
     enable = true;
-    pulse.enable = true;
-  };
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;      # provides PulseAudio compatibility
+    jack.enable = true;       # optional, for JACK apps
+  }; 
 
   # **********************************************************************
   # Graphics
