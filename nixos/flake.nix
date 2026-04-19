@@ -6,10 +6,13 @@
 			url = "github:nix-community/home-manager/release-25.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		vicinae.url = "github:vicinaehq/vicinae";
+		vicinae-extensions.url = "github:vicinaehq/extensions";
 	};
 
-	outputs = { self, nixpkgs, home-manager, ...}: {
+	outputs = { self, nixpkgs, home-manager, ...} @ inputs: {
 		nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
+			specialArgs = { inherit inputs; };
 			modules = [
 				./system/configuration.nix
 				home-manager.nixosModules.home-manager {

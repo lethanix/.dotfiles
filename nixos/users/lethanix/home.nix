@@ -4,6 +4,7 @@
     ./dotnix/git.nix
     ./dotnix/bash.nix
     ./dotnix/tmux.nix
+    ./dotnix/vicinae.nix
   ];
 
   home.stateVersion = "25.11";
@@ -29,11 +30,20 @@
     zoxide
     direnv
     unzip
+    yazi
     bat
     eza
     fzf
     fd
+    jq
 
+    # Extend Yazi
+    imagemagick
+    poppler
+    ffmpeg
+    resvg
+    file
+    
     # Needed for neovim
     gcc
     gnumake
@@ -45,6 +55,7 @@
     hyprcursor
     catppuccin-cursors.mochaMauve
     catppuccin-cursors.mochaDark
+    brightnessctl
     
     # Fonts 
     nerd-fonts.fira-code
