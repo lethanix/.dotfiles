@@ -127,18 +127,21 @@
   # Graphics
   # **********************************************************************
   # services.xserver.videoDrivers = [ "nouveau" ];
-  hardware.nvidia.open = false;
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [ libva-vdpau-driver ];
 
   # More options:
   # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+  hardware.nvidia = {
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    # nvidia-drm.modeset=1 is required for some wayland compositors
+    modesetting.enable = true;
+    # This is the critical part for sleep/hibernate issues
+    powerManagement.enable = true;
+  };
 
-  # nvidia-drm.modeset=1 is required for some wayland compositors
-  hardware.nvidia.modesetting.enable = true;
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [ libva-vdpau-driver ];
 
   # **********************************************************************
 
