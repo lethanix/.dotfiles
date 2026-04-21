@@ -6,7 +6,6 @@
 	  user.name = "lethanix";
           user.email = "me@lethanix.com";
 	};
-        signing.format = null;
     };
 
 }
