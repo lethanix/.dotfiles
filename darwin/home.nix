@@ -30,6 +30,7 @@
       ffmpeg
       bottom
       rustup
+      claude-agent-acp
 
       tmux
       glow
@@ -51,6 +52,8 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.space-mono
       commit-mono
+
+      emacs
     ];
   };
   programs.home-manager.enable = true;
