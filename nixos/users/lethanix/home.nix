@@ -61,6 +61,9 @@
     nerd-fonts.fira-code
     nerd-fonts.space-mono
     nerd-fonts.jetbrains-mono
+
+    # Keyboard config
+    kanata
   ];
   
   # Home Manager dotfiles management
@@ -76,6 +79,8 @@
     
     ".config/ghostty".recursive = true;
     ".config/ghostty".source = ./dotany/ghostty;
+
+    ".config/kanata/config.kbd".source = ./dotany/kanata.kbd;
   };
 
   home.sessionVariables = {

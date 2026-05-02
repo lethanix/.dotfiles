@@ -26,13 +26,15 @@
 
   networking.hostName = "nixos-btw"; # Define your hostname.
   networking.networkmanager.enable = true;
+  nix.settings.download-buffer-size = 1073741824; # Increasing buffer size
 
   # **********************************************************************
 
   services.displayManager.ly.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "America/Mexico_City";
+  # Set your time
+  time.timeZone = "US/Eastern";
+  services.timesyncd.enable = true;
 
   # Fix time sync problem with dual boot Windows
   time.hardwareClockInLocalTime = true;
@@ -74,10 +76,22 @@
 
   users.users.lethanix = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    # Adding uinput and input for kanata
+    extraGroups = [ "networkmanager" "wheel" "uinput" "input"]; 
     packages = with pkgs; [];
   };
 
+  # **********************************************************************
+  # Kanata access config
+  # **********************************************************************
+  # Configure udev to allow the uinput group access
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
+
+  # Ensure the uinput module is loaded at boot
+  boot.kernelModules = [ "uinput" ];
+  
   # **********************************************************************
   # Packages
   # **********************************************************************

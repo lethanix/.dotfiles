@@ -1,0 +1,35 @@
+#|
+This minimal config changes Caps Lock to act as Escape on quick tap, 
+but if held, it will act as hyperkey (Control + Shift + Alt + Super).
+
+It also changes the backtick/grave key to act as backtick/grave on quick tap, 
+but change hjkl keys to arrow keys on hold (vim mode... kind of).
+
+|#
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps grv	
+              h    j    k    l
+)
+
+(deflayer default
+  @cap @grv
+              _    _    _    _
+)
+
+(deflayer arrows
+  _ _ 
+              left  down  up  right
+)
+
+
+(defalias
+  ;; tap-hold <tap-timeout> <hold-timeout> <tap-action> <hold-action>
+  cap (tap-hold-press 200 200 esc (multi ctl sft alt met))
+  grv (tap-hold-press 200 200 grv (layer-toggle arrows))
+)
+

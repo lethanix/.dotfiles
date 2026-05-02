@@ -1,4 +1,12 @@
+# TODO: Setup dark and light configuaration to make the following work:
 # theme = light:Catppuccin Frappe,dark:Catppuccin Mocha
+# theme = light:Catppuccin Frappe,dark:TokyoNight Night
 theme = TokyoNight Night
-font-family = JetBrainsMono Nerd Font 
-font-size = 15
+
+font-family = JetBrainsMono Nerd Font
+# font-family = SpaceMono Nerd Font
+font-size = 13
+
+# Key-remap of hyperkey (super+ctrl+shift+alt)
+# Tmux: super+ctrl+shift+alt+a -> ctrl+a
+keybind = super+ctrl+shift+alt+a=text:\x01
