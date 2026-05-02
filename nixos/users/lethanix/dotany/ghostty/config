@@ -10,3 +10,5 @@ font-size = 13
 # Key-remap of hyperkey (super+ctrl+shift+alt)
 # Tmux: super+ctrl+shift+alt+a -> ctrl+a
 keybind = super+ctrl+shift+alt+a=text:\x01
+keybind = super+ctrl+shift+alt+u=text:\x15
+keybind = super+ctrl+shift+alt+d=text:\x04
