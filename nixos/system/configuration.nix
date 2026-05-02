@@ -17,6 +17,8 @@
 
   boot.initrd.luks.devices."luks-6debef84-20e2-45b6-ba71-812a1306739f".device = "/dev/disk/by-uuid/6debef84-20e2-45b6-ba71-812a1306739f";
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # **********************************************************************
   # Enable flakes
 
