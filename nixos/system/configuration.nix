@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -32,7 +33,14 @@
 
   # **********************************************************************
 
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "dur_file"; # "doom" "matrix" "gameoflife"
+      dur_file_path = "home/lethanix/.dotfiles/nixos/users/lethanix/dotany/ly/blackhole-smooth-240x67.dur";
+      full_color = true;
+    };
+  };
 
   # Set your time
   time.timeZone = "US/Eastern";
@@ -49,38 +57,38 @@
     xkb.layout = "us";
     xkb.variant = "";
   };
-  
+
   # Configure power management
   services.tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 50;
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 50;
 
-       #Optional helps save long term battery health
-       START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
-       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
-       
-       START_CHARGE_THRESH_BAT1=40;
-       STOP_CHARGE_THRESH_BAT1=80;
-      };
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+
+      START_CHARGE_THRESH_BAT1 = 40;
+      STOP_CHARGE_THRESH_BAT1 = 80;
+    };
   };
-  
+
   # **********************************************************************
 
   users.users.lethanix = {
     isNormalUser = true;
     # Adding uinput and input for kanata
-    extraGroups = [ "networkmanager" "wheel" "uinput" "input"]; 
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" "uinput" "input" ];
+    packages = with pkgs; [ ];
   };
 
   # **********************************************************************
@@ -93,7 +101,7 @@
 
   # Ensure the uinput module is loaded at boot
   boot.kernelModules = [ "uinput" ];
-  
+
   # **********************************************************************
   # Packages
   # **********************************************************************
@@ -102,42 +110,42 @@
 
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     git
     kitty
     wireplumber
   ];
 
   fonts.packages = with pkgs; [
-  	nerd-fonts.jetbrains-mono 
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
+    enable = true;
+    xwayland.enable = true;
   };
 
   programs.firefox.enable = true;
-  
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
-  
+
   # **********************************************************************
   # Audio
   # **********************************************************************
   services.pulseaudio.enable = false;
-  
+
   security.rtkit.enable = true;
-  
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;      # provides PulseAudio compatibility
-    jack.enable = true;       # optional, for JACK apps
-  }; 
+    pulse.enable = true; # provides PulseAudio compatibility
+    jack.enable = true; # optional, for JACK apps
+  };
 
   # **********************************************************************
   # Graphics
