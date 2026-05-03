@@ -51,6 +51,7 @@
 
     # Hyprland utils
     hyprpaper
+    hyprlock
     wl-clipboard
     hyprcursor
     catppuccin-cursors.mochaMauve
