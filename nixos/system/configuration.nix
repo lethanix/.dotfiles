@@ -87,7 +87,7 @@
   users.users.lethanix = {
     isNormalUser = true;
     # Adding uinput and input for kanata
-    extraGroups = [ "networkmanager" "wheel" "uinput" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" "input" "docker" ];
     packages = with pkgs; [ ];
   };
 
@@ -166,6 +166,11 @@
 
   hardware.graphics.enable = true;
   hardware.graphics.extraPackages = with pkgs; [ libva-vdpau-driver ];
+
+  # **********************************************************************
+  # Docker
+  # **********************************************************************
+  virtualisation.docker.enable = true;
 
   # **********************************************************************
 
