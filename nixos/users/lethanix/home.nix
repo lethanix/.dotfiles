@@ -43,7 +43,7 @@
     ffmpeg
     resvg
     file
-    
+
     # Needed for neovim
     gcc
     gnumake
@@ -56,7 +56,7 @@
     catppuccin-cursors.mochaMauve
     catppuccin-cursors.mochaDark
     brightnessctl
-    
+
     # Fonts 
     nerd-fonts.fira-code
     nerd-fonts.space-mono
@@ -65,7 +65,7 @@
     # Keyboard config
     kanata
   ];
-  
+
   # Home Manager dotfiles management
   home.file = {
     ".config/nvim".recursive = true;
@@ -76,7 +76,7 @@
 
     ".config/hypr".recursive = true;
     ".config/hypr".source = ./dotany/hypr;
-    
+
     ".config/ghostty".recursive = true;
     ".config/ghostty".source = ./dotany/ghostty;
 

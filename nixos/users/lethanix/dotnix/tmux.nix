@@ -6,8 +6,8 @@
 
     terminal = "tmux-256color";
     extraConfig = ''
-    set-option -ga terminal-overrides ",*:RGB"
-    set -g @catppuccin_flavour 'mocha'
+      set-option -ga terminal-overrides ",*:RGB"
+      set -g @catppuccin_flavour 'mocha'
     '';
 
     escapeTime = 0;
