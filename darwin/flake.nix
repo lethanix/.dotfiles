@@ -8,14 +8,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, ... }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, nixpkgs-stable, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
+        pkgs-stable = import nixpkgs-stable { inherit system; };
       in
       {
+        formatter = pkgs.nixpkgs-fmt;
         packages = {
 
           homeConfigurations = {
@@ -28,6 +31,7 @@
               # to pass through arguments to home.nix
               extraSpecialArgs = {
                 inherit pkgs;
+                inherit pkgs-stable;
               };
             };
           };
