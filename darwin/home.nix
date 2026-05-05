@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-stable, ... }:
+{
 
   imports = [
     # ../shared/nvim/neovim.nix
@@ -11,7 +12,7 @@
     stateVersion = "25.11";
     username = "lethani";
     homeDirectory = "/Users/lethani";
-    packages = with pkgs; [
+    packages = (with pkgs; [
       # Using better bash (not macOS/Apple)
       # bash
       # direnv
@@ -20,6 +21,9 @@
       # DevOps
       # kubectl => use asdf instead in order to avoid version conflicts with K8s API
       # k9s
+      devcontainer
+      secretspec
+      devenv
 
       # Utilities
       ghostty-bin
@@ -36,7 +40,7 @@
       glow
       bat
       eza
-      fzf 
+      fzf
       fd
       gh
 
@@ -48,13 +52,16 @@
       # lua
       # luajitPackages.luarocks
 
-      nerd-fonts.fira-code 
+      nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.space-mono
       commit-mono
 
       emacs
-    ];
+    ]) ++ (with pkgs-stable; [
+      # All these come from stable
+      
+    ]);
   };
   programs.home-manager.enable = true;
 
