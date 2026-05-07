@@ -24,6 +24,10 @@
       devcontainer
       secretspec
       devenv
+      pyenv
+      yarn
+      fnm
+      # nodejs
 
       # Utilities
       ghostty-bin
@@ -60,6 +64,7 @@
       emacs
     ]) ++ (with pkgs-stable; [
       # All these come from stable
+      # python310
       
     ]);
   };
