@@ -73,6 +73,15 @@ eval "$(starship init bash)"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+# fnm setup
+eval "$(fnm env --use-on-cd --shell bash)"
+
 # cd change to zoxide 
-eval "$(zoxide init bash)"
+eval "$(zoxide init bash)" # MUST be at the END
 alias cd=z
+
