@@ -34,6 +34,7 @@
       starship
       tealdeer
       ripgrep
+      zellij
       zoxide
       ffmpeg
       bottom
@@ -60,6 +61,8 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.space-mono
       commit-mono
+
+      write-good
 
       emacs
     ]) ++ (with pkgs-stable; [
