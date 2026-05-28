@@ -63,6 +63,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export GOOSE_BIN_DIR="$HOME/.local/bin/" 
 export PATH="$GOOSE_BIN_DIR:$PATH"
 
+# Adding path for Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 # ******************************************
 # Prompt
 # ******************************************
